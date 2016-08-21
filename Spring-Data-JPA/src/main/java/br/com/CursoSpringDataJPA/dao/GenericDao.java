@@ -10,7 +10,7 @@ import javax.persistence.Query;
 import org.hibernate.action.internal.EntityIdentityInsertAction;
 import org.hibernate.type.SerializableType;
 
-import br.com.CursoSpringDataJPA.Aula05.Util.JPAUtil;
+import br.com.CursoSpringDataJPA.Util.JPAUtil;
 
 /**Extendendo Serializable, quando trabalha com javaPersistence, precisa ser 
  * do tipo Serializable.

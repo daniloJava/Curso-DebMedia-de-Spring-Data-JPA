@@ -1,4 +1,4 @@
-package br.com.CursoSpringDataJPA.Aula05.Util;
+package br.com.CursoSpringDataJPA.Util;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
