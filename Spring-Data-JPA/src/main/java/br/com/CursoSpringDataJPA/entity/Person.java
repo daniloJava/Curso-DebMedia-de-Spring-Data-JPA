@@ -2,18 +2,22 @@ package br.com.CursoSpringDataJPA.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(
 	name = "PERSONS",
-	indexes = {@Index(columnList = "FIRST_NAME, LAST_NAME", name = "IDX_PERSON_NAME", unique = true)}
+	indexes = {@Index(columnList = "PRIMEIRO_NOME, ULTIMO_NOME", name = "IDX_PERSON_NAME", unique = true)}
 )
 /**Modelo para a a entidade Person
  * e tambem a criação de uma tabela no banco de dados
@@ -37,6 +41,33 @@ public class Person implements Serializable {
 	
 	@Column(name = "IDADE", nullable = false)
 	private Integer age;
+	
+	/*cacade para cada a inserçao ou upadate.
+	 * FetchType.EAGER = para cada interação com o person, o documente tambem é retornado
+	 * 
+	 * 
+	 */
+	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
+	@JoinColumn(name = "ID_Documents")
+	private Document doc;
+
+	
+	
+	
+	
+	/**
+	 * @return o atributo doc
+	 */
+	public Document getDoc() {
+		return doc;
+	}
+
+	/**
+	 * @param doc the doc to set
+	 */
+	public void setDoc(Document doc) {
+		this.doc = doc;
+	}
 
 	public Long getId() {
 		return id;
