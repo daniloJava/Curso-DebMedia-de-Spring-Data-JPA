@@ -1,6 +1,8 @@
 package br.com.CursoSpringDataJPA.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -51,10 +54,43 @@ public class Person implements Serializable {
 	@JoinColumn(name = "ID_Documents")
 	private Document doc;
 
+	/*mappedBy é a forma que se diz qual metodo ou variavel da classe Phone
+	 * que ele vai se relacionar.
+	 * 
+	 */
+	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private List<Phone> cel;
 	
+	/**Classe que adiciona os numeros de telefones
+	 * caso não esteja inicializado a lista de telefones.
+	 * 
+	 * @param fones Phones - telefone
+	 */
+	public void addPhone(Phone fones){
+		if(cel == null)
+			cel = new ArrayList<Phone>();
+		/*pega a propria instancia e add no fone
+		 * para que o ID de pessoa esteja em Fones
+		*/
+		fones.setPessoa(this);
+		cel.add(fones);
+		
+	}
 	
-	
-	
+	/**
+	 * @return o atributo cel
+	 */
+	public List<Phone> getCel() {
+		return cel;
+	}
+
+	/**
+	 * @param cel the cel to set
+	 */
+	public void setCel(List<Phone> cel) {
+		this.cel = cel;
+	}
+
 	/**
 	 * @return o atributo doc
 	 */
