@@ -13,6 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -61,6 +63,33 @@ public class Person implements Serializable {
 	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Phone> cel;
 	
+	
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	//mesmo mapeamento de Address
+	@JoinTable(
+			name = "PERSONS_ENDERECO",
+			joinColumns = @JoinColumn(name = "ID_ENDERECO"),
+			inverseJoinColumns = @JoinColumn(name = "ID_PERSON")
+	)
+	private List<Address> endereco;
+	
+	
+	
+	
+	/**
+	 * @return o atributo endereco
+	 */
+	public List<Address> getEndereco() {
+		return endereco;
+	}
+
+	/**
+	 * @param endereco the endereco to set
+	 */
+	public void setEndereco(List<Address> endereco) {
+		this.endereco = endereco;
+	}
+
 	/**Classe que adiciona os numeros de telefones
 	 * caso não esteja inicializado a lista de telefones.
 	 * 
