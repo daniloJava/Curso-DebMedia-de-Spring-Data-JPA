@@ -53,7 +53,7 @@ public class Person implements Serializable {
 	 * 
 	 */
 	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
-	@JoinColumn(name = "ID_Documents")
+	@JoinColumn(name = "ID_DOCUMENT")
 	private Document doc;
 
 	/*mappedBy é a forma que se diz qual metodo ou variavel da classe Phone
@@ -64,12 +64,12 @@ public class Person implements Serializable {
 	private List<Phone> cel;
 	
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.ALL)
 	//mesmo mapeamento de Address
 	@JoinTable(
 			name = "PERSONS_ENDERECO",
-			joinColumns = @JoinColumn(name = "ID_ENDERECO"),
-			inverseJoinColumns = @JoinColumn(name = "ID_PERSON")
+			joinColumns = @JoinColumn(name = "ID_PERSON"),
+			inverseJoinColumns = @JoinColumn(name = "ID_ENDERECO")
 	)
 	private List<Address> endereco;
 	

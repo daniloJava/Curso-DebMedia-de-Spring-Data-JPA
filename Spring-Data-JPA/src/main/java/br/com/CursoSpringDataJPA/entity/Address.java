@@ -40,7 +40,7 @@ public class Address implements Serializable{
 	@Column(name ="")
 	private TypeAddress tipo;
 	
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany()
 	/*Precisamos de alguns parametros, porque é a tabela gerada do relacionamento. N for N
 	 * Name - nome da terceira tabela que armazenas as Chaves primarias
 	 * joinColumns - a chave de endereço
@@ -55,7 +55,10 @@ public class Address implements Serializable{
 	@Column(name ="")
 	private List<Person> pessoa;
 
-
+	public Address (){
+		
+	}
+	
 	/**
 	 * @return o atributo idAddresses
 	 */
