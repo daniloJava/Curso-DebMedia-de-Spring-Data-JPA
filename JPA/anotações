@@ -1,0 +1,15 @@
+@Componente - Criação de qualquer tipo de bean
+@Repository - Anotação especifica para persistencia DAO.
+@Services - Classes que são definidas como regras de negocio
+@Autowired - Classes para injeção de dependências em beans, contrutores ou metodos sets.
+@Controller - Seria o controle da aplicação MVC
+@RequestMapping - define a url de acesso ao metodo
+@ResponseBody - para uso com recursos rest, ultlizando o AJAX enviando uma resposta para o Ajaz recebendo pela interface
+@PathVarieble - Recupera valores de parametros da url
+@ModelAttribute - Recupera o objeto de um formulário, tudo de uma vez apartir de um Objeto.
+
+@configuration - configurando algum bean, que são informações para alguma configuração, JPA, JDBC, ou qualquer ooutro
+@Bean - dentro da classe @configuration voce usa para transformar o retorno desse objeto possa ser injetado em qualquer outra classe.
+@PropertySource - definir um arquivo de propriedades, Exemplo que seria as informações com banco de dados
+@Value - recupera e inicializa o valor da propriedade
+@componentScan - definiçõa do local dos beans criados.  
