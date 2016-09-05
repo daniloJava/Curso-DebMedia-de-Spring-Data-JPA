@@ -1,7 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/data/jpa
+		http://www.springframework.org/schema/data/jpa/spring-jpa-1.8.xsd
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
+	<!-- Onde fica todas as interfaces dos repositorios -->
+	<jpa:repositories base-package="br.com.spring.repository"></jpa:repositories>
 
+	<!-- Recurso que trabalha com as propriedades de configuração do spring -->
+	<context:property-placeholder location="application.properties" />
+
+	<!-- Adicionando os beans -->
+
+	<!-- Bean do DataSources Adicionando o pool de conexões padão do spring, 
+		não é recomendavel usar esse recurso, o que a propria documentação fala é 
+		para usar o seu proprio pool. -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<!-- buscando as informações em um arquivo de configuração APPLICATION.PROPERTIES -->
+		<property name="username" value="${jdbc.use}"></property>
+		<property name="password" value="${jdbc.pass}"></property>
+		<property name="driverClassName" value="${jdbc.driver}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+
+	</bean>
+
+	<!-- configuração das entidades. -->
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+		<!-- Injetando um bean com a propriedade ref -->
+		<property name="dataSource" ref="dataSource"></property>
+		<!-- propriedade que está as classes de entidade -->
+		<property name="packagesToScan" value="br.com.spring.entity"></property>
+		<!-- configuração de qual fremework para trabalhar com o JPA -->
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="showSql" value="true"></property>
+				<property name="generateDdl" value="true"></property>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory"></property>
+		<property name="jpaDialect">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"></bean>
+		</property>
+	
+	
+	</bean>
 </beans>
