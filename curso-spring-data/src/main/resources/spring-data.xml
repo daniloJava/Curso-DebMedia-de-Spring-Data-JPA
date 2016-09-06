@@ -11,12 +11,12 @@
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
-	<!-- Onde fica todas as interfaces dos repositorios -->
+	<!-- Onde fica todas as interfaces dos repositorios Habilitando o JPA ou @EnableJpaRepositories-->
 	<jpa:repositories base-package="br.com.spring.repository"></jpa:repositories>
 
-	<!-- Recurso que trabalha com as propriedades de configuração do spring -->
+	<!-- Recurso que trabalha com as propriedades de configuração do spring ou @PropertySource-->
 	<context:property-placeholder location="application.properties" />
-	<!-- para que o spring entenda as alterações feitas por anotações -->
+	<!-- para que o spring entenda as alterações feitas por anotações da transações ou @EnableTransactionManagement-->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	
 	
