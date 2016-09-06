@@ -16,7 +16,10 @@
 
 	<!-- Recurso que trabalha com as propriedades de configuração do spring -->
 	<context:property-placeholder location="application.properties" />
-
+	<!-- para que o spring entenda as alterações feitas por anotações -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	
 	<!-- Adicionando os beans -->
 
 	<!-- Bean do DataSources Adicionando o pool de conexões padão do spring, 
@@ -32,9 +35,9 @@
 
 	</bean>
 
-	<!-- configuração das entidades. -->
-	<bean id="entityManagerFactory"
-		class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+	<!-- configuração das entidades. Utilizando os recursos do Spring SEM INICIALIZAR  o arquivo de persistencia  -->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		
 		<!-- Injetando um bean com a propriedade ref -->
 		<property name="dataSource" ref="dataSource"></property>
 		<!-- propriedade que está as classes de entidade -->
@@ -47,9 +50,12 @@
 			</bean>
 		</property>
 	</bean>
-
+	
+	<!-- Spring monitorando as transações -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<!-- Quem seria o Objeto para se injetado  entityManagerFactory Criado Acima-->
 		<property name="entityManagerFactory" ref="entityManagerFactory"></property>
+		<!--Para que o spring saiba com o que ele vai lidar Adicionando uma TAG-->
 		<property name="jpaDialect">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"></bean>
 		</property>
