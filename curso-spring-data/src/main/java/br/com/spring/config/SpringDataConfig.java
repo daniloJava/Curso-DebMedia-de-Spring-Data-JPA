@@ -12,8 +12,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**Classe de configuração baseado em código java
@@ -40,23 +43,41 @@ public class SpringDataConfig {
 	@Value(value = "${jdbc.url}")
 	private String url;
 
-	/**Responsavel para o spring trabalhar com Hibernate
+	
+	/**Configurar a parte de transação
 	 * 
+	 */
+	@Bean
+	public PlatformTransactionManager transactionManager(EntityManagerFactory factory){
+		//
+		JpaTransactionManager manager = new JpaTransactionManager();
+		manager.setEntityManagerFactory(factory);
+		manager.setJpaDialect(new HibernateJpaDialect());
+		return manager;
+	}
+	
+	
+	
+	public HibernateJpaVendorAdapter jpaVendorAdapter(){
+		//<property name="jpaVendorAdapter">
+				HibernateJpaVendorAdapter adapter = new  HibernateJpaVendorAdapter();
+				//<property name="showSql" value="true"></property>
+				adapter.setShowSql(true);
+				//<property name="generateDdl" value="true"></property>
+				adapter.setGenerateDdl(true);
+		
+		return adapter;
+	}
+	
+	/**Responsavel para o spring trabalhar com Hibernate
+	 *Com um pequeno problema em apresentar o sql, porem simplesmente é aplicar o metodo assim e faz a chamada direto no metodo
 	 * @return
 	 */
 	@Bean
 	public EntityManagerFactory entityManagerFactory(){
-		//<property name="jpaVendorAdapter">
-		HibernateJpaVendorAdapter adapter = new  HibernateJpaVendorAdapter();
-		//<property name="showSql" value="true"></property>
-		adapter.setShowSql(true);
-		//<property name="generateDdl" value="true"></property>
-		adapter.setGenerateDdl(true);
-		
-		
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		//<property name="jpaVendorAdapter">
-		factory.setJpaVendorAdapter(adapter);
+		factory.setJpaVendorAdapter(jpaVendorAdapter());
 		//<property name="packagesToScan" value="br.com.spring.entity">
 		factory.setPackagesToScan("br.com.spring.entity");
 		//<property name="dataSource" ref="dataSource">

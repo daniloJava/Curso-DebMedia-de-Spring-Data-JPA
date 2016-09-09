@@ -20,7 +20,8 @@ import br.com.spring.repository.PhoneRepository;
  *
  */
 @SpringBootApplication
-@ImportResource(value="spring-date.xml")//dizendo para o Spring que precisa trabalhar com o arquivo Spring-data.xml
+//@ImportResource(value="spring-date.xml")//dizendo para o Spring que precisa trabalhar com o arquivo Spring-data.xml
+
 public class CursoSpringDataApplication implements CommandLineRunner{
 	//pessoa
 	@Autowired
