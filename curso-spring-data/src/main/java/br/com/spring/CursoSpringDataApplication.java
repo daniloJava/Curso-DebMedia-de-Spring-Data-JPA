@@ -1,5 +1,6 @@
 package br.com.spring;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 
+import br.com.spring.entity.Address;
+import br.com.spring.entity.Address.TypeAddress;
+import br.com.spring.entity.Phone.TypePhones;
+import br.com.spring.entity.Document;
 import br.com.spring.entity.Person;
+import br.com.spring.entity.Phone;
 import br.com.spring.repository.AddressRepository;
 import br.com.spring.repository.DocumentRepository;
 import br.com.spring.repository.PersonRepository;
@@ -49,8 +55,29 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 	public void run(String... arg0) throws Exception {
 		
 		testConfiguration();
+		testSave();
 	}
 	
+	//Metodos para testar os salvars
+	private void testSave() {
+		Person pessoa1 = new Person();
+		pessoa1.setFirstName("Danilo");
+		pessoa1.setLastName("Juquinha");
+		pessoa1.setAge(24);
+		pessoa1.setDoc(new Document("425.789.168-88", 455550135));
+		
+		Address endereco = new Address();
+		endereco.setCity("Carapicuiba");
+		endereco.setStreet("Rua dos Bobos numero 0");
+		endereco.setTipo(TypeAddress.RESIDENCIAL);
+
+		
+		pessoa1.setEndereco(Arrays.asList(endereco));
+		pessoa1.addPhone(new Phone(TypePhones.CELULAR, "994585013"));
+		
+		
+	}
+
 	//simples para ver se está funcionando
 	private void testConfiguration() {
 		long total = personRepository.count();
