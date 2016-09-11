@@ -53,9 +53,78 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 //		testConfiguration();
 //		testSave();
 //		testUpdate();
-		testeDelete();
+//		testeDelete();
+//		testeSavePersons();
+		testeDeletePersons();
+		
+		
 		
 	}
+	private void testeDeletePersons() {
+		Person p1 = personRepository.findOne(11L);
+		Person p2 = personRepository.findOne(12L);
+		Person p3 = personRepository.findOne(13L);
+		
+		/*Dessa forma o Spring vai abrir a conexão, chamar um transação, executar, executar o commit e fechar tudo.
+		 * ele vai executar para cada objeto, ou seja em 3 vezes conforme o array
+		 * 
+		 */
+		personRepository.delete(Arrays.asList(p1, p2, p3));
+		System.out.println("***********************************");
+		
+		Person p4 = personRepository.findOne(14L);
+		Person p5 = personRepository.findOne(15L);
+		Person p6 = personRepository.findOne(16L);
+		/*nesse caso, será excluido em uma unica operação, onde teoricamente e passa os 3 ids de uma vez
+		 * 
+		 */
+		personRepository.deleteInBatch(Arrays.asList(p4, p5, p6));
+	}
+
+	private void testeSavePersons() {
+		Person p1 = new Person();
+		p1.setFirstName("Dan");
+		p1.setLastName("Juqui");
+		p1.setAge(98);
+		p1.setDoc(new Document("465.111.111-88", 45555565));
+		
+		Person p2 = new Person();
+		p2.setFirstName("aline");
+		p2.setLastName("amaral");
+		p2.setAge(23);
+		p2.setDoc(new Document("478.439.148-88", 58557765));
+		
+		Person p3 = new Person();
+		p3.setFirstName("Carlos");
+		p3.setLastName("silva");
+		p3.setAge(45);
+		p3.setDoc(new Document("478.439.144-48", 5834465));
+		
+		Person p4 = new Person();
+		p4.setFirstName("Juquinha");
+		p4.setLastName("Locaa0");
+		p4.setAge(12);
+		p4.setDoc(new Document("248.349.148-88", 58554565));
+		
+		Person p5 = new Person();
+		p5.setFirstName("Vinicius");
+		p5.setLastName("oliveira");
+		p5.setAge(73);
+		p5.setDoc(new Document("478.119.457-22", 58676365));
+		
+		
+		Person p6 = new Person();
+		p6.setFirstName("Carlinha");
+		p6.setLastName("Show");
+		p6.setAge(44);
+		p6.setDoc(new Document("118.479.438-38", 58239965));
+		
+		//adiciona todos os objetos criados passando uma interable.
+		List<Person> persons = personRepository.save(Arrays.asList(p1, p2, p3, p4, p5, p6));
+		
+		persons.forEach(System.out::println);
+	}
+
 	private void testeDelete() {
 		List<Person> persons = personRepository.findAll();
 		persons.forEach(System.out::println);
