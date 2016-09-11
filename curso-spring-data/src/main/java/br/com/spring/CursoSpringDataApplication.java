@@ -50,10 +50,42 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 	@Override
 	public void run(String... arg0) throws Exception {
 		
-		testConfiguration();
+//		testConfiguration();
 //		testSave();
+//		testUpdate();
+		testeDelete();
+		
 	}
-	
+	private void testeDelete() {
+		List<Person> persons = personRepository.findAll();
+		persons.forEach(System.out::println);
+		//deletando pelo ID
+		personRepository.delete(1L);
+		
+		//deletando pelo objeto completo
+		Person pes = personRepository.findOne(6L);
+		
+		personRepository.delete(pes);
+		
+		persons = personRepository.findAll();
+		persons.forEach(System.out::println);
+		
+	}
+
+	//teste de updatedes
+	private void testUpdate() {
+		Person person = personRepository.findOne(7L);
+		System.out.println(person.getLastName());
+		
+		person.setLastName("Manoel");
+		//Spring data não possue um metodo Update, 
+		//ele verifica que o objeto já tem um ID, e ele executa então o update
+		personRepository.save(person);
+		
+		Person person2 = personRepository.findOne(7L);
+		System.out.println(person2.getLastName());
+	}
+
 	//Metodos para testar os salvars
 	private void testSave() {
 		Person pessoa1 = new Person();
@@ -71,6 +103,11 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 		pessoa1.setEndereco(Arrays.asList(endereco));
 		pessoa1.addPhone(new Phone(TypePhones.CELULAR, "994585013"));
 		
+		personRepository.save(pessoa1);
+		
+		Person p2 = personRepository.findOne(pessoa1.getId());
+		
+		System.out.println(p2.toString());
 		
 	}
 
