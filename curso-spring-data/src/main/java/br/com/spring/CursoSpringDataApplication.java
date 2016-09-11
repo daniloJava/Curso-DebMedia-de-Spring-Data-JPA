@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.context.annotation.ImportResource;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+import org.springframework.data.domain.Sort;
 
 import br.com.spring.entity.Address;
 import br.com.spring.entity.Address.TypeAddress;
@@ -26,22 +27,17 @@ import br.com.spring.repository.PhoneRepository;
  *
  */
 @SpringBootApplication
-//@ImportResource(value="spring-date.xml")//dizendo para o Spring que precisa trabalhar com o arquivo Spring-data.xml
-
+//@ImportResource(value="spring-data.xml")//dizendo para o Spring que precisa trabalhar com o arquivo Spring-data.xml
 public class CursoSpringDataApplication implements CommandLineRunner{
 	//pessoa
 	@Autowired
 	private PersonRepository personRepository;
-	
 	@Autowired
 	private AddressRepository addressRepository;
-	
 	@Autowired
-	private DocumentRepository documenteRepository;  
-	
+	private DocumentRepository documentRepository;
 	@Autowired
 	private PhoneRepository phoneRepository;
-	
 	
 	
 	public static void main(String[] args) {
@@ -55,7 +51,7 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 	public void run(String... arg0) throws Exception {
 		
 		testConfiguration();
-		testSave();
+//		testSave();
 	}
 	
 	//Metodos para testar os salvars
@@ -86,7 +82,7 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 		long total2 = addressRepository.count();
 		System.out.println("tEM " + total2);
 		
-		long total3 = documenteRepository.count();
+		long total3 = documentRepository.count();
 		System.out.println("tEM " + total3);
 		
 		long total4 = phoneRepository.count();

@@ -1,8 +1,5 @@
 package br.com.spring.config;
 
-import java.sql.DriverManager;
-
-import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
@@ -19,6 +16,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+
 /**Classe de configuração baseado em código java
  * 
  * @author Danilo Silva
@@ -31,15 +29,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class SpringDataConfig {
 	
 	//Configurando o Data Sources
-	@Value(value = "${jdbc.use}")
-	private String userName; 
-	
+	@Value(value = "${jdbc.user}")
+	private String username;
 	@Value(value = "${jdbc.pass}")
 	private String password;
-	
 	@Value(value = "${jdbc.driver}")
 	private String driver;
-	
 	@Value(value = "${jdbc.url}")
 	private String url;
 
@@ -48,24 +43,22 @@ public class SpringDataConfig {
 	 * 
 	 */
 	@Bean
-	public PlatformTransactionManager transactionManager(EntityManagerFactory factory){
-		//
+	public PlatformTransactionManager transactionManager(EntityManagerFactory factory) {
 		JpaTransactionManager manager = new JpaTransactionManager();
 		manager.setEntityManagerFactory(factory);
 		manager.setJpaDialect(new HibernateJpaDialect());
 		return manager;
 	}
 	
-	
-	
+	@Bean
 	public HibernateJpaVendorAdapter jpaVendorAdapter(){
 		//<property name="jpaVendorAdapter">
-				HibernateJpaVendorAdapter adapter = new  HibernateJpaVendorAdapter();
+				HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
 				//<property name="showSql" value="true"></property>
 				adapter.setShowSql(true);
 				//<property name="generateDdl" value="true"></property>
 				adapter.setGenerateDdl(true);
-		
+
 		return adapter;
 	}
 	
@@ -92,10 +85,10 @@ public class SpringDataConfig {
 	 * 
 	 * @return - Retorno do Objeto configurado para conexão
 	 */
-	@Bean//usa o Id como onome do metodo ou @Bean(name = "DATASOURCE") 
+	@Bean(name = "dataSource")//usa o Id como onome do metodo ou @Bean(name = "DATASOURCE") 
 	public DataSource dataSource(){
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setUsername(userName);
+		dataSource.setUsername(username);
 		dataSource.setPassword(password);
 		dataSource.setDriverClassName(driver);
 		dataSource.setUrl(url);

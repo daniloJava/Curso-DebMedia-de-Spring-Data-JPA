@@ -28,7 +28,7 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<!-- buscando as informações em um arquivo de configuração APPLICATION.PROPERTIES -->
-		<property name="username" value="${jdbc.use}"></property>
+		<property name="username" value="${jdbc.user}"></property>
 		<property name="password" value="${jdbc.pass}"></property>
 		<property name="driverClassName" value="${jdbc.driver}"></property>
 		<property name="url" value="${jdbc.url}"></property>
@@ -54,7 +54,7 @@
 	<!-- Spring monitorando as transações -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<!-- Quem seria o Objeto para se injetado  entityManagerFactory Criado Acima-->
-		<property name="entityManagerFactory" ref="entityManagerFactory"></property>
+		<property name="entityManagerFactory" ref="entityManageFactory"></property>
 		<!--Para que o spring saiba com o que ele vai lidar Adicionando uma TAG-->
 		<property name="jpaDialect">
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"></bean>

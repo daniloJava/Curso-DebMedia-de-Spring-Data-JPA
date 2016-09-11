@@ -11,6 +11,6 @@ import br.com.spring.entity.Person;
  */
 public interface PersonRepository extends JpaRepository<Person, Long>{
 
-	
+	 
 	
 }
