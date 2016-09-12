@@ -7,8 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ImportResource;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.domain.Sort.Order;
 
 import br.com.spring.entity.Address;
 import br.com.spring.entity.Address.TypeAddress;
@@ -23,7 +26,7 @@ import br.com.spring.repository.PhoneRepository;
 
 /**Clase para os teste do Spring
  * a interface sendo implementada CommandLineRunner - é para que possa se trabalhar com linha de comando
- * @author Aluno
+ * @author Danilo SIlva
  *
  */
 @SpringBootApplication
@@ -55,11 +58,72 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 //		testUpdate();
 //		testeDelete();
 //		testeSavePersons();
-		testeDeletePersons();
-		
-		
+//		testeDeletePersons();
+//		testFindAndSort();
+//		testFindByIDS();
+//		testeExistes();
+//		testePagination();
 		
 	}
+	
+	/**Criando com paginação
+	 * 
+	 */
+	private void testePagination() {
+		//criando uma paginação começãndo em 0 e contendo 4 linhas por pagina
+		// se não tiver mais ele não traz nada.
+		Page<Person> page = personRepository.findAll(new PageRequest(0, 4));
+		page.getContent().forEach(System.out::println);
+		
+		Page<Person> page2 = personRepository.findAll(new PageRequest(1, 4));
+		page2.getContent().forEach(System.out::println);
+		
+		Page<Person> page3 = personRepository.findAll(new PageRequest(2, 4));
+		page3.getContent().forEach(System.out::println);
+		
+	}
+
+	/**Um valor bolleando se existe ou não
+	 * 
+	 */
+	private void testeExistes() {
+		boolean b1 = personRepository.exists(10L);
+		
+		System.out.println("\n\n\n\n\n\n");
+		System.out.println("B1 é " + b1);
+		
+		boolean b2 = personRepository.exists(61L);
+		System.out.println("B2 é " + b2);
+
+	}
+
+	/**Tipo de consulta por uma lista de IDs
+	 * 
+	 * 
+	 */
+	private void testFindByIDS() {
+		
+		List<Person> persons = personRepository.findAll(Arrays.asList(10L, 11L, 13L));
+		persons.forEach(System.out::println);
+	}
+
+	/** ORdenando a consulta
+	 * 
+	 */
+	private void testFindAndSort() {
+		
+		Order orderAsc = new Order(Direction.ASC, "lastName");
+		Order orderDesc = new Order(Direction.DESC, "firstName");
+		Sort sort = new Sort(orderAsc, orderDesc);
+		
+		List<Person> persons = personRepository.findAll(sort);
+		
+		persons.forEach(System.out::println);
+	}
+	
+	/**Deletando por uma lista de objetos
+	 * 
+	 */
 	private void testeDeletePersons() {
 		Person p1 = personRepository.findOne(11L);
 		Person p2 = personRepository.findOne(12L);
@@ -81,6 +145,9 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 		personRepository.deleteInBatch(Arrays.asList(p4, p5, p6));
 	}
 
+	/**Salvando por um lista de Objetos
+	 * 
+	 */
 	private void testeSavePersons() {
 		Person p1 = new Person();
 		p1.setFirstName("Dan");
@@ -124,7 +191,10 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 		
 		persons.forEach(System.out::println);
 	}
-
+	
+	/**Deletando uma lista
+	 * 
+	 */
 	private void testeDelete() {
 		List<Person> persons = personRepository.findAll();
 		persons.forEach(System.out::println);
