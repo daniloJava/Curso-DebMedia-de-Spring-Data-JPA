@@ -64,8 +64,104 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 //		testeExistes();
 //		testePagination();
 		
+//		testeByAge();
+//		testeFirstName();
+//		testByAndOr();
+//		testeBetween();
+//		testelastNameANdeBetween();
+//		testeGeaterAndLess();
+//		testeGeaterAndLessEquals();
+		testeFirstGeaterthan();
+		
+		
+		
 	}
+	//Teste
+	private void testeFirstGeaterthan() {
+		//No caso, ele procura letra por letra da ordem alfabetica, nesse caso o registro Danilo não retorna.
+		List<Person> p1 = personRepository.findByFirsttNameGreaterThan("Danilo");
+		p1.forEach(System.out::println);
+		
+	}
+
+	private void testeGeaterAndLessEquals() {
+		// TODO Auto-generated method stub
+		//tudo que for >= 28
+		System.out.println("--------- - - - - -- - -  - - -  -------");
+		//recupera tudo que for <= 25
+		List<Person> p2 = personRepository.findByAgeLessThanEqual(25);
+		p2.forEach(System.out::println);
+		
+	}
+
+	private void testeGeaterAndLess() {
+		//tudo que for > 28
+		List<Person> p1 = personRepository.findByAgeGreaterThan(25);
+		p1.forEach(System.out::println);
+		
+		System.out.println("--------- - - - - -- - -  - - -  -------");
+		//recupera tudo que for < 25
+		List<Person> p2 = personRepository.findByAgeLessThan(25);
+		p2.forEach(System.out::println);
+		
+	}
+
+	private void testelastNameANdeBetween() {
+		//Recupera tudo que for "Danilo" e a idade entre 14 e 80
+		List<Person> p1 = personRepository.findByLastNameAndAgeBetween("Danilo", 14, 80);
+		p1.forEach(System.out::println);
+		
+		
+	}
+
+	private void testeBetween() {
 	
+		//Recupera as idades de 14 até 80
+		List<Person> p1 = personRepository.findByAgeBetween(14, 80);
+		p1.forEach(System.out::println);
+	
+	}		
+
+	//Teste do KeyWords AND OR
+	private void testByAndOr() {
+		//Somente pelo nome
+		Person p1 = personRepository.findByFistNameAndLastName("Juquinha", "Danilo");
+		System.out.println(p1.toString());
+		
+		//tudo que for pelo nome e pela idade;
+		List<Person> p2 = personRepository.findByAgeOrFirstName("Danilo", 22);
+		p2.forEach(System.out::println);
+		
+	}
+
+	//Teste dos novos metodos por LIKE
+	private void testeFirstName() {
+		
+		List<Person> p1 = personRepository.findByFistNameLike("Danilo");
+		p1.forEach(System.out::println);
+		
+		System.out.println(" ------- - - - - --- - -- -- ");
+		List<Person> p2 = personRepository.findByFistNameNotLike("Danilo");
+		p2.forEach(System.out::println);
+		
+		
+	}
+
+	//Testar o retorno de Age
+	private void testeByAge() {
+		//Recupera todos os regitros com a idade 22
+		List<Person> p1 = personRepository.findByAge(22);
+		
+		p1.forEach(System.out::println);
+		
+		System.out.println("--- ---- ---- --- --- --- -- --- --");
+		//recupera todos os registros que não tenha a idade 22
+		List<Person> p2 = personRepository.findByAgeNot(22);
+		
+		p2.forEach(System.out::println);
+		
+	}
+
 	/**Criando com paginação
 	 * 
 	 */
