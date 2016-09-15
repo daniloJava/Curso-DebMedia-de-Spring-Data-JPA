@@ -79,11 +79,28 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 //		testeByOderBy();
 //		testIgnoreCase();
 //		testIsNullAndNotNull();
-		testPhonesByNumber();
-		testByGreaterThanAndOrder();
+//		testPhonesByNumber();
+//		testByGreaterThanAndOrder();
+//		findFirstNameWithQuery();
+//		findFistNameAndAgeQuery();
+		
 		
 	}
 	
+	private void findFistNameAndAgeQuery() {
+		//Busca os nome ou com a idade informada usando o metodo com o @Query.
+		List<Person> p1 = personRepository.findByFirstNameOrAge("Danilo", 29);
+		p1.forEach(System.out::println);
+		
+	}
+
+	private void findFirstNameWithQuery() {
+		//Busca os nomes usando o metodo com o @Query.
+		List<Person> p1 = personRepository.findByFirstName("Danilo");
+		p1.forEach(System.out::println);
+		
+	}
+
 	private void testByGreaterThanAndOrder() {
 		
 		//retorna as pessoas com base no seu numero de telefone

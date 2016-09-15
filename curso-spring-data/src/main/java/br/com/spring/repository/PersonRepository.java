@@ -3,6 +3,7 @@ package br.com.spring.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import br.com.spring.entity.Person;
 
@@ -203,4 +204,33 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	 */
 	List<Person> findByAgeGreaterThanOrderByFirstNameAscLastNameAsc(Integer idade);
 	
+	/**Usando o @Query seria para o caso de que você escrevesse o JPQL
+	 * Sendo que o nome do metodo pode ser qualquer nome, o Spring ira verificar somente o Anotação
+	 * 
+	 * ?1 - é a ordem dos parametos.
+	 * Tomar cuidado com os parametros na declaração, porque ele identifica o Tipo na JPQL
+	 * causando uma exessão se tiver alguma incompatibilidade.
+	 * 
+	 * @param fistname
+	 * @return
+	 */
+	@Query("select p from Person p where p.firstName like ?1 or p.age = ?2")
+	List<Person> findByFirstName(String fistname);
+	
+	/**Mesma coisa do metodo a cima.
+	 * 
+	 * @param fistname
+	 * @param age
+	 * @return
+	 */
+	@Query("select p from Person p where p.firstName like ?1")
+	List<Person> findByFirstNameOrAge(String fistname, Integer age);
+	
+	/**Utilizando um Atributo Objeto.
+	 * 
+	 * @param cpfValor
+	 * @return
+	 */
+	@Query("select p from Person p where p.document.cpf *?1")
+	List<Person> findByDocumentCPFEndWith(String cpfValor);
 }
