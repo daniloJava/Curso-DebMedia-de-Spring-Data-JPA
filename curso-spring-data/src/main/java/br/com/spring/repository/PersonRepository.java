@@ -8,6 +8,25 @@ import br.com.spring.entity.Person;
 
 /**
  * Criando uma interface para repositorio de pessoas e extendendo da Classe JPA
+ * Utilizando tambem as palavras Chaves do Spring
+ * 
+ * Somente as palavras chaves, sempre começa com findBy + atributo + outra palavra chave + outro atrigunto ......
+ * findByAge (pelo atributo)
+ * Not
+ * Like
+ * NotLike
+ * And
+ * Or
+ * Between
+ * GreaterThan
+ * LessThan 
+ * GreaterThanEqual
+ * LessThanEqual
+ * In
+ * NotIn
+ * IgnoreCase
+ * IsNull
+ * IsNotNull
  * 
  * @author Danilo Silva
  *
@@ -43,14 +62,14 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	 * @param firstName - parametro para procura no banco
 	 * @return List<Person> - de todas os registros que tenha aquele parametro
 	 */
-	List<Person> findByFistNameLike(String firstName);
+	List<Person> findByFirstNameLike(String firstName);
 	
 	/**procura todos os nomes que não contenha o parametro recebido.
 	 * 
 	 * @param firstName
 	 * @return
 	 */
-	List<Person> findByFistNameNotLike(String firstName);
+	List<Person> findByFirstNameNotLike(String firstName);
 	
 	/**Utilizando operador logico AND para que busque somente um nome
 	 * 
@@ -112,7 +131,7 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	 * @return List<Person> - que for MAIOR que ou igual age
 	 */
 	List<Person> findByAgeGreaterThanEqual(int age);
-	
+
 	/**é como se fosse um MENOR QUE E IGUAL  <= 
 	 * 
 	 * ou seja, ele procura o que for menor que o parametro
@@ -128,5 +147,60 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	 */
 	List<Person> findByFirsttNameGreaterThan(String firstName);
 	
+	
+	//lista de parametros em uma consulta
+	/**Recupera uma lista conforme a Lista de parametros passados
+	 * por parametros.
+	 * 
+	 * @param args - lista de parametros
+	 * @return - retorna a consulta
+	 */
+	List<Person> findByAgeIn(Integer... args);
+	
+	
+	/**Recupera uma lista que não esteja na lista passada por parametro
+	 * por parametros.
+	 * 
+	 * @param args - lista de parametros
+	 * @return - retorna a consulta
+	 */
+	List<Person> findByAgeNotIn(Integer... args);
+	
+	
+	/**Eliminar a distinção de maiusculas e minusculas
+	 * 
+	 * @param fistname String - passando o nome
+	 * @return Retorna lista com a consulta.
+	 */
+	List<Person> findByFirstNameIgnoreCase(String fistname);
+	
+	/**Buscando todas os registros que o documento que estiver Null
+	 * 
+	 * @return - retorna consulta
+	 */
+	List<Person> findByDocumentIsNull();
+	
+	/**Retorna todos os registros de documentos que não são nulos
+	 * 
+	 * @return - retorna consulta.
+	 */
+	List<Person> findByDocumentIsNotNull();
+	
+	/**fazendo uma consluta apartir d euma lista de telefones, ou seja, utilizando um atributo que é Objeto
+	 * 
+	 * Seria o nome da Classe, e o Atrinbuto dentro dessa lasse.
+	 * 
+	 * @return
+	 */
+	List<Person> findByPhonesNumber(String number);
+	
+	/**Passando uma idade,
+	 * ele ira buscar que tenha idade maior que o valor do parametro,
+	 * ordenando pelo primeiro nome e depois por segundo nome
+	 * 
+	 * @param idade
+	 * @return - retorna consulta.
+	 */
+	List<Person> findByAgeGreaterThanOrderByFirstNameAscLastNameAsc(Integer idade);
 	
 }

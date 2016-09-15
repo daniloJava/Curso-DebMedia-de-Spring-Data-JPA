@@ -71,11 +71,95 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 //		testelastNameANdeBetween();
 //		testeGeaterAndLess();
 //		testeGeaterAndLessEquals();
-		testeFirstGeaterthan();
+//		testeFirstGeaterthan();
+//		testByStartEnd();
+//		testByContaning();
+//		testByAddressStartingEnding();
+//		findByInAndNotIn();
+//		testeByOderBy();
+//		testIgnoreCase();
+//		testIsNullAndNotNull();
+		testPhonesByNumber();
+		testByGreaterThanAndOrder();
 		
+	}
+	
+	private void testByGreaterThanAndOrder() {
+		
+		//retorna as pessoas com base no seu numero de telefone
+		List<Person> p1 = personRepository.findByAgeGreaterThanOrderByFirstNameAscLastNameAsc(34);
+		p1.forEach(System.out::println);
 		
 		
 	}
+
+	private void testPhonesByNumber() {
+		//retorna as pessoas com base no seu numero de telefone
+		List<Person> p1 = personRepository.findByPhonesNumber("9458");
+		p1.forEach(System.out::println);
+	}
+
+	private void testIsNullAndNotNull() {
+		//Recupera lista que esteja Nulo os Documentos
+		List<Person> p1 = personRepository.findByDocumentIsNull();
+		p1.forEach(System.out::println);
+		
+		//Recupera lista que não esteja Nulo os Documentos
+		List<Person> p2 = personRepository.findByDocumentIsNotNull();
+		p2.forEach(System.out::println);
+		
+	}
+
+	private void testIgnoreCase() {
+		//Recupera lista ignorando as letras;
+		List<Person> p1 = personRepository.findByFirstNameIgnoreCase("dAnIlO");
+		p1.forEach(System.out::println);
+		
+	}
+
+	private void testeByOderBy() {
+		
+		//lista de cidade Carakas ordenadas pelo tipo.
+		List<Address> a1 = addressRepository.findByCityOderByTypeDesc("Carakas");
+		a1.forEach(System.out::println);
+	}
+
+	private void findByInAndNotIn() {
+		
+		List<Person> p1 = personRepository.findByAgeNotIn(14,15,45);
+		p1.forEach(System.out::println);
+		
+		List<Person> p2 = personRepository.findByAgeIn(14,15,45);
+		p2.forEach(System.out::println);
+		
+	}
+
+	private void testByAddressStartingEnding() {
+		//procura que começa com uma cidade OU termina com a rua informada 
+		List<Address> a1 = addressRepository.findByCityStartWithOrStreetEndingWith("Carakas","Dos Bobos");
+		a1.forEach(System.out::println);
+		
+	}
+
+	private void testByContaning() {
+		
+		//procura que contenha o parametro 
+		List<Address> a1 = addressRepository.findByStreetContaning("Dos Bobos");
+		a1.forEach(System.out::println);
+		
+	}
+	
+	private void testByStartEnd() {
+		
+		//procura que contenha o parametro 
+		List<Address> a1 = addressRepository.findByCityStartingWith("Dos Bobos");
+		a1.forEach(System.out::println);
+		// inicia com;
+		List<Address> a2 = addressRepository.findByStreetEndingWith("Rua");
+		a2.forEach(System.out::println);
+		
+	}
+
 	//Teste
 	private void testeFirstGeaterthan() {
 		//No caso, ele procura letra por letra da ordem alfabetica, nesse caso o registro Danilo não retorna.
@@ -137,11 +221,11 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 	//Teste dos novos metodos por LIKE
 	private void testeFirstName() {
 		
-		List<Person> p1 = personRepository.findByFistNameLike("Danilo");
+		List<Person> p1 = personRepository.findByFirstNameLike("Danilo");
 		p1.forEach(System.out::println);
 		
 		System.out.println(" ------- - - - - --- - -- -- ");
-		List<Person> p2 = personRepository.findByFistNameNotLike("Danilo");
+		List<Person> p2 = personRepository.findByFirstNameNotLike("Danilo");
 		p2.forEach(System.out::println);
 		
 		
