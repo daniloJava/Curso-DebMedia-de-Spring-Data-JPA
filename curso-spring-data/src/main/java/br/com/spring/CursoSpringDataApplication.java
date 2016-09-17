@@ -112,17 +112,17 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 
 	private void testPhonesByNumber() {
 		//retorna as pessoas com base no seu numero de telefone
-		List<Person> p1 = personRepository.findByPhonesNumber("9458");
+		List<Person> p1 = personRepository.findByCelStartingWith("98");
 		p1.forEach(System.out::println);
 	}
 
 	private void testIsNullAndNotNull() {
 		//Recupera lista que esteja Nulo os Documentos
-		List<Person> p1 = personRepository.findByDocumentIsNull();
+		List<Person> p1 = personRepository.findByDocIsNull();
 		p1.forEach(System.out::println);
 		
 		//Recupera lista que não esteja Nulo os Documentos
-		List<Person> p2 = personRepository.findByDocumentIsNotNull();
+		List<Person> p2 = personRepository.findByDocIsNotNull();
 		p2.forEach(System.out::println);
 		
 	}
@@ -137,7 +137,7 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 	private void testeByOderBy() {
 		
 		//lista de cidade Carakas ordenadas pelo tipo.
-		List<Address> a1 = addressRepository.findByCityOderByTypeDesc("Carakas");
+		List<Address> a1 = addressRepository.findByCityOrderByTipoDesc("Carakas");
 		a1.forEach(System.out::println);
 	}
 
@@ -153,7 +153,7 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 
 	private void testByAddressStartingEnding() {
 		//procura que começa com uma cidade OU termina com a rua informada 
-		List<Address> a1 = addressRepository.findByCityStartWithOrStreetEndingWith("Carakas","Dos Bobos");
+		List<Address> a1 = addressRepository.findByCityStartingWithOrStreetEndingWith("Carakas","Dos Bobos");
 		a1.forEach(System.out::println);
 		
 	}
@@ -161,7 +161,7 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 	private void testByContaning() {
 		
 		//procura que contenha o parametro 
-		List<Address> a1 = addressRepository.findByStreetContaning("Dos Bobos");
+		List<Address> a1 = addressRepository.findByStreetContaining("Dos Bobos");
 		a1.forEach(System.out::println);
 		
 	}
@@ -180,7 +180,7 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 	//Teste
 	private void testeFirstGeaterthan() {
 		//No caso, ele procura letra por letra da ordem alfabetica, nesse caso o registro Danilo não retorna.
-		List<Person> p1 = personRepository.findByFirsttNameGreaterThan("Danilo");
+		List<Person> p1 = personRepository.findByFirstNameGreaterThan("Danilo");
 		p1.forEach(System.out::println);
 		
 	}
@@ -226,7 +226,7 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 	//Teste do KeyWords AND OR
 	private void testByAndOr() {
 		//Somente pelo nome
-		Person p1 = personRepository.findByFistNameAndLastName("Juquinha", "Danilo");
+		Person p1 = personRepository.findByFirstNameAndLastName("Juquinha", "Danilo");
 		System.out.println(p1.toString());
 		
 		//tudo que for pelo nome e pela idade;
@@ -250,14 +250,14 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 
 	//Testar o retorno de Age
 	private void testeByAge() {
-		//Recupera todos os regitros com a idade 22
-		List<Person> p1 = personRepository.findByAge(22);
+		//Recupera todos os regitros com a idade 23
+		List<Person> p1 = personRepository.findByAge(23);
 		
 		p1.forEach(System.out::println);
 		
 		System.out.println("--- ---- ---- --- --- --- -- --- --");
-		//recupera todos os registros que não tenha a idade 22
-		List<Person> p2 = personRepository.findByAgeNot(22);
+		//recupera todos os registros que não tenha a idade 23
+		List<Person> p2 = personRepository.findByAgeNot(23);
 		
 		p2.forEach(System.out::println);
 		

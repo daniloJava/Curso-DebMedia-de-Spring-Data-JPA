@@ -37,7 +37,7 @@ public interface AddressRepository extends JpaRepository<Address, Long>{
 	 * @param street String - Rua
 	 * @return uma lista de Endereços que tanha as letras do parametro.
 	 */
-	List<Address> findByStreetContaning(String street);
+	List<Address> findByStreetContaining(String street);
 	
 	/**Mesclando duas opçoes, começo de uma cidade OU o que tem  final de uma rua informada
 	 * 
@@ -45,7 +45,7 @@ public interface AddressRepository extends JpaRepository<Address, Long>{
 	 * @param street - rua para busca
 	 * @return - lista da consulta
 	 */
-	List<Address> findByCityStartWithOrStreetEndingWith(String city, String street);
+	List<Address> findByCityStartingWithOrStreetEndingWith(String city, String street);
 	
 	/**serve para ordenar os resultados passando se é Crescente ou Decrescente
 	 * Trabalha passano o atributo criado na Classe. Type 
@@ -53,7 +53,7 @@ public interface AddressRepository extends JpaRepository<Address, Long>{
 	 * @param city cidade buscada
 	 * @return - retorna uma lista pela City informada e ordenado Decrescente por tipo
 	 */
-	List<Address> findByCityOderByTypeDesc(String city);
+	List<Address> findByCityOrderByTipoDesc(String city);
 	
 	
 	

@@ -78,7 +78,7 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	 * @param lastName
 	 * @return
 	 */
-	Person findByFistNameAndLastName(String firstName, String lastName);
+	Person findByFirstNameAndLastName(String firstName, String lastName);
 	
 	/**Usando a logia do Operador OR para o Firstname e o AGE
 	 * 
@@ -146,7 +146,7 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	 * @param firstName String - valor para procurar o que for maior
 	 * @return List<Person>  - de pessoas maior que o parametro
 	 */
-	List<Person> findByFirsttNameGreaterThan(String firstName);
+	List<Person> findByFirstNameGreaterThan(String firstName);
 	
 	
 	//lista de parametros em uma consulta
@@ -179,13 +179,13 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	 * 
 	 * @return - retorna consulta
 	 */
-	List<Person> findByDocumentIsNull();
+	List<Person> findByDocIsNull();
 	
 	/**Retorna todos os registros de documentos que não são nulos
 	 * 
 	 * @return - retorna consulta.
 	 */
-	List<Person> findByDocumentIsNotNull();
+	List<Person> findByDocIsNotNull();
 	
 	/**fazendo uma consluta apartir d euma lista de telefones, ou seja, utilizando um atributo que é Objeto
 	 * 
@@ -193,7 +193,7 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	 * 
 	 * @return
 	 */
-	List<Person> findByPhonesNumber(String number);
+	List<Person> findByCelStartingWith(String cel);
 	
 	/**Passando uma idade,
 	 * ele ira buscar que tenha idade maior que o valor do parametro,
@@ -214,7 +214,7 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	 * @param fistname
 	 * @return
 	 */
-	@Query("select p from Person p where p.firstName like ?1 or p.age = ?2")
+	@Query("select p from Person p where p.firstName like ?1")
 	List<Person> findByFirstName(String fistname);
 	
 	/**Mesma coisa do metodo a cima.
@@ -223,7 +223,7 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	 * @param age
 	 * @return
 	 */
-	@Query("select p from Person p where p.firstName like ?1")
+	@Query("select p from Person p where p.firstName like ?1 or p.age = ?2")
 	List<Person> findByFirstNameOrAge(String fistname, Integer age);
 	
 	/**Utilizando um Atributo Objeto.
@@ -231,6 +231,6 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	 * @param cpfValor
 	 * @return
 	 */
-	@Query("select p from Person p where p.document.cpf *?1")
-	List<Person> findByDocumentCPFEndWith(String cpfValor);
+	@Query("select p from Person p where p.doc.cpfDocument like %?1")
+	List<Person> findByDocEndWith(String cpfDocument);
 }
