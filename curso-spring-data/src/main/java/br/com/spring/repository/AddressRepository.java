@@ -2,6 +2,8 @@ package br.com.spring.repository;
 
 import java.util.List;
 
+import javax.persistence.NamedQuery;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.spring.entity.Address;
@@ -55,6 +57,19 @@ public interface AddressRepository extends JpaRepository<Address, Long>{
 	 */
 	List<Address> findByCityOrderByTipoDesc(String city);
 	
+	/**O Spring busca pela anotação @NamedQuery na Entidade Address, com o nome que foi criado
+	 * A enttidade já reconhece pelo parametro Address 
+	 * 
+	 * @param city
+	 * @return
+	 */
+	List<Address> buscaPorCidade(String city);
 	
+	/**com um @NamedNativeQuery
+	 * 
+	 * @param city
+	 * @return
+	 */
+	List<Address> buscaPorEndereco(String city, String street);
 	
 }

@@ -3,6 +3,8 @@ package br.com.spring;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.NamedQuery;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -85,11 +87,24 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 //		findFistNameAndAgeQuery();
 //		findPersonByAgesParan();
 //		findFirstNamesParam();
-		findDocumentByCpf();
-		
+//		findDocumentByCpf();
+//		findByAddressNamedQuery();
+		findByEndereco();
 		
 	}
 	
+	private void findByEndereco() {
+		List<Address> addres = addressRepository.buscaPorEndereco("Carapicuiba", "Rua dos Bobos numero 0");
+		addres.forEach(System.out::println);
+		
+	}
+
+	private void findByAddressNamedQuery() {
+		List<Address> addres = addressRepository.buscaPorCidade("Carapicuiba");
+		addres.forEach(System.out::println);
+		
+	}
+
 	private void findDocumentByCpf() {
 		List<Document> doc = documentRepository.findByCpfStartWith("42");
 		doc.forEach(System.out::println);
