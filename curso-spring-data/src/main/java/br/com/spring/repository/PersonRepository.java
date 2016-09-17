@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import br.com.spring.entity.Person;
 
@@ -233,4 +234,24 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	 */
 	@Query("select p from Person p where p.doc.cpfDocument like %?1")
 	List<Person> findByDocEndWith(String cpfDocument);
+	
+	
+	/**
+	 * informar para a assinatura do metodo o qual o nome do parametro que ele utiliza, de acordo com a consulta JPQL
+	 * 
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+	@Query("select p from Person p where p.age >= :min and p.age <= :max")
+	List<Person> findByAgeBetween(@Param("min") Integer start, @Param("max") Integer end);
+
+	
+	@Query("select p from Person p where p.firstName in :names order by p.age asc")
+	List<Person> findByFirstNames(@Param("names") String... firstNames);
+	
+	
+	
+	
 }
+
