@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GeneratorType;
 
-@Entity
+@Entity(name = "docs")
 @Table(name = "DOCUMENTS")
 public class Document implements Serializable{
 	@Id
