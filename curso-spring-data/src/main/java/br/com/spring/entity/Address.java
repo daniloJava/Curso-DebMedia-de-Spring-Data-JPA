@@ -26,15 +26,19 @@ import javax.persistence.Table;
 		name = "Address.buscaPorCidade",
 		query= "select a from Address a where a.city like ?1"
 )
-@NamedNativeQueries(
+@NamedNativeQueries({
 		@NamedNativeQuery(
 			name = "Address.buscaPorEndereco",
 			query = "select * from ADDRESSES where CITY_ENDERECO like ?1 and STREET_ENDERECO like ?2",
 			//Precisa dizer para o JPA que tipo de retorno, porque o select retorna colunas e não um Objeto 
 			resultClass = Address.class
-		)
-		
-		)
+		),
+		//Recupera de uma função criada no BD.
+		@NamedNativeQuery(
+			name = "Address.functionConcatenaEndereço",
+			query = "select funcConcateAddress(?1)"
+			)
+})
 public class Address implements Serializable{
 	
 	public enum TypeAddress{

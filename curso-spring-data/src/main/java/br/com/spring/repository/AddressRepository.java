@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.NamedQuery;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import br.com.spring.entity.Address;
 
@@ -71,5 +72,16 @@ public interface AddressRepository extends JpaRepository<Address, Long>{
 	 * @return
 	 */
 	List<Address> buscaPorEndereco(String city, String street);
+	
+	/**Chamada do Metodo para a função criada no Bango 
+	 * Native Query.
+	 * 
+	 * @param id
+	 * @return
+	 */
+	String funcConcateAddress(Long id);
+	
+	@Query(value = "select funcConcateAddress(?1)", nativeQuery = true)
+	String funcionNativeQueryConcatEndereco(Long id);
 	
 }
