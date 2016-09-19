@@ -92,10 +92,20 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 //		findByEndereco();
 		
 //		testeFunctionAnddress();
-		
+		testeProcedureCPF();
 		
 	}
 	
+	private void testeProcedureCPF() {
+		
+		String cpf1 = documentRepository.replaceCPF(2L);
+		System.out.println(cpf1);
+		
+		String cpf2 = documentRepository.procReplaceCPF(2L);
+		System.out.println(cpf2);
+		
+	}
+
 	private void testeFunctionAnddress() {
 		
 		String ad1 = addressRepository.funcConcateAddress(7L);
