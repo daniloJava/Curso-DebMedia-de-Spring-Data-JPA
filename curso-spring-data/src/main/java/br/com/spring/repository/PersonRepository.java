@@ -29,6 +29,8 @@ import br.com.spring.entity.Person;
  * IgnoreCase
  * IsNull
  * IsNotNull
+ * First
+ * Top
  * 
  * @author Danilo Silva
  *
@@ -251,7 +253,29 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 	List<Person> findByFirstNames(@Param("names") String... firstNames);
 	
 	
+	/**Retornando o primeiro registro da consulta
+	 * 
+	 * @return
+	 */
+	Person findFirstByOrderByLastNameDesc();
 	
+	Person findFirstByOrderByLastNameAsc();
+	
+	/**Um unico resultado do top da consulta.
+	 * 
+	 * @return
+	 */
+	Person findTopByOrderByAgeAsc();
+	
+	Person findTopByOrderByAgeDesc();
+	
+	
+	/*São os 3 primeiros elementos da Lista
+	 * 
+	 */
+	List<Person>findTop3ByOrderByAgeDesc();
+	
+	List<Person>findFirst3ByOrderByLastNameAsc();
 	
 }
 
