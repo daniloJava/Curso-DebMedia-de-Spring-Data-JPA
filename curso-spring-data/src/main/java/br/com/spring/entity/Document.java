@@ -7,12 +7,29 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedStoredProcedureQuery;
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureParameter;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GeneratorType;
 
 @Entity(name = "docs")
 @Table(name = "DOCUMENTS")
+@NamedStoredProcedureQuery(
+		name = "docs.procedureReplaceCPF",
+		procedureName = "procReplaceCPF",
+		parameters = {
+				//parametro de entrada
+				@StoredProcedureParameter(
+					mode = ParameterMode.IN, name= "ID_IN", type = Long.class	
+				),
+				//parametro de saida
+				@StoredProcedureParameter(
+						mode = ParameterMode.OUT, name= "CPF_OUT", type = String.class	
+				)
+		}
+)
 public class Document implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
