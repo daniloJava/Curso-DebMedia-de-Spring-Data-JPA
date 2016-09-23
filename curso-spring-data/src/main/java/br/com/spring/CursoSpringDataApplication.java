@@ -21,10 +21,12 @@ import br.com.spring.entity.Phone.TypePhones;
 import br.com.spring.entity.Document;
 import br.com.spring.entity.Person;
 import br.com.spring.entity.Phone;
+import br.com.spring.entity.User;
 import br.com.spring.repository.AddressRepository;
 import br.com.spring.repository.DocumentRepository;
 import br.com.spring.repository.PersonRepository;
 import br.com.spring.repository.PhoneRepository;
+import br.com.spring.repository.UserRepository;
 
 /**Clase para os teste do Spring
  * a interface sendo implementada CommandLineRunner - é para que possa se trabalhar com linha de comando
@@ -43,6 +45,8 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 	private DocumentRepository documentRepository;
 	@Autowired
 	private PhoneRepository phoneRepository;
+	@Autowired
+	private UserRepository userRepository;
 	
 	
 	public static void main(String[] args) {
@@ -97,12 +101,29 @@ public class CursoSpringDataApplication implements CommandLineRunner{
 //		deletePhoneNumber();
 //		findFirstLastName();
 //		findTopAge();
-		findFirst3AndTop3();
+//		findFirst3AndTop3();
 		
+		TestUser();
 		
 		
 	}
-	
+	//metodo para testar o AbstractPersistable.
+	private void TestUser() {
+		// TODO Auto-generated method stub
+		User user = new User();
+		user.setUserName("Danilo");
+		user.setPassword("1234586");
+		
+		if(user.isNew())
+			userRepository.save(user);
+		
+		User user2 = new User();
+		user2 = userRepository.findOne(1L);
+		
+		System.out.println(user2.toString());
+		
+	}
+
 	private void findFirst3AndTop3() {
 		
 		List<Person> first3 = personRepository.findFirst3ByOrderByLastNameAsc();
