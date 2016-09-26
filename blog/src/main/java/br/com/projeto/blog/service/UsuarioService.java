@@ -23,6 +23,7 @@ public class UsuarioService {
 	
 	@Transactional(readOnly = false)
 	public void updateNomeAndEmail(Usuario user) {
+		
 		repository.updateNomeAndEmail(user.getNome(), user.getEmail(), user.getId());
 	}
 	
@@ -66,6 +67,9 @@ public class UsuarioService {
 
 	@Transactional(readOnly = false)
 	public void updateSenha(Usuario user) {
+		String hash = new BCryptPasswordEncoder().encode(user.getSenha());
+		user.setSenha(hash);
+		
 		repository.updateSenha(user.getSenha(), user.getId());
 	}
 	

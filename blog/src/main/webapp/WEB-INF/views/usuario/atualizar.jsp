@@ -12,6 +12,7 @@
 
 </head>
 <body>
+	<c:import url="../menu.jsp" />
 	<fieldset class="grupo">
 		<legend>Editar dados do perfil</legend>
 		

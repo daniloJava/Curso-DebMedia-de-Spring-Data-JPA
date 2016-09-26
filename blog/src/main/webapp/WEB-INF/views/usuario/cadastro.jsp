@@ -11,7 +11,7 @@
 
 </head>
 <body>
-
+	<c:import url="../menu.jsp" />
 	<c:url var="save" value="/usuario/save" />
 	<form:form modelAttribute="usuario" action="${save}" method="POST"
 		enctype="multipart/form-data">

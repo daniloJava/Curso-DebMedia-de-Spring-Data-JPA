@@ -4,32 +4,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Perfil</title>
+<title>Perfil do Autor</title>
 <link type="text/css" rel="stylesheet" href="<c:url value= "/css/style.css" />">
 
 </head>
 
 <body>
 	<fieldset>
-		<legend>Perfil</legend>
+		<legend>Perfil do Autor</legend>
 		<table class="table">
 			<tr>
-				<th>Avatar</th>
-				<th>Nome do Usuário</th>
+				
+				<th>Nome do Autor</th>
 				<th>Email</th>
 				<th>Data de Cadasrro</th>
-				<th>Perfil</th>
+				<th>Biografia</th>
 				<th>Ação</th>
 			</tr>
 			<tr>
-				<td><a href='<c:url value="/avatar/update/${usuario.avatar.id}"></c:url>' title="Editar avatar">
-					<img src='<c:url value= "/avatar/load/${usuario.avatar.id}" /> '
-						style = "width: 40px; height: 40px;" /></a>
-				</td>
-				<td>${usuario.nome }</td>
-				<td>${usuario.email }</td>
-				<td>${usuario.dataCadastro }</td>
-				<td>${usuario.perfil}</td>
+				
+				<td>${autor.nome }</td>
+				<td>${autor.usuario.email }</td>
+				<td>${autor.usuario.dataCadastro }</td>
+				<td>${autor.biografia}</td>
 				<td>
 					<c:url var="update" value = "/usuario/update/${usuario.id}"></c:url>
 					<a href="${update}" title="Editar">&#9445</a>
