@@ -1,0 +1,1202 @@
+2016-09-25 16:54:08 DEBUG logging:55 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+2016-09-25 16:54:08 DEBUG LogHelper:117 - PersistenceUnitInfo [
+	name: default
+	persistence provider classname: null
+	classloader: WebappClassLoader
+  context: blog
+  delegate: false
+----------> Parent Classloader:
+java.net.URLClassLoader@63961c42
+
+	excludeUnlistedClasses: true
+	JTA datasource: null
+	Non JTA datasource: org.apache.commons.dbcp2.BasicDataSource@6a008f6c
+	Transaction type: RESOURCE_LOCAL
+	PU root URL: file:/home/tapower/Documentos/Projetos/CursoDevMedia/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/blog/WEB-INF/classes/
+	Shared Cache Mode: UNSPECIFIED
+	Validation Mode: AUTO
+	Jar files URLs []
+	Managed classes names [
+		br.com.projeto.blog.entity.Usuario
+		br.com.projeto.blog.entity.Avatar
+		br.com.projeto.blog.converter.LocalDateTimeConverter
+		br.com.projeto.blog.converter.LocalDateConverter]
+	Mapping files names []
+	Properties []
+2016-09-25 16:54:08 DEBUG IntegratorServiceImpl:63 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+2016-09-25 16:54:08 DEBUG IntegratorServiceImpl:63 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+2016-09-25 16:54:08 DEBUG IntegratorServiceImpl:63 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+2016-09-25 16:54:08 DEBUG IntegratorServiceImpl:63 - Adding Integrator [org.hibernate.jpa.event.spi.JpaIntegrator].
+2016-09-25 16:54:08 DEBUG StrategySelectorImpl:79 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [MySQL5] -> [org.hibernate.dialect.MySQL5Dialect] (replacing [org.hibernate.dialect.MySQL5Dialect])
+2016-09-25 16:54:08 DEBUG StrategySelectorImpl:79 - Registering named strategy selector [org.hibernate.dialect.Dialect] : [MySQL5InnoDB] -> [org.hibernate.dialect.MySQL5InnoDBDialect] (replacing [org.hibernate.dialect.MySQL5InnoDBDialect])
+2016-09-25 16:54:08 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 16:54:08 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 16:54:08 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 16:54:08 DEBUG ServiceBinding:85 - Overriding existing service binding [org.hibernate.secure.spi.JaccService]
+2016-09-25 16:54:08 DEBUG BasicTypeRegistry:146 - Adding type registration boolean -> org.hibernate.type.BooleanType@e5a4d09
+2016-09-25 16:54:08 DEBUG BasicTypeRegistry:146 - Adding type registration boolean -> org.hibernate.type.BooleanType@e5a4d09
+2016-09-25 16:54:08 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@e5a4d09
+2016-09-25 16:54:08 DEBUG BasicTypeRegistry:146 - Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@4b15fd92
+2016-09-25 16:54:08 DEBUG BasicTypeRegistry:146 - Adding type registration true_false -> org.hibernate.type.TrueFalseType@11ad1616
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration yes_no -> org.hibernate.type.YesNoType@1d7ff772
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration byte -> org.hibernate.type.ByteType@7210ed88
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration byte -> org.hibernate.type.ByteType@7210ed88
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@7210ed88
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration character -> org.hibernate.type.CharacterType@392e1de5
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration char -> org.hibernate.type.CharacterType@392e1de5
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@392e1de5
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration short -> org.hibernate.type.ShortType@324df71c
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration short -> org.hibernate.type.ShortType@324df71c
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Short -> org.hibernate.type.ShortType@324df71c
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration integer -> org.hibernate.type.IntegerType@5d252636
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration int -> org.hibernate.type.IntegerType@5d252636
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@5d252636
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration long -> org.hibernate.type.LongType@57fd87f8
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration long -> org.hibernate.type.LongType@57fd87f8
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Long -> org.hibernate.type.LongType@57fd87f8
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration float -> org.hibernate.type.FloatType@2325f462
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration float -> org.hibernate.type.FloatType@2325f462
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Float -> org.hibernate.type.FloatType@2325f462
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration double -> org.hibernate.type.DoubleType@17a66091
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration double -> org.hibernate.type.DoubleType@17a66091
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@17a66091
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@1db35ba5
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@1db35ba5
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration big_integer -> org.hibernate.type.BigIntegerType@6e93db56
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@6e93db56
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration string -> org.hibernate.type.StringType@283e93be
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.String -> org.hibernate.type.StringType@283e93be
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration nstring -> org.hibernate.type.StringNVarcharType@7faa0eb8
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@1097b55f
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration url -> org.hibernate.type.UrlType@15977e39
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.net.URL -> org.hibernate.type.UrlType@15977e39
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration date -> org.hibernate.type.DateType@308768ab
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Date -> org.hibernate.type.DateType@308768ab
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration time -> org.hibernate.type.TimeType@31436ae1
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Time -> org.hibernate.type.TimeType@31436ae1
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration timestamp -> org.hibernate.type.TimestampType@11fbeea
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@11fbeea
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Date -> org.hibernate.type.TimestampType@11fbeea
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@8243743
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration calendar -> org.hibernate.type.CalendarType@74497393
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@74497393
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@74497393
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@5086f1b0
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration locale -> org.hibernate.type.LocaleType@57202e34
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@57202e34
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration currency -> org.hibernate.type.CurrencyType@6de535fe
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@6de535fe
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration timezone -> org.hibernate.type.TimeZoneType@48d2c2a9
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@48d2c2a9
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration class -> org.hibernate.type.ClassType@1c3f94bd
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Class -> org.hibernate.type.ClassType@1c3f94bd
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@1aebb1be
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@1aebb1be
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@74f1c8b5
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration pg-uuid -> org.hibernate.type.PostgresUUIDType@6927d036
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration binary -> org.hibernate.type.BinaryType@41724dda
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration byte[] -> org.hibernate.type.BinaryType@41724dda
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration [B -> org.hibernate.type.BinaryType@41724dda
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@2c1bd262
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@2c1bd262
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@2c1bd262
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration image -> org.hibernate.type.ImageType@4b6ed296
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration characters -> org.hibernate.type.CharArrayType@7be47b8
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration char[] -> org.hibernate.type.CharArrayType@7be47b8
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration [C -> org.hibernate.type.CharArrayType@7be47b8
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@5ba8807e
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@5ba8807e
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@5ba8807e
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration text -> org.hibernate.type.TextType@44459d6
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration ntext -> org.hibernate.type.NTextType@36276965
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration blob -> org.hibernate.type.BlobType@39922a55
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@39922a55
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@48dbc11f
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration clob -> org.hibernate.type.ClobType@1219dbda
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@1219dbda
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration nclob -> org.hibernate.type.NClobType@7b1a76c7
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@7b1a76c7
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@1d5f24ab
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@621b80c9
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration serializable -> org.hibernate.type.SerializableType@3b78affd
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration object -> org.hibernate.type.ObjectType@7453d03c
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@7453d03c
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@489595b7
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@222d6ea9
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@bc0fba4
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@704946e4
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@14154d77
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@5d84217a
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@5195ecb5
+2016-09-25 16:54:09 DEBUG BasicTypeRegistry:146 - Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@6b51fe05
+2016-09-25 16:54:09 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid2] -> [org.hibernate.id.UUIDGenerator]
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [guid] -> [org.hibernate.id.GUIDGenerator]
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid] -> [org.hibernate.id.UUIDHexGenerator]
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [uuid.hex] -> [org.hibernate.id.UUIDHexGenerator]
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [hilo] -> [org.hibernate.id.TableHiLoGenerator]
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [assigned] -> [org.hibernate.id.Assigned]
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [identity] -> [org.hibernate.id.IdentityGenerator]
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [select] -> [org.hibernate.id.SelectGenerator]
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [sequence] -> [org.hibernate.id.SequenceGenerator]
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [seqhilo] -> [org.hibernate.id.SequenceHiLoGenerator]
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [increment] -> [org.hibernate.id.IncrementGenerator]
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [foreign] -> [org.hibernate.id.ForeignGenerator]
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [sequence-identity] -> [org.hibernate.id.SequenceIdentityGenerator]
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [enhanced-sequence] -> [org.hibernate.id.enhanced.SequenceStyleGenerator]
+2016-09-25 16:54:09 DEBUG DefaultIdentifierGeneratorFactory:93 - Registering IdentifierGenerator strategy [enhanced-table] -> [org.hibernate.id.enhanced.TableGenerator]
+2016-09-25 16:54:09 DEBUG Configuration:1843 - Preparing to build session factory with filters : {}
+2016-09-25 16:54:09 DEBUG JdbcServicesImpl:128 - Database ->
+       name : MySQL
+    version : 5.7.13-0ubuntu0.16.04.2
+      major : 5
+      minor : 7
+2016-09-25 16:54:09 DEBUG JdbcServicesImpl:139 - Driver ->
+       name : MySQL Connector Java
+    version : mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )
+      major : 5
+      minor : 1
+2016-09-25 16:54:09 DEBUG JdbcServicesImpl:150 - JDBC version : 4.0
+2016-09-25 16:54:09 DEBUG StandardRefCursorSupport:187 - Unexpected error trying to gauge level of JDBC REF_CURSOR support : null
+2016-09-25 16:54:09 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 16:54:09 DEBUG Configuration:3805 - Processing hbm.xml files
+2016-09-25 16:54:09 DEBUG Configuration:3835 - Process annotated classes
+2016-09-25 16:54:09 DEBUG AnnotationBinder:601 - Binding entity from annotated class: br.com.projeto.blog.entity.Usuario
+2016-09-25 16:54:09 DEBUG Ejb3Column:240 - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+2016-09-25 16:54:09 DEBUG EntityBinder:399 - Import with entity name Usuario
+2016-09-25 16:54:09 DEBUG EntityBinder:612 - Bind entity br.com.projeto.blog.entity.Usuario on table USUARIOS
+2016-09-25 16:54:10 DEBUG Ejb3Column:240 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(USUARIOS), mappingColumn=id, insertable=true, updatable=true, unique=false}
+2016-09-25 16:54:10 DEBUG PropertyBinder:185 - MetadataSourceProcessor property id with lazy=false
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:106 - Attempting to locate auto-apply AttributeConverter for property [br.com.projeto.blog.entity.Usuario:id]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateConverter, domainType=java.time.LocalDate, jdbcType=java.sql.Date]] type [LocalDate] for match [Long]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateTimeConverter, domainType=java.time.LocalDateTime, jdbcType=java.sql.Timestamp]] type [LocalDateTime] for match [Long]
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:385 - building SimpleValue for id
+2016-09-25 16:54:10 DEBUG PropertyBinder:271 - Building property id
+2016-09-25 16:54:10 DEBUG Ejb3Column:240 - Binding column: Ejb3JoinColumn{logicalColumnName='AVATAR_ID', referencedColumn='', mappedBy=''}
+2016-09-25 16:54:10 DEBUG Ejb3Column:240 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(USUARIOS), mappingColumn=avatar, insertable=true, updatable=true, unique=false}
+2016-09-25 16:54:10 DEBUG PropertyBinder:271 - Building property avatar
+2016-09-25 16:54:10 DEBUG Ejb3Column:240 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(USUARIOS), mappingColumn=DATA_CADASTRO, insertable=true, updatable=true, unique=false}
+2016-09-25 16:54:10 DEBUG PropertyBinder:185 - MetadataSourceProcessor property dataCadastro with lazy=false
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:106 - Attempting to locate auto-apply AttributeConverter for property [br.com.projeto.blog.entity.Usuario:dataCadastro]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateConverter, domainType=java.time.LocalDate, jdbcType=java.sql.Date]] type [LocalDate] for match [LocalDate]
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:310 - Starting applyAttributeConverter [br.com.projeto.blog.entity.Usuario:dataCadastro]
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:385 - building SimpleValue for dataCadastro
+2016-09-25 16:54:10 DEBUG PropertyBinder:271 - Building property dataCadastro
+2016-09-25 16:54:10 DEBUG Ejb3Column:240 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(USUARIOS), mappingColumn=EMAIL, insertable=true, updatable=true, unique=true}
+2016-09-25 16:54:10 DEBUG PropertyBinder:185 - MetadataSourceProcessor property email with lazy=false
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:106 - Attempting to locate auto-apply AttributeConverter for property [br.com.projeto.blog.entity.Usuario:email]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateConverter, domainType=java.time.LocalDate, jdbcType=java.sql.Date]] type [LocalDate] for match [String]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateTimeConverter, domainType=java.time.LocalDateTime, jdbcType=java.sql.Timestamp]] type [LocalDateTime] for match [String]
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:385 - building SimpleValue for email
+2016-09-25 16:54:10 DEBUG PropertyBinder:271 - Building property email
+2016-09-25 16:54:10 DEBUG Ejb3Column:240 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(USUARIOS), mappingColumn=NOME, insertable=true, updatable=true, unique=true}
+2016-09-25 16:54:10 DEBUG PropertyBinder:185 - MetadataSourceProcessor property nome with lazy=false
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:106 - Attempting to locate auto-apply AttributeConverter for property [br.com.projeto.blog.entity.Usuario:nome]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateConverter, domainType=java.time.LocalDate, jdbcType=java.sql.Date]] type [LocalDate] for match [String]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateTimeConverter, domainType=java.time.LocalDateTime, jdbcType=java.sql.Timestamp]] type [LocalDateTime] for match [String]
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:385 - building SimpleValue for nome
+2016-09-25 16:54:10 DEBUG PropertyBinder:271 - Building property nome
+2016-09-25 16:54:10 DEBUG Ejb3Column:240 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(USUARIOS), mappingColumn=PERFIL, insertable=true, updatable=true, unique=false}
+2016-09-25 16:54:10 DEBUG PropertyBinder:185 - MetadataSourceProcessor property perfil with lazy=false
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:106 - Attempting to locate auto-apply AttributeConverter for property [br.com.projeto.blog.entity.Usuario:perfil]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateConverter, domainType=java.time.LocalDate, jdbcType=java.sql.Date]] type [LocalDate] for match [Perfil]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateTimeConverter, domainType=java.time.LocalDateTime, jdbcType=java.sql.Timestamp]] type [LocalDateTime] for match [Perfil]
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:385 - building SimpleValue for perfil
+2016-09-25 16:54:10 DEBUG PropertyBinder:271 - Building property perfil
+2016-09-25 16:54:10 DEBUG Ejb3Column:240 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(USUARIOS), mappingColumn=SENHA_HASH, insertable=true, updatable=true, unique=false}
+2016-09-25 16:54:10 DEBUG PropertyBinder:185 - MetadataSourceProcessor property senha with lazy=false
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:106 - Attempting to locate auto-apply AttributeConverter for property [br.com.projeto.blog.entity.Usuario:senha]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateConverter, domainType=java.time.LocalDate, jdbcType=java.sql.Date]] type [LocalDate] for match [String]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateTimeConverter, domainType=java.time.LocalDateTime, jdbcType=java.sql.Timestamp]] type [LocalDateTime] for match [String]
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:385 - building SimpleValue for senha
+2016-09-25 16:54:10 DEBUG PropertyBinder:271 - Building property senha
+2016-09-25 16:54:10 DEBUG AnnotationBinder:601 - Binding entity from annotated class: br.com.projeto.blog.entity.Avatar
+2016-09-25 16:54:10 DEBUG Ejb3Column:240 - Binding column: Ejb3DiscriminatorColumn{logicalColumnName'DTYPE', discriminatorTypeName='string'}
+2016-09-25 16:54:10 DEBUG EntityBinder:399 - Import with entity name Avatar
+2016-09-25 16:54:10 DEBUG EntityBinder:612 - Bind entity br.com.projeto.blog.entity.Avatar on table AVATARES
+2016-09-25 16:54:10 DEBUG Ejb3Column:240 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(AVATARES), mappingColumn=id, insertable=true, updatable=true, unique=false}
+2016-09-25 16:54:10 DEBUG PropertyBinder:185 - MetadataSourceProcessor property id with lazy=false
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:106 - Attempting to locate auto-apply AttributeConverter for property [br.com.projeto.blog.entity.Avatar:id]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateConverter, domainType=java.time.LocalDate, jdbcType=java.sql.Date]] type [LocalDate] for match [Long]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateTimeConverter, domainType=java.time.LocalDateTime, jdbcType=java.sql.Timestamp]] type [LocalDateTime] for match [Long]
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:385 - building SimpleValue for id
+2016-09-25 16:54:10 DEBUG PropertyBinder:271 - Building property id
+2016-09-25 16:54:10 DEBUG Ejb3Column:240 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(AVATARES), mappingColumn=avatar, insertable=true, updatable=true, unique=false}
+2016-09-25 16:54:10 DEBUG PropertyBinder:185 - MetadataSourceProcessor property avatar with lazy=false
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:106 - Attempting to locate auto-apply AttributeConverter for property [br.com.projeto.blog.entity.Avatar:avatar]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateConverter, domainType=java.time.LocalDate, jdbcType=java.sql.Date]] type [LocalDate] for match [byte[]]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateTimeConverter, domainType=java.time.LocalDateTime, jdbcType=java.sql.Timestamp]] type [LocalDateTime] for match [byte[]]
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:385 - building SimpleValue for avatar
+2016-09-25 16:54:10 DEBUG PropertyBinder:271 - Building property avatar
+2016-09-25 16:54:10 DEBUG Ejb3Column:240 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(AVATARES), mappingColumn=tipo, insertable=true, updatable=true, unique=false}
+2016-09-25 16:54:10 DEBUG PropertyBinder:185 - MetadataSourceProcessor property tipo with lazy=false
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:106 - Attempting to locate auto-apply AttributeConverter for property [br.com.projeto.blog.entity.Avatar:tipo]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateConverter, domainType=java.time.LocalDate, jdbcType=java.sql.Date]] type [LocalDate] for match [String]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateTimeConverter, domainType=java.time.LocalDateTime, jdbcType=java.sql.Timestamp]] type [LocalDateTime] for match [String]
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:385 - building SimpleValue for tipo
+2016-09-25 16:54:10 DEBUG PropertyBinder:271 - Building property tipo
+2016-09-25 16:54:10 DEBUG Ejb3Column:240 - Binding column: Ejb3Column{table=org.hibernate.mapping.Table(AVATARES), mappingColumn=titulo, insertable=true, updatable=true, unique=false}
+2016-09-25 16:54:10 DEBUG PropertyBinder:185 - MetadataSourceProcessor property titulo with lazy=false
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:106 - Attempting to locate auto-apply AttributeConverter for property [br.com.projeto.blog.entity.Avatar:titulo]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateConverter, domainType=java.time.LocalDate, jdbcType=java.sql.Date]] type [LocalDate] for match [String]
+2016-09-25 16:54:10 DEBUG AbstractPropertyHolder:113 - Checking auto-apply AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateTimeConverter, domainType=java.time.LocalDateTime, jdbcType=java.sql.Timestamp]] type [LocalDateTime] for match [String]
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:385 - building SimpleValue for titulo
+2016-09-25 16:54:10 DEBUG PropertyBinder:271 - Building property titulo
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:422 - Starting fillSimpleValue for id
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:422 - Starting fillSimpleValue for dataCadastro
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:435 - Applying JPA AttributeConverter [org.hibernate.cfg.AttributeConverterDefinition[converterClass=br.com.projeto.blog.converter.LocalDateConverter, domainType=java.time.LocalDate, jdbcType=java.sql.Date]] to [br.com.projeto.blog.entity.Usuario:dataCadastro]
+2016-09-25 16:54:10 DEBUG AttributeConverterTypeAdapter:61 - Created AttributeConverterTypeAdapter -> BasicType adapter for AttributeConverter<LocalDate,Date>
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:422 - Starting fillSimpleValue for email
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:422 - Starting fillSimpleValue for nome
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:422 - Starting fillSimpleValue for perfil
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:422 - Starting fillSimpleValue for senha
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:422 - Starting fillSimpleValue for id
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:422 - Starting fillSimpleValue for avatar
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:422 - Starting fillSimpleValue for tipo
+2016-09-25 16:54:10 DEBUG SimpleValueBinder:422 - Starting fillSimpleValue for titulo
+2016-09-25 16:54:10 DEBUG Configuration:1484 - Processing fk mappings (*ToOne and JoinedSubclass)
+2016-09-25 16:54:10 DEBUG Configuration:1689 - Processing extends queue
+2016-09-25 16:54:10 DEBUG Configuration:1747 - Processing extends queue
+2016-09-25 16:54:10 DEBUG Configuration:1692 - Processing collection mappings
+2016-09-25 16:54:10 DEBUG Configuration:1702 - Processing native query and ResultSetMapping mappings
+2016-09-25 16:54:10 DEBUG Configuration:1710 - Processing association property references
+2016-09-25 16:54:10 DEBUG Configuration:1732 - Creating tables' unique integer identifiers
+2016-09-25 16:54:10 DEBUG Configuration:1733 - Processing foreign key constraints
+2016-09-25 16:54:10 DEBUG Configuration:1804 - Resolving reference to class: br.com.projeto.blog.entity.Avatar
+2016-09-25 16:54:10 DEBUG JtaPlatformInitiator:59 - No JtaPlatform was specified, checking resolver
+2016-09-25 16:54:10 DEBUG JtaPlatformResolverInitiator:50 - No JtaPlatformResolver was specified, using default [org.hibernate.engine.transaction.jta.platform.internal.StandardJtaPlatformResolver]
+2016-09-25 16:54:10 DEBUG StandardJtaPlatformResolver:118 - Could not resolve JtaPlatform, using default [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2016-09-25 16:54:10 DEBUG SettingsFactory:122 - Automatic flush during beforeCompletion(): disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:128 - Automatic session close at end of transaction: disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:139 - JDBC batch size: 15
+2016-09-25 16:54:10 DEBUG SettingsFactory:145 - JDBC batch updates for versioned data: disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:155 - Scrollable result sets: enabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:161 - Wrap result sets: disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:167 - JDBC3 getGeneratedKeys(): enabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:179 - multi-tenancy strategy : NONE
+2016-09-25 16:54:10 DEBUG SettingsFactory:185 - Connection release mode: auto
+2016-09-25 16:54:10 DEBUG SettingsFactory:207 - Using BatchFetchStyle : LEGACY
+2016-09-25 16:54:10 DEBUG SettingsFactory:226 - Maximum outer join fetch depth: 2
+2016-09-25 16:54:10 DEBUG SettingsFactory:232 - Default batch fetch size: 1
+2016-09-25 16:54:10 DEBUG SettingsFactory:238 - Generate SQL with comments: disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:244 - Order SQL updates by primary key: disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:250 - Order SQL inserts for batching: disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:258 - Default null ordering: none
+2016-09-25 16:54:10 DEBUG SettingsFactory:501 - Query translator: org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory
+2016-09-25 16:54:10 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 16:54:10 DEBUG SettingsFactory:268 - Query language substitutions: {}
+2016-09-25 16:54:10 DEBUG SettingsFactory:274 - JPA-QL strict compliance: disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:282 - Second-level cache: enabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:288 - Query cache: disabled
+2016-09-25 16:54:10 DEBUG RegionFactoryInitiator:105 - Cache region factory : org.hibernate.cache.internal.NoCachingRegionFactory
+2016-09-25 16:54:10 DEBUG SettingsFactory:301 - Optimize cache for minimal puts: disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:316 - Structured second-level cache entries: disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:326 - Second-level cache direct-reference entries: disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:332 - Automatic eviction of collection cache: disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:340 - Statistics: disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:346 - Deleted entity synthetic identifier rollback: disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:373 - Default entity-mode: pojo
+2016-09-25 16:54:10 DEBUG SettingsFactory:379 - Named query checking : enabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:385 - Check Nullability in Core (should be disabled when Bean Validation is on): enabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:403 - Allow initialization of lazy state outside session : : disabled
+2016-09-25 16:54:10 DEBUG SettingsFactory:413 - JTA Track by Thread: enabled
+2016-09-25 16:54:10 DEBUG SessionFactoryImpl:229 - Building session factory
+2016-09-25 16:54:10 DEBUG SessionFactoryImpl:285 - Session factory constructed with filter configurations : {}
+2016-09-25 16:54:10 DEBUG SessionFactoryImpl:286 - Instantiating session factory with properties: {java.vendor=Oracle Corporation, sun.java.launcher=SUN_STANDARD, catalina.base=/home/tapower/Documentos/Projetos/CursoDevMedia/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, catalina.useNaming=true, os.name=Linux, sun.boot.class.path=/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes, sun.desktop=gnome, java.vm.specification.vendor=Oracle Corporation, java.runtime.version=1.8.0_91-b14, user.name=tapower, tomcat.util.scan.StandardJarScanFilter.jarsToScan=log4j-core*.jar,log4j-taglib*.jar, shared.loader=, tomcat.util.buf.StringCache.byte.enabled=true, javax.persistence.validation.mode=AUTO, user.language=pt, java.naming.factory.initial=org.apache.naming.java.javaURLContextFactory, sun.boot.library.path=/usr/lib/jvm/java-8-oracle/jre/lib/amd64, java.version=1.8.0_91, user.timezone=America/Sao_Paulo, sun.arch.data.model=64, java.endorsed.dirs=/home/tapower/Documentos/apache-tomcat-8.0.21/endorsed, sun.cpu.isalist=, sun.jnu.encoding=UTF-8, file.encoding.pkg=sun.io, package.access=sun.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.tomcat., file.separator=/, java.specification.name=Java Platform API Specification, java.class.version=52.0, user.country=BR, java.home=/usr/lib/jvm/java-8-oracle/jre, java.vm.info=mixed mode, os.version=4.4.0-31-generic, path.separator=:, java.vm.version=25.91-b14, java.awt.printerjob=sun.print.PSPrinterJob, sun.io.unicode.encoding=UnicodeLittle, awt.toolkit=sun.awt.X11.XToolkit, package.definition=sun.,java.,org.apache.catalina.,org.apache.coyote.,org.apache.jasper.,org.apache.naming.,org.apache.tomcat., java.naming.factory.url.pkgs=org.apache.naming, user.home=/home/tapower, java.specification.vendor=Oracle Corporation, hibernate.hbm2ddl.auto=update, tomcat.util.scan.StandardJarScanFilter.jarsToSkip=bootstrap.jar,commons-daemon.jar,tomcat-juli.jar,annotations-api.jar,el-api.jar,jsp-api.jar,servlet-api.jar,websocket-api.jar,catalina.jar,catalina-ant.jar,catalina-ha.jar,catalina-storeconfig.jar,catalina-tribes.jar,jasper.jar,jasper-el.jar,ecj-*.jar,tomcat-api.jar,tomcat-util.jar,tomcat-util-scan.jar,tomcat-coyote.jar,tomcat-dbcp.jar,tomcat-jni.jar,tomcat-spdy.jar,tomcat-websocket.jar,tomcat-i18n-en.jar,tomcat-i18n-es.jar,tomcat-i18n-fr.jar,tomcat-i18n-ja.jar,tomcat-juli-adapters.jar,catalina-jmx-remote.jar,catalina-ws.jar,tomcat-jdbc.jar,tools.jar,commons-beanutils*.jar,commons-codec*.jar,commons-collections*.jar,commons-dbcp*.jar,commons-digester*.jar,commons-fileupload*.jar,commons-httpclient*.jar,commons-io*.jar,commons-lang*.jar,commons-logging*.jar,commons-math*.jar,commons-pool*.jar,jstl.jar,taglibs-standard-spec-*.jar,geronimo-spec-jaxrpc*.jar,wsdl4j*.jar,ant.jar,ant-junit*.jar,aspectj*.jar,jmx.jar,h2*.jar,hibernate*.jar,httpclient*.jar,jmx-tools.jar,jta*.jar,log4j*.jar,mail*.jar,slf4j*.jar,xercesImpl.jar,xmlParserAPIs.jar,xml-apis.jar,junit.jar,junit-*.jar,ant-launcher.jar,cobertura-*.jar,asm-*.jar,dom4j-*.jar,icu4j-*.jar,jaxen-*.jar,jdom-*.jar,jetty-*.jar,oro-*.jar,servlet-api-*.jar,tagsoup-*.jar,xmlParserAPIs-*.jar,xom-*.jar, java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib, java.vendor.url=http://java.oracle.com/, java.vm.vendor=Oracle Corporation, hibernate.ejb.persistenceUnitName=default, common.loader="${catalina.base}/lib","${catalina.base}/lib/*.jar","${catalina.home}/lib","${catalina.home}/lib/*.jar", java.runtime.name=Java(TM) SE Runtime Environment, sun.java.command=org.apache.catalina.startup.Bootstrap start, java.class.path=/home/tapower/Documentos/apache-tomcat-8.0.21/bin/bootstrap.jar:/home/tapower/Documentos/apache-tomcat-8.0.21/bin/tomcat-juli.jar:/usr/lib/jvm/java-8-oracle/lib/tools.jar, hibernate.bytecode.use_reflection_optimizer=false, java.vm.specification.name=Java Virtual Machine Specification, java.vm.specification.version=1.8, catalina.home=/home/tapower/Documentos/apache-tomcat-8.0.21, javax.persistence.nonJtaDataSource=org.apache.commons.dbcp2.BasicDataSource@6a008f6c, sun.cpu.endian=little, sun.os.patch.level=unknown, java.io.tmpdir=/tmp, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, javax.persistence.sharedCache.mode=UNSPECIFIED, server.loader=, os.arch=amd64, java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment, java.ext.dirs=/usr/lib/jvm/java-8-oracle/jre/lib/ext:/usr/java/packages/lib/ext, user.dir=/home/tapower, line.separator=
+, wtp.deploy=/home/tapower/Documentos/Projetos/CursoDevMedia/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, file.encoding=UTF-8, java.specification.version=1.8, hibernate.show_sql=true}
+2016-09-25 16:54:10 DEBUG JaccIntegrator:90 - Skipping JACC integration as it was not enabled
+2016-09-25 16:54:10 DEBUG CascadeStyles:287 - External cascade style regsitration [persist : STYLE_PERSIST_SKIPLAZY] overrode base registration [STYLE_PERSIST]
+2016-09-25 16:54:10 DEBUG DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.MySQL5Dialect]
+2016-09-25 16:54:10 DEBUG DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.MySQL5Dialect]
+2016-09-25 16:54:10 DEBUG AbstractEntityPersister:3676 - Static SQL for entity: br.com.projeto.blog.entity.Usuario
+2016-09-25 16:54:10 DEBUG AbstractEntityPersister:3681 -  Version select: select id from USUARIOS where id =?
+2016-09-25 16:54:10 DEBUG AbstractEntityPersister:3684 -  Snapshot select: select usuario_.id, usuario_.AVATAR_ID as AVATAR_I7_1_, usuario_.DATA_CADASTRO as DATA_CAD2_1_, usuario_.EMAIL as EMAIL3_1_, usuario_.NOME as NOME4_1_, usuario_.PERFIL as PERFIL5_1_, usuario_.SENHA_HASH as SENHA_HA6_1_ from USUARIOS usuario_ where usuario_.id=?
+2016-09-25 16:54:10 DEBUG AbstractEntityPersister:3687 -  Insert 0: insert into USUARIOS (AVATAR_ID, DATA_CADASTRO, EMAIL, NOME, PERFIL, SENHA_HASH, id) values (?, ?, ?, ?, ?, ?, ?)
+2016-09-25 16:54:10 DEBUG AbstractEntityPersister:3688 -  Update 0: update USUARIOS set AVATAR_ID=?, DATA_CADASTRO=?, EMAIL=?, NOME=?, PERFIL=?, SENHA_HASH=? where id=?
+2016-09-25 16:54:10 DEBUG AbstractEntityPersister:3689 -  Delete 0: delete from USUARIOS where id=?
+2016-09-25 16:54:10 DEBUG AbstractEntityPersister:3692 -  Identity insert: insert into USUARIOS (AVATAR_ID, DATA_CADASTRO, EMAIL, NOME, PERFIL, SENHA_HASH) values (?, ?, ?, ?, ?, ?)
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2f4288ec]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2694e9f]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar.avatar
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar.tipo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar.titulo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : dataCadastro
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : email
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : nome
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : perfil
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : senha
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Usuario)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Usuario, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Usuario)
+          - EntityAttributeFetchImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:1>, path=br.com.projeto.blog.entity.Usuario.avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Usuario)
+          - SQL table alias mapping - usuario0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+          - JOIN (JoinDefinedByMetadata(avatar)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=br.com.projeto.blog.entity.Avatar)
+                - SQL table alias mapping - avatar1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_0_1_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Usuario [NONE]: select usuario0_.id as id1_1_0_, usuario0_.AVATAR_ID as AVATAR_I7_1_0_, usuario0_.DATA_CADASTRO as DATA_CAD2_1_0_, usuario0_.EMAIL as EMAIL3_1_0_, usuario0_.NOME as NOME4_1_0_, usuario0_.PERFIL as PERFIL5_1_0_, usuario0_.SENHA_HASH as SENHA_HA6_1_0_, avatar1_.id as id1_0_1_, avatar1_.avatar as avatar2_0_1_, avatar1_.tipo as tipo3_0_1_, avatar1_.titulo as titulo4_0_1_ from USUARIOS usuario0_ left outer join AVATARES avatar1_ on usuario0_.AVATAR_ID=avatar1_.id where usuario0_.id=?
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@45c14213]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4428f6ba]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar.avatar
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar.tipo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar.titulo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : dataCadastro
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : email
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : nome
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : perfil
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : senha
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Usuario)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Usuario, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Usuario)
+          - EntityAttributeFetchImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:1>, path=br.com.projeto.blog.entity.Usuario.avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Usuario)
+          - SQL table alias mapping - usuario0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+          - JOIN (JoinDefinedByMetadata(avatar)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=br.com.projeto.blog.entity.Avatar)
+                - SQL table alias mapping - avatar1_
+                - alias suffix - 1_
+                - suffixed key columns - {id1_0_1_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Usuario [READ]: select usuario0_.id as id1_1_0_, usuario0_.AVATAR_ID as AVATAR_I7_1_0_, usuario0_.DATA_CADASTRO as DATA_CAD2_1_0_, usuario0_.EMAIL as EMAIL3_1_0_, usuario0_.NOME as NOME4_1_0_, usuario0_.PERFIL as PERFIL5_1_0_, usuario0_.SENHA_HASH as SENHA_HA6_1_0_, avatar1_.id as id1_0_1_, avatar1_.avatar as avatar2_0_1_, avatar1_.tipo as tipo3_0_1_, avatar1_.titulo as titulo4_0_1_ from USUARIOS usuario0_ left outer join AVATARES avatar1_ on usuario0_.AVATAR_ID=avatar1_.id where usuario0_.id=?
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5521c241]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@62004c6c]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : dataCadastro
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : email
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : nome
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : perfil
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : senha
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Usuario)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Usuario, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Usuario)
+          - EntityAttributeFetchImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:1>, path=br.com.projeto.blog.entity.Usuario.avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Usuario)
+          - SQL table alias mapping - usuario0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Usuario [UPGRADE]: select usuario0_.id as id1_1_0_, usuario0_.AVATAR_ID as AVATAR_I7_1_0_, usuario0_.DATA_CADASTRO as DATA_CAD2_1_0_, usuario0_.EMAIL as EMAIL3_1_0_, usuario0_.NOME as NOME4_1_0_, usuario0_.PERFIL as PERFIL5_1_0_, usuario0_.SENHA_HASH as SENHA_HA6_1_0_ from USUARIOS usuario0_ where usuario0_.id=? for update
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@68d0b41]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4b335a87]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : dataCadastro
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : email
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : nome
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : perfil
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : senha
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Usuario)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Usuario, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Usuario)
+          - EntityAttributeFetchImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:1>, path=br.com.projeto.blog.entity.Usuario.avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Usuario)
+          - SQL table alias mapping - usuario0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Usuario [UPGRADE_NOWAIT]: select usuario0_.id as id1_1_0_, usuario0_.AVATAR_ID as AVATAR_I7_1_0_, usuario0_.DATA_CADASTRO as DATA_CAD2_1_0_, usuario0_.EMAIL as EMAIL3_1_0_, usuario0_.NOME as NOME4_1_0_, usuario0_.PERFIL as PERFIL5_1_0_, usuario0_.SENHA_HASH as SENHA_HA6_1_0_ from USUARIOS usuario0_ where usuario0_.id=? for update
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2b300ca1]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@378e8a05]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : dataCadastro
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : email
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : nome
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : perfil
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : senha
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Usuario)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Usuario, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Usuario)
+          - EntityAttributeFetchImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:1>, path=br.com.projeto.blog.entity.Usuario.avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Usuario)
+          - SQL table alias mapping - usuario0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Usuario [UPGRADE_SKIPLOCKED]: select usuario0_.id as id1_1_0_, usuario0_.AVATAR_ID as AVATAR_I7_1_0_, usuario0_.DATA_CADASTRO as DATA_CAD2_1_0_, usuario0_.EMAIL as EMAIL3_1_0_, usuario0_.NOME as NOME4_1_0_, usuario0_.PERFIL as PERFIL5_1_0_, usuario0_.SENHA_HASH as SENHA_HA6_1_0_ from USUARIOS usuario0_ where usuario0_.id=? for update
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@66381911]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@46284dbb]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : dataCadastro
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : email
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : nome
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : perfil
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : senha
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Usuario)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Usuario, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Usuario)
+          - EntityAttributeFetchImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:1>, path=br.com.projeto.blog.entity.Usuario.avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Usuario)
+          - SQL table alias mapping - usuario0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Usuario [FORCE]: select usuario0_.id as id1_1_0_, usuario0_.AVATAR_ID as AVATAR_I7_1_0_, usuario0_.DATA_CADASTRO as DATA_CAD2_1_0_, usuario0_.EMAIL as EMAIL3_1_0_, usuario0_.NOME as NOME4_1_0_, usuario0_.PERFIL as PERFIL5_1_0_, usuario0_.SENHA_HASH as SENHA_HA6_1_0_ from USUARIOS usuario0_ where usuario0_.id=? for update
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@53539d9]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5cf9753c]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : dataCadastro
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : email
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : nome
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : perfil
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : senha
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Usuario)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Usuario, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Usuario)
+          - EntityAttributeFetchImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:1>, path=br.com.projeto.blog.entity.Usuario.avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Usuario)
+          - SQL table alias mapping - usuario0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Usuario [PESSIMISTIC_READ]: select usuario0_.id as id1_1_0_, usuario0_.AVATAR_ID as AVATAR_I7_1_0_, usuario0_.DATA_CADASTRO as DATA_CAD2_1_0_, usuario0_.EMAIL as EMAIL3_1_0_, usuario0_.NOME as NOME4_1_0_, usuario0_.PERFIL as PERFIL5_1_0_, usuario0_.SENHA_HASH as SENHA_HA6_1_0_ from USUARIOS usuario0_ where usuario0_.id=? lock in share mode
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@58b8ae8d]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4d72b570]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : dataCadastro
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : email
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : nome
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : perfil
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : senha
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Usuario)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Usuario, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Usuario)
+          - EntityAttributeFetchImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:1>, path=br.com.projeto.blog.entity.Usuario.avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Usuario)
+          - SQL table alias mapping - usuario0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Usuario [PESSIMISTIC_WRITE]: select usuario0_.id as id1_1_0_, usuario0_.AVATAR_ID as AVATAR_I7_1_0_, usuario0_.DATA_CADASTRO as DATA_CAD2_1_0_, usuario0_.EMAIL as EMAIL3_1_0_, usuario0_.NOME as NOME4_1_0_, usuario0_.PERFIL as PERFIL5_1_0_, usuario0_.SENHA_HASH as SENHA_HA6_1_0_ from USUARIOS usuario0_ where usuario0_.id=? for update
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5ab56977]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4eff5d1b]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : dataCadastro
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : email
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : nome
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : perfil
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : senha
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Usuario)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Usuario, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Usuario)
+          - EntityAttributeFetchImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:1>, path=br.com.projeto.blog.entity.Usuario.avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Usuario)
+          - SQL table alias mapping - usuario0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Usuario [PESSIMISTIC_FORCE_INCREMENT]: select usuario0_.id as id1_1_0_, usuario0_.AVATAR_ID as AVATAR_I7_1_0_, usuario0_.DATA_CADASTRO as DATA_CAD2_1_0_, usuario0_.EMAIL as EMAIL3_1_0_, usuario0_.NOME as NOME4_1_0_, usuario0_.PERFIL as PERFIL5_1_0_, usuario0_.SENHA_HASH as SENHA_HA6_1_0_ from USUARIOS usuario0_ where usuario0_.id=? for update
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@167ea881]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3320654]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : dataCadastro
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : email
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : nome
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : perfil
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : senha
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Usuario)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Usuario, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Usuario)
+          - EntityAttributeFetchImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:1>, path=br.com.projeto.blog.entity.Usuario.avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Usuario)
+          - SQL table alias mapping - usuario0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Usuario [OPTIMISTIC]: select usuario0_.id as id1_1_0_, usuario0_.AVATAR_ID as AVATAR_I7_1_0_, usuario0_.DATA_CADASTRO as DATA_CAD2_1_0_, usuario0_.EMAIL as EMAIL3_1_0_, usuario0_.NOME as NOME4_1_0_, usuario0_.PERFIL as PERFIL5_1_0_, usuario0_.SENHA_HASH as SENHA_HA6_1_0_ from USUARIOS usuario0_ where usuario0_.id=?
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@371184ac]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3f7d19db]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : dataCadastro
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : email
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : nome
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : perfil
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : senha
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Usuario)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Usuario, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Usuario)
+          - EntityAttributeFetchImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:1>, path=br.com.projeto.blog.entity.Usuario.avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Usuario)
+          - SQL table alias mapping - usuario0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_1_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Usuario [OPTIMISTIC_FORCE_INCREMENT]: select usuario0_.id as id1_1_0_, usuario0_.AVATAR_ID as AVATAR_I7_1_0_, usuario0_.DATA_CADASTRO as DATA_CAD2_1_0_, usuario0_.EMAIL as EMAIL3_1_0_, usuario0_.NOME as NOME4_1_0_, usuario0_.PERFIL as PERFIL5_1_0_, usuario0_.SENHA_HASH as SENHA_HA6_1_0_ from USUARIOS usuario0_ where usuario0_.id=?
+2016-09-25 16:54:10 DEBUG Loader:56 - Static select for action ACTION_MERGE on entity br.com.projeto.blog.entity.Usuario: select usuario0_.id as id1_1_0_, usuario0_.AVATAR_ID as AVATAR_I7_1_0_, usuario0_.DATA_CADASTRO as DATA_CAD2_1_0_, usuario0_.EMAIL as EMAIL3_1_0_, usuario0_.NOME as NOME4_1_0_, usuario0_.PERFIL as PERFIL5_1_0_, usuario0_.SENHA_HASH as SENHA_HA6_1_0_ from USUARIOS usuario0_ where usuario0_.id=?
+2016-09-25 16:54:10 DEBUG Loader:56 - Static select for action ACTION_REFRESH on entity br.com.projeto.blog.entity.Usuario: select usuario0_.id as id1_1_0_, usuario0_.AVATAR_ID as AVATAR_I7_1_0_, usuario0_.DATA_CADASTRO as DATA_CAD2_1_0_, usuario0_.EMAIL as EMAIL3_1_0_, usuario0_.NOME as NOME4_1_0_, usuario0_.PERFIL as PERFIL5_1_0_, usuario0_.SENHA_HASH as SENHA_HA6_1_0_ from USUARIOS usuario0_ where usuario0_.id=?
+2016-09-25 16:54:10 DEBUG AbstractEntityPersister:3676 - Static SQL for entity: br.com.projeto.blog.entity.Avatar
+2016-09-25 16:54:10 DEBUG AbstractEntityPersister:3681 -  Version select: select id from AVATARES where id =?
+2016-09-25 16:54:10 DEBUG AbstractEntityPersister:3684 -  Snapshot select: select avatar_.id, avatar_.avatar as avatar2_0_, avatar_.tipo as tipo3_0_, avatar_.titulo as titulo4_0_ from AVATARES avatar_ where avatar_.id=?
+2016-09-25 16:54:10 DEBUG AbstractEntityPersister:3687 -  Insert 0: insert into AVATARES (avatar, tipo, titulo, id) values (?, ?, ?, ?)
+2016-09-25 16:54:10 DEBUG AbstractEntityPersister:3688 -  Update 0: update AVATARES set avatar=?, tipo=?, titulo=? where id=?
+2016-09-25 16:54:10 DEBUG AbstractEntityPersister:3689 -  Delete 0: delete from AVATARES where id=?
+2016-09-25 16:54:10 DEBUG AbstractEntityPersister:3692 -  Identity insert: insert into AVATARES (avatar, tipo, titulo) values (?, ?, ?)
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2e164f45]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : tipo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : titulo
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Avatar)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Avatar)
+          - SQL table alias mapping - avatar0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Avatar [NONE]: select avatar0_.id as id1_0_0_, avatar0_.avatar as avatar2_0_0_, avatar0_.tipo as tipo3_0_0_, avatar0_.titulo as titulo4_0_0_ from AVATARES avatar0_ where avatar0_.id=?
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@365e22bc]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : tipo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : titulo
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Avatar)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Avatar)
+          - SQL table alias mapping - avatar0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Avatar [READ]: select avatar0_.id as id1_0_0_, avatar0_.avatar as avatar2_0_0_, avatar0_.tipo as tipo3_0_0_, avatar0_.titulo as titulo4_0_0_ from AVATARES avatar0_ where avatar0_.id=?
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@12144336]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : tipo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : titulo
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Avatar)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Avatar)
+          - SQL table alias mapping - avatar0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Avatar [UPGRADE]: select avatar0_.id as id1_0_0_, avatar0_.avatar as avatar2_0_0_, avatar0_.tipo as tipo3_0_0_, avatar0_.titulo as titulo4_0_0_ from AVATARES avatar0_ where avatar0_.id=? for update
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@37fed3fb]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : tipo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : titulo
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Avatar)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Avatar)
+          - SQL table alias mapping - avatar0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Avatar [UPGRADE_NOWAIT]: select avatar0_.id as id1_0_0_, avatar0_.avatar as avatar2_0_0_, avatar0_.tipo as tipo3_0_0_, avatar0_.titulo as titulo4_0_0_ from AVATARES avatar0_ where avatar0_.id=? for update
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@2b458b6f]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : tipo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : titulo
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Avatar)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Avatar)
+          - SQL table alias mapping - avatar0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Avatar [UPGRADE_SKIPLOCKED]: select avatar0_.id as id1_0_0_, avatar0_.avatar as avatar2_0_0_, avatar0_.tipo as tipo3_0_0_, avatar0_.titulo as titulo4_0_0_ from AVATARES avatar0_ where avatar0_.id=? for update
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@504726df]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : tipo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : titulo
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Avatar)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Avatar)
+          - SQL table alias mapping - avatar0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Avatar [FORCE]: select avatar0_.id as id1_0_0_, avatar0_.avatar as avatar2_0_0_, avatar0_.tipo as tipo3_0_0_, avatar0_.titulo as titulo4_0_0_ from AVATARES avatar0_ where avatar0_.id=? for update
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1448ca74]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : tipo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : titulo
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Avatar)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Avatar)
+          - SQL table alias mapping - avatar0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Avatar [PESSIMISTIC_READ]: select avatar0_.id as id1_0_0_, avatar0_.avatar as avatar2_0_0_, avatar0_.tipo as tipo3_0_0_, avatar0_.titulo as titulo4_0_0_ from AVATARES avatar0_ where avatar0_.id=? lock in share mode
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7cbac9c1]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : tipo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : titulo
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Avatar)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Avatar)
+          - SQL table alias mapping - avatar0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Avatar [PESSIMISTIC_WRITE]: select avatar0_.id as id1_0_0_, avatar0_.avatar as avatar2_0_0_, avatar0_.tipo as tipo3_0_0_, avatar0_.titulo as titulo4_0_0_ from AVATARES avatar0_ where avatar0_.id=? for update
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@f06f133]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : tipo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : titulo
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Avatar)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Avatar)
+          - SQL table alias mapping - avatar0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Avatar [PESSIMISTIC_FORCE_INCREMENT]: select avatar0_.id as id1_0_0_, avatar0_.avatar as avatar2_0_0_, avatar0_.tipo as tipo3_0_0_, avatar0_.titulo as titulo4_0_0_ from AVATARES avatar0_ where avatar0_.id=? for update
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@235f0143]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : tipo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : titulo
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Avatar)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Avatar)
+          - SQL table alias mapping - avatar0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Avatar [OPTIMISTIC]: select avatar0_.id as id1_0_0_, avatar0_.avatar as avatar2_0_0_, avatar0_.tipo as tipo3_0_0_, avatar0_.titulo as titulo4_0_0_ from AVATARES avatar0_ where avatar0_.id=?
+2016-09-25 16:54:10 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3a5adb00]
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : avatar
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : tipo
+2016-09-25 16:54:10 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : titulo
+2016-09-25 16:54:10 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-09-25 16:54:10 DEBUG LoadQueryJoinAndFetchProcessor:112 - processing queryspace <gen:0>
+2016-09-25 16:54:10 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=br.com.projeto.blog.entity.Avatar)
+    - Returns
+       - EntityReturnImpl(entity=br.com.projeto.blog.entity.Avatar, querySpaceUid=<gen:0>, path=br.com.projeto.blog.entity.Avatar)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=br.com.projeto.blog.entity.Avatar)
+          - SQL table alias mapping - avatar0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_0_0_}
+
+2016-09-25 16:54:10 DEBUG EntityLoader:146 - Static select for entity br.com.projeto.blog.entity.Avatar [OPTIMISTIC_FORCE_INCREMENT]: select avatar0_.id as id1_0_0_, avatar0_.avatar as avatar2_0_0_, avatar0_.tipo as tipo3_0_0_, avatar0_.titulo as titulo4_0_0_ from AVATARES avatar0_ where avatar0_.id=?
+2016-09-25 16:54:10 DEBUG Loader:56 - Static select for action ACTION_MERGE on entity br.com.projeto.blog.entity.Avatar: select avatar0_.id as id1_0_0_, avatar0_.avatar as avatar2_0_0_, avatar0_.tipo as tipo3_0_0_, avatar0_.titulo as titulo4_0_0_ from AVATARES avatar0_ where avatar0_.id=?
+2016-09-25 16:54:10 DEBUG Loader:56 - Static select for action ACTION_REFRESH on entity br.com.projeto.blog.entity.Avatar: select avatar0_.id as id1_0_0_, avatar0_.avatar as avatar2_0_0_, avatar0_.tipo as tipo3_0_0_, avatar0_.titulo as titulo4_0_0_ from AVATARES avatar0_ where avatar0_.id=?
+2016-09-25 16:54:10 DEBUG SessionFactoryRegistry:67 - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@efec0c2
+2016-09-25 16:54:10 DEBUG SessionFactoryRegistry:89 - Registering SessionFactory: 01dae270-89be-4a63-a8a5-d3d704cf66c7 (<unnamed>)
+2016-09-25 16:54:10 DEBUG SessionFactoryRegistry:96 - Not binding SessionFactory to JNDI, no JNDI name configured
+2016-09-25 16:54:10 DEBUG SessionFactoryImpl:505 - Instantiated session factory
+2016-09-25 16:54:10 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 16:54:10 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 16:54:10 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 16:54:10 DEBUG Configuration:3805 - Processing hbm.xml files
+2016-09-25 16:54:10 DEBUG Configuration:3835 - Process annotated classes
+2016-09-25 16:54:10 DEBUG Configuration:1484 - Processing fk mappings (*ToOne and JoinedSubclass)
+2016-09-25 16:54:10 DEBUG Configuration:1689 - Processing extends queue
+2016-09-25 16:54:10 DEBUG Configuration:1747 - Processing extends queue
+2016-09-25 16:54:10 DEBUG Configuration:1692 - Processing collection mappings
+2016-09-25 16:54:10 DEBUG Configuration:1702 - Processing native query and ResultSetMapping mappings
+2016-09-25 16:54:10 DEBUG Configuration:1710 - Processing association property references
+2016-09-25 16:54:10 DEBUG Configuration:1732 - Creating tables' unique integer identifiers
+2016-09-25 16:54:10 DEBUG Configuration:1733 - Processing foreign key constraints
+2016-09-25 16:54:10 DEBUG Configuration:1804 - Resolving reference to class: br.com.projeto.blog.entity.Avatar
+2016-09-25 16:54:10 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 16:54:10 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 16:54:10 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 16:54:10 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 16:54:10 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 16:54:10 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 16:54:10 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 16:54:10 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 16:54:10 DEBUG DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.MySQL5Dialect]
+2016-09-25 16:54:10 DEBUG DefaultIdentifierGeneratorFactory:107 - Setting dialect [org.hibernate.dialect.MySQL5Dialect]
+2016-09-25 16:54:10 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 16:54:10 DEBUG NamedQueryRepository:155 - Checking 0 named HQL queries
+2016-09-25 16:54:10 DEBUG NamedQueryRepository:171 - Checking 0 named SQL queries
+2016-09-25 16:54:10 DEBUG StatisticsInitiator:110 - Statistics initialized [enabled=false]
+2016-09-25 16:54:10 DEBUG JpaSchemaGenerator:115 - No actions specified; doing nothing
+2016-09-25 16:54:10 DEBUG EntityManagerFactoryRegistry:56 - Initializing EntityManagerFactoryRegistry : org.hibernate.jpa.internal.EntityManagerFactoryRegistry@3b8d6bb0
+2016-09-25 16:54:10 DEBUG EntityManagerFactoryRegistry:66 - Registering EntityManagerFactory: default 
+2016-09-25 16:54:11 DEBUG AbstractEntityManagerImpl:1529 - Mark transaction for rollback
+2016-09-25 16:54:11 DEBUG AbstractEntityManagerImpl:1529 - Mark transaction for rollback
+2016-09-25 16:54:21 DEBUG SessionFactoryImpl:1339 - HHH000031: Closing
+2016-09-25 16:54:21 DEBUG AbstractServiceRegistryImpl:406 - Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+2016-09-25 16:54:21 DEBUG BootstrapServiceRegistryImpl:308 - Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
+2016-09-25 16:54:21 DEBUG EntityManagerFactoryRegistry:108 - Remove: name=default
+2016-09-25 16:54:24 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 16:54:24 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 16:54:24 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 16:54:24 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 16:54:24 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 16:54:25 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 16:54:25 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 16:54:25 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 16:54:25 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 16:54:25 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 16:54:25 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 16:54:25 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 16:54:25 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 16:54:25 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 16:54:25 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 16:54:25 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 16:54:25 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 16:54:25 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 16:54:25 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 16:56:12 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 16:56:12 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 16:56:12 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 16:56:12 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 16:56:12 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 16:56:13 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 16:56:13 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 16:56:13 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 16:56:13 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 16:56:13 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 16:56:13 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 16:56:13 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 16:56:13 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 16:56:13 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 16:56:13 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 16:56:13 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 16:56:13 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 16:56:13 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 16:56:13 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 16:57:59 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 16:58:00 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 16:58:00 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 16:58:00 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 16:58:00 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 16:58:00 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 16:58:00 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 16:58:00 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 16:58:00 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 16:58:00 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 16:58:00 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 16:58:00 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 16:58:00 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 16:58:00 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 16:58:00 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 16:58:00 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 16:58:00 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 16:58:00 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 16:58:00 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 16:58:13 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 16:58:13 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 16:58:13 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 16:58:13 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 16:58:13 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 16:58:13 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 16:58:13 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 16:58:14 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 16:58:14 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 16:58:14 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 16:58:14 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 16:58:14 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 16:58:14 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 16:58:14 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 16:58:14 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 16:58:14 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 16:58:14 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 16:58:14 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 16:58:14 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 17:08:50 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 17:08:50 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 17:08:50 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 17:08:50 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 17:08:50 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 17:08:50 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 17:08:51 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 17:08:51 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 17:08:51 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 17:08:51 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 17:08:51 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 17:08:51 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 17:08:51 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 17:08:51 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 17:08:51 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 17:08:51 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 17:08:51 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 17:08:51 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 17:08:51 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 17:24:25 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 17:24:26 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 17:24:26 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 17:24:26 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 17:24:26 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 17:24:26 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 17:24:27 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 17:24:27 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 17:24:27 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 17:24:27 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 17:24:27 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 17:24:27 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 17:24:27 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 17:24:27 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 17:24:27 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 17:24:27 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 17:24:27 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 17:24:27 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 17:24:27 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 17:26:55 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 17:26:55 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 17:26:55 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 17:26:55 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 17:26:55 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 17:26:55 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 17:26:55 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 17:26:56 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 17:26:56 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 17:26:56 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 17:26:56 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 17:26:56 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 17:26:56 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 17:26:56 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 17:26:56 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 17:26:56 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 17:26:56 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 17:26:56 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 17:26:56 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 17:29:02 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 17:29:02 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 17:29:02 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 17:29:02 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 17:29:02 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 17:29:02 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 17:29:02 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 17:29:03 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 17:29:03 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 17:29:03 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 17:29:03 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 17:29:03 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 17:29:03 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 17:29:03 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 17:29:03 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 17:29:03 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 17:29:03 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 17:29:03 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 17:29:03 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 17:29:53 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 17:29:53 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 17:29:53 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 17:29:53 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 17:29:54 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 17:29:54 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 17:29:54 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 17:29:55 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 17:29:55 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 17:29:55 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 17:29:55 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 17:29:55 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 17:29:55 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 17:29:55 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 17:29:55 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 17:29:55 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 17:29:55 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 17:29:55 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 17:29:55 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 17:35:11 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 17:35:12 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 17:35:12 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 17:35:12 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 17:35:12 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 17:35:12 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 17:35:12 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 17:35:13 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 17:35:13 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 17:35:13 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 17:35:13 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 17:35:13 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 17:35:13 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 17:35:13 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 17:35:13 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 17:35:13 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 17:35:13 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 17:35:13 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 17:35:13 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 17:35:32 WARN  SqlExceptionHelper:144 - SQL Error: 0, SQLState: S1009
+2016-09-25 17:35:32 ERROR SqlExceptionHelper:146 - Connection is read-only. Queries leading to data modification are not allowed
+2016-09-25 17:36:50 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 17:36:50 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 17:36:50 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 17:36:50 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 17:36:50 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 17:36:50 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 17:36:50 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 17:36:51 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 17:36:51 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 17:36:51 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 17:36:51 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 17:36:51 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 17:36:51 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 17:36:51 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 17:36:51 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 17:36:51 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 17:36:51 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 17:36:51 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 17:36:51 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 17:36:58 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 17:36:58 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 17:36:58 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 17:36:58 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 17:36:58 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 17:36:58 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 17:36:58 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 17:36:58 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 17:36:58 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 17:36:58 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 17:36:58 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 17:36:58 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 17:36:58 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 17:36:58 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 17:36:58 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 17:37:03 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 17:37:03 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 17:37:03 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 17:37:03 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 17:37:03 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 17:37:03 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 17:37:03 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 17:37:03 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 17:37:03 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 17:37:03 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 17:37:03 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 17:37:03 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 17:37:03 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 17:37:03 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 17:37:03 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 17:37:11 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 17:37:11 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 17:37:11 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 17:37:11 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 17:37:11 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 17:37:11 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 17:37:11 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 17:37:11 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 17:37:11 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 17:37:11 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 17:37:11 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 17:37:11 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 17:37:11 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 17:37:11 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 17:37:11 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 17:37:55 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 17:37:55 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 17:37:55 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 17:37:55 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 17:37:56 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 17:37:56 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 17:37:56 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 17:37:56 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 17:37:56 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 17:37:56 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 17:37:56 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 17:37:56 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 17:37:56 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 17:37:56 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 17:37:56 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 17:37:56 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 17:37:56 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 17:37:56 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 17:37:56 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 17:38:40 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 17:38:40 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 17:38:40 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 17:38:40 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 17:38:40 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 17:38:40 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 17:38:41 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 17:38:41 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 17:38:41 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 17:38:41 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 17:38:41 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 17:38:41 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 17:38:41 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 17:38:41 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 17:38:41 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 17:38:41 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 17:38:41 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 17:38:41 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 17:38:41 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 20:54:59 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 20:54:59 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 20:54:59 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 20:54:59 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 20:54:59 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 20:55:00 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 20:55:00 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 20:55:00 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 20:55:00 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 20:55:00 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 20:55:00 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 20:55:00 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 20:55:00 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 20:55:00 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 20:55:00 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 20:55:00 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 20:55:00 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 20:55:00 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 20:55:00 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 20:55:56 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 20:55:56 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 20:55:56 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 20:55:56 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 20:55:56 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 20:55:57 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 20:55:57 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 20:55:57 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 20:55:57 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 20:55:57 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 20:55:57 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 20:55:57 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 20:55:57 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 20:55:57 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 20:55:57 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 20:55:57 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 20:55:57 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 20:55:57 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 20:55:57 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 20:56:20 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 20:56:20 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 20:56:20 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 20:56:20 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 20:56:20 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 20:56:21 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 20:56:21 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 20:56:21 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 20:56:21 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 20:56:21 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 20:56:21 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 20:56:21 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 20:56:21 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 20:56:21 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 20:56:21 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 20:56:21 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 20:56:21 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 20:56:21 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 20:56:21 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-25 20:58:49 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-25 20:58:49 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-25 20:58:49 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-25 20:58:49 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-25 20:58:50 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-25 20:58:50 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-25 20:58:50 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-25 20:58:50 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-25 20:58:50 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-25 20:58:50 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-25 20:58:50 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-25 20:58:50 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-25 20:58:50 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-25 20:58:50 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-25 20:58:50 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-25 20:58:50 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-25 20:58:50 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-25 20:58:50 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-25 20:58:50 INFO  SchemaUpdate:267 - HHH000232: Schema update complete

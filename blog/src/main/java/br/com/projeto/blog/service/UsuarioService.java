@@ -20,6 +20,13 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository repository;
 
+	
+	@Transactional(readOnly = false)
+	public void updateNomeAndEmail(Usuario user) {
+		repository.updateNomeAndEmail(user.getNome(), user.getEmail(), user.getId());
+	}
+	
+	
 	@Transactional(readOnly = true)
 	public void delete(Long id){
 		
@@ -33,6 +40,7 @@ public class UsuarioService {
 			user.setDataCadastro(LocalDate.now());
 		
 		String hash = new BCryptPasswordEncoder().encode(user.getSenha());
+		user.setSenha(hash);
 		
 		repository.save(user);
 		
@@ -55,5 +63,12 @@ public class UsuarioService {
 	public List<Usuario> findAll(){
 		return repository.findAll();
 	}
+
+	@Transactional(readOnly = false)
+	public void updateSenha(Usuario user) {
+		repository.updateSenha(user.getSenha(), user.getId());
+	}
+	
+	
 	
 }

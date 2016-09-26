@@ -62,7 +62,8 @@ public class SpringDataConfig {
 	public EntityManagerFactory entityManagerFactory(){
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(jpaVendorAdapter());
-		factory.setPackagesToScan(env.getProperty("hibernate.package.scan"));
+		factory.setPackagesToScan(env.getProperty("hibernate.package.scan"),
+				env.getProperty("java.time.jpa.converter"));
 		factory.setDataSource(dataSource());
 		factory.afterPropertiesSet();
 		

@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
@@ -22,11 +23,21 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan("br.com.projeto.blog")
 public class SpringMvcConfig extends WebMvcConfigurerAdapter{
 	
+	
+	
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/css/**")
+			.addResourceLocations("/WEB-INF/resources/css/");
+		
+	}
+
+
 	/**Classe para configurações de arquivos pelo site.
 	 * 
 	 * @return
 	 */
-	@Bean()
+	@Bean
 	public MultipartResolver multipartResolver(){
 		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
 		multipartResolver.setMaxUploadSize(100000); //100k tamanho do arquivo.

@@ -1,7 +1,9 @@
 package br.com.projeto.blog.web.controller;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -32,6 +34,66 @@ public class UsuarioController {
 	
 	@Autowired
 	private AvatarService avatarService;
+	
+	/**Metodo para fazer o resete de senha..
+	 * 
+	 * 
+	 * @param id - se tiver um Id.
+	 * @param user = usuario recuperado da pagina.
+	 * @return
+	 */
+	@RequestMapping(value = {"/update/senha/{id}", "/update/senha"},
+			method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView updateSenha(@PathVariable("id") Optional<Long> id ,
+			@ModelAttribute("usuario") Usuario user){
+		
+		ModelAndView view = new ModelAndView();
+		
+		if(id.isPresent()){
+			user = usuarioService.findById(id.get());
+			view.addObject("usuario", user);
+			view.setViewName("usuario/atualizar");
+			return view;
+		}
+		
+		usuarioService.updateSenha(user);
+		view.setViewName("redirect:/usuario/perfil/" + user.getId());
+		return view;
+		
+	}
+	
+	
+	
+	/**Metodo para fazer um update no perfil
+	 * 
+	 * é possivel passar mais de uma URL de forma de Array.
+	 * 
+	 * @PathVariable("id") - faz com  que esse metodo sempre tenha um ID na URL
+	 * 
+	 * 
+	 */
+	@RequestMapping(value = {"/update/{id}", "/update"}, 
+			method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView update(@PathVariable("id") Optional<Long> id, 
+			@ModelAttribute("usuario") Usuario user){
+		ModelAndView view = new ModelAndView();
+		//é um teste para verificar se existe um ID registrado vindo pela URL /update/{id}
+		if(id.isPresent()){
+			usuarioService.findById(id.get());
+			view.addObject("usuario", user);
+			view.setViewName("usuario/atualizar");
+			return view;
+		}
+		
+		// se vir por /update
+		usuarioService.updateNomeAndEmail(user);
+		
+		view.setViewName("redirect:/usuario/perfil/" + user.getId());
+		
+		return view;
+		
+	}
+	
 	
 	/**Classe para fazer as converções da opção de Enum
 	 * 

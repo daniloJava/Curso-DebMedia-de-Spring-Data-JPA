@@ -1,0 +1,28 @@
+
+.campo {
+	margin-bottom: 1em;
+}
+
+.campo input:FOCUS, .campo select:FOCUS {
+	background: #f8f8f8;
+}
+
+.table {
+	width: 640px;
+	text-align: center;
+}
+
+fieldset {
+	width: 640px;
+	margin: 0 auto;
+}
+
+fieldset.group .campo {
+	float: left;
+	margin-right: 2em;
+}
+
+.master {
+	width: 960px;
+	margin: 0 auto;
+}

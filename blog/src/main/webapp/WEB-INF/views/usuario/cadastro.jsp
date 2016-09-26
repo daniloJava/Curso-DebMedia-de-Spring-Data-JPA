@@ -6,35 +6,8 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Usuário</title>
-<style type="text/css">
-.campo {
-	margin-bottom: 1em;
-}
 
-.campo input:FOCUS, .campo select:FOCUS {
-	background: #f8f8f8;
-}
-
-.table {
-	width: 640px;
-	text-align: center;
-}
-
-fieldset {
-	width: 640px;
-	margin: 0 auto;
-}
-
-fieldset.group .campo {
-	float: left;
-	margin-right: 2em;
-}
-
-.master {
-	width: 960px;
-	margin: 0 auto;
-}
-</style>
+<link type="text/css" rel="stylesheet" href="<c:url value= "/css/style.css" />">
 
 </head>
 <body>
@@ -47,17 +20,17 @@ fieldset.group .campo {
 		<fieldset>
 			<legend>Cadastro de Usuário</legend>
 			
-			<div>
+			<div class="campo">
 				<form:label path="nome">Nome do Usuário</form:label><br>
 				<form:input path="nome" required="true" title="Inserir Nome" type="text"/>
 			</div><br>
 			
-			<div>
+			<div class="campo">
 				<form:label path="email">E-mail</form:label><br>
 				<form:input path="email" required="true" type="email"/>
 			</div><br>
 			
-			<div>
+			<div class="campo">
 				<form:label path="senha">Senha</form:label><br>
 				<form:password path="senha" required="true" />
 			</div><br>
@@ -68,7 +41,7 @@ fieldset.group .campo {
 				
 			</div><br>
 			
-			<div>
+			<div  class="campo">
 				<form:label path="perfil">Avatar</form:label><br>
 				<form:select path="perfil" required="true">
 				
