@@ -1573,3 +1573,28 @@ java.net.URLClassLoader@63961c42
 2016-09-26 00:04:00 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
 2016-09-26 00:04:00 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
 2016-09-26 00:04:00 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2016-09-26 00:07:40 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2016-09-26 00:07:40 INFO  Version:54 - HHH000412: Hibernate Core {4.3.8.Final}
+2016-09-26 00:07:40 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-09-26 00:07:40 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-09-26 00:07:40 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-09-26 00:07:41 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2016-09-26 00:07:41 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-09-26 00:07:41 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2016-09-26 00:07:41 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2016-09-26 00:07:41 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2016-09-26 00:07:41 INFO  TableMetadata:66 - HHH000261: Table found: blog.AUTORES
+2016-09-26 00:07:41 INFO  TableMetadata:67 - HHH000037: Columns: [usuario_id, biografia, nome, id]
+2016-09-26 00:07:41 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_hfko6k60b7gkorxy947tlskdr]
+2016-09-26 00:07:41 INFO  TableMetadata:70 - HHH000126: Indexes: [fk_hfko6k60b7gkorxy947tlskdr, uk_99cjahve0ffmk8t8s7xsa6mg9, primary]
+2016-09-26 00:07:41 INFO  TableMetadata:66 - HHH000261: Table found: blog.AVATARES
+2016-09-26 00:07:41 INFO  TableMetadata:67 - HHH000037: Columns: [tipo, titulo, id, avatar]
+2016-09-26 00:07:41 INFO  TableMetadata:69 - HHH000108: Foreign keys: []
+2016-09-26 00:07:41 INFO  TableMetadata:70 - HHH000126: Indexes: [primary]
+2016-09-26 00:07:41 INFO  TableMetadata:66 - HHH000261: Table found: blog.USUARIOS
+2016-09-26 00:07:41 INFO  TableMetadata:67 - HHH000037: Columns: [senha_hash, avatar_id, data_cadastro, nome, id, email, perfil]
+2016-09-26 00:07:41 INFO  TableMetadata:69 - HHH000108: Foreign keys: [fk_mxpquxoik22piwrghds12j9w3]
+2016-09-26 00:07:41 INFO  TableMetadata:70 - HHH000126: Indexes: [uk_iuych6nvfbtufsvkcl8ink3g6, fk_mxpquxoik22piwrghds12j9w3, primary, uk_1nkghbdcvplrb8uwoep7hf1kt]
+2016-09-26 00:07:41 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
