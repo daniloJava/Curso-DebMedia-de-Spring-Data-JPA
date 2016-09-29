@@ -21,19 +21,20 @@
 				<th>Biografia</th>
 				<th>Ação</th>
 			</tr>
-			<tr>
+			<c:forEach var="autor" items="autores" varStatus="i">
+			<tr bgcolor="">
 				
 				<td>${autor.nome }</td>
 				<td>${autor.usuario.email }</td>
 				<td>${autor.usuario.dataCadastro }</td>
 				<td>${autor.biografia}</td>
 				<td>
-					<c:url var="update" value = "/usuario/update/${usuario.id}"></c:url>
+					<c:url var="update" value = "/autor/update/${autor.id}"></c:url>
 					<a href="${update}" title="Editar">&#9445</a>
 					<a href="#" title="Excluir">&#9447</a>
 				</td>
 			</tr>
-			
+			</c:forEach>
 		</table>
 	</fieldset>
 

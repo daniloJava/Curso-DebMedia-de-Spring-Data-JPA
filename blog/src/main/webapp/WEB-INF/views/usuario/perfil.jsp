@@ -21,7 +21,7 @@
 				<th>Perfil</th>
 				<th>Ação</th>
 			</tr>
-			<tr>
+			<tr bgcolor="${i.count % 2 !=0 ? '#f1f1f1' : 'white'}">
 				<td><a href='<c:url value="/avatar/update/${usuario.avatar.id}"></c:url>' title="Editar avatar">
 					<img src='<c:url value= "/avatar/load/${usuario.avatar.id}" /> '
 						style = "width: 40px; height: 40px;" /></a>
