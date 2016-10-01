@@ -36,4 +36,10 @@ public class AutorService {
 	public Autor findByNome(String nome){
 		return repository.findByNome(nome);
 	}
+	
+	@Transactional(readOnly = false)
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		repository.delete(id);
+	}
 }

@@ -23,6 +23,15 @@ public class AutorController {
 	private AutorService autorService;
 	
 	
+	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+	public String delete(@PathVariable("id") Long id) {
+		
+		autorService.delete(id);
+		
+		return "redirect:/autor/add";
+	}
+	
+	
 	/**conseguindo alterar os dados do Autor.
 	 * 
 	 * @param id
@@ -41,7 +50,7 @@ public class AutorController {
 	
 	
 	/**Buscando um Autor  ou todos os autroes usando o Optionl,
-	 * para descobrir as condições do id..
+	 * para descobrir as condiï¿½ï¿½es do id..
 	 * 
 	 * @param id
 	 * @return

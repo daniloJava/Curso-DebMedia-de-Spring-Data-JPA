@@ -11,7 +11,7 @@ public interface AutorRepository extends JpaRepository<Autor, Long>{
 	Autor findByNome(String nome);
 	
 	@Modifying
-	@Query("update Autor a set a.nome = ?1, a.biografia = ?2, where a.id = ?3")
+	@Query("update Autor a set a.nome = ?1, a.biografia = ?2 where a.id = ?3")
 	void updateNomeAndBiografia(String nome, String biografia, Long id);
 	
 }
