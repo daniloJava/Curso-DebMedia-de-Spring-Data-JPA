@@ -18,6 +18,9 @@
 		<a href="<c:url value="/postagem/list"/>"> Lista postagens </a>
 		 
 	</nav>
+	<nav>
+		<a href="<c:url value="/categoria/add"/>"> Categorias</a>
+	</nav>
 
 </fieldset>
 
