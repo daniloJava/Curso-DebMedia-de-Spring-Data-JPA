@@ -30,6 +30,13 @@
 				<br>
 				<form:textarea path="texto" rows="15" cols="80" />
 			</div>
+			<div class="campo">
+				<form:label path="categorias">Selecione a(s) Categorias</form:label><br>
+				<form:select multiple="true" path="categorias"> 
+					<form:options items="${categorias }" itemValue="id" itemLabel="descricao" />
+				</form:select>
+			</div>
+			
 			<div>
 				<input type="submit" value="Salvar"> <input type="reset"
 					value="Limpar">
