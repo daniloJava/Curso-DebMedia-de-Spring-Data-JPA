@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -39,4 +40,40 @@ public class HomeController {
 		
 		return new ModelAndView("posts", model);
 	}
+	
+	/**classe para que busca todas as postagens referente a Categoria
+	 * atravez do Link.
+	 * 
+	 * @param permaLink
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/categoria/{link}", method = RequestMethod.POST)
+	public ModelAndView postByCategoria(@PathVariable("link") String permaLink,  ModelMap model){
+		
+		List<Postagem> postagens = postagemService.findByCategoria(permaLink);
+		model.addAttribute("postagens", postagens);
+		
+		return new ModelAndView("posts", model);
+		
+	}
+	
+	/**Metodo para ir até o link das postagens daquele autor especifico
+	 * 
+	 * @param nome
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/autor/{nome}", method= RequestMethod.GET)
+	public ModelAndView postsByAutor(@PathVariable("nome") String nome, ModelMap model){
+		
+		
+		List<Postagem> postagens = postagemService.findByAutor(nome);
+		
+		model.addAttribute("postagens", postagens);
+		
+		return new ModelAndView("posts", model);
+	}
+	
+	
 }

@@ -80,6 +80,21 @@ public class PostagemService {
 	public void delete(Long id) {
 		repository.delete(id);
 	}
+
+	/**Busca as categorias pelo perma link
+	 * 
+	 * @param permaLink
+	 * @return
+	 */
+	public List<Postagem> findByCategoria(String permaLink) {
+		
+		return repository.findByCategoriasPermalink(permaLink);
+	}
+
+
+	public List<Postagem> findByAutor(String nome) {
+		return repository.findByAutor(nome);
+	}
 	
 	
 	

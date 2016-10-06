@@ -26,3 +26,13 @@ fieldset.group .campo {
 	width: 960px;
 	margin: 0 auto;
 }
+
+.header{
+	text-align: center;
+	font-family: monospace;;
+	
+}
+a:link{
+	text-decoration: none;
+	
+}
