@@ -21,8 +21,31 @@ import br.com.projeto.blog.service.PostagemService;
 @Controller
 public class HomeController {
 
+	
+	
+	
+	
 	@Autowired
 	public  PostagemService postagemService;
+	
+	
+	
+	/**Metodo para abrir o unico post
+	 * 
+	 * @param permalink
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/{permalink}", method = RequestMethod.GET)
+	public ModelAndView openPostagem(@PathVariable("permalink") String permalink, ModelMap model){
+		
+		Postagem postagem= postagemService.findByPermaLink(permalink);
+		model.addAttribute("postagem", postagem);
+		
+		return new ModelAndView("post", model);
+		
+	}
+	
 	
 	/**Metodo para recuperar sempre a pagina principal
 	 * 

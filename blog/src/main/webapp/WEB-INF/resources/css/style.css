@@ -1,38 +1,85 @@
+ a:link {
+ 	text-decoration: none;
+ }
+ 
+.post-autor {
+	border: 2px solid #eee;
+	position: relative;
+	padding: 10px 10px 10px 10px;
+	color: silver;
+	font-family: sans-serif;
+	text-align: justify;	
+} 
 
-.campo {
-	margin-bottom: 1em;
+.post-avatar {
+	float: left;
+	margin: 0 10px 0 0;
+	width: 64px;
+	height: auto;
+	position: relative;
 }
-
-.campo input:FOCUS, .campo select:FOCUS {
-	background: #f8f8f8;
-}
-
-.table {
-	width: 640px;
-	text-align: center;
-}
-
-fieldset {
-	width: 640px;
-	margin: 0 auto;
-}
-
-fieldset.group .campo {
+ 
+ .post-categ {
+ 	margin-bottom: 40px;
+ 	font-family: monospace;
+ }
+ 
+ .post-categ a:link {
+ 	background:  #f2f2f2;
+ 	display: inline-block;
+ 	line-height: 16px;
+ 	color: #999;
+ 	padding: 3px 7px;
+ 	margin: 0 5px 2px 0;
+ }
+ 
+  .post-categ a:hover {
+ 	background:  #f0f0f0;
+ 	display: inline-block;
+ 	line-height: 16px;
+ 	color: #999;
+ 	padding: 3px 7px;
+ 	margin: 0 5px 2px 0;
+ }
+ 
+ .post-texto {
+ 	font-family: sans-serif;
+ 	font-size: 12pt;
+ 	text-align: justify;
+ 	line-height: 1.5em;
+ 	color: gray;
+ }
+ 
+ .campo {
+ 	margin-bottom: 1em;
+ }
+ .campo input:FOCUS, .campo select:FOCUS {
+	background: yellow;	
+ }
+ 
+ .table {
+ 	width: 640px;
+ 	text-align: center;
+ }
+ 
+ fieldset {
+ 	width: 640px;
+ 	margin: 0 auto;
+ }
+ 
+ fieldset.group .campo {
 	float: left;
 	margin-right: 2em;
-}
-
-.master {
-	width: 960px;
-	margin: 0 auto;
-}
-
-.header{
-	text-align: center;
-	font-family: monospace;;
-	
-}
-a:link{
-	text-decoration: none;
-	
-}
+ }
+ 
+ .master {
+ 	width: 960px;
+ 	margin: 0 auto;
+ } 
+ 
+ .header {
+ 	text-align: center;
+ 	font-family: monospace;
+ }
+ 
+ 

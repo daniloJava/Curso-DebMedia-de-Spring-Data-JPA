@@ -3,6 +3,9 @@ package br.com.projeto.blog.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.domain.Sort.Order;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,6 +14,11 @@ import br.com.projeto.blog.entity.Categoria;
 import br.com.projeto.blog.repository.CategoriaRepository;
 import br.com.projeto.blog.util.MyReplaceString;
 
+/**Classe para serlõ de Categoria
+ * 
+ * @author Danilo Silva
+ *
+ */
 @Service
 @Transactional(readOnly = true, propagation = Propagation.REQUIRED)
 public class CategoriaService {
@@ -20,7 +28,8 @@ public class CategoriaService {
 
 	
 	public List<Categoria> findAll(){
-		return repository.findAll();
+		Sort order = new Sort(new Order(Direction.ASC, "descricao"));
+		return repository.findAll(order);
 	}
 	
 	@Transactional(readOnly = false)
