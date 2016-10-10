@@ -5,29 +5,26 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.com.projeto.blog.entity.Comentario;
 import br.com.projeto.blog.entity.Postagem;
 import br.com.projeto.blog.service.PostagemService;
 
 /**Controller para a pagina inicial
  * 
- * @author Aluno
+ * @author Danilo Silva
  *
  */
 @Controller
 public class HomeController {
-
-	
-	
-	
 	
 	@Autowired
 	public  PostagemService postagemService;
-	
 	
 	
 	/**Metodo para abrir o unico post
@@ -36,13 +33,15 @@ public class HomeController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = "/{permalink}", method = RequestMethod.GET)
-	public ModelAndView openPostagem(@PathVariable("permalink") String permalink, ModelMap model){
+	@RequestMapping(value = "/{permaLink}", method = RequestMethod.GET)
+	public ModelAndView openPostagem(
+			@ModelAttribute("comentario") Comentario comentario,
+			@PathVariable("permaLink") String permalink, ModelMap model){
 		
 		Postagem postagem= postagemService.findByPermaLink(permalink);
 		model.addAttribute("postagem", postagem);
 		
-		return new ModelAndView("post", model);
+		return new ModelAndView("posts", model);
 		
 	}
 	
@@ -54,14 +53,16 @@ public class HomeController {
 	 * @param model - ModelMap para adicionar um atributo
 	 * @return
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView home(ModelMap model){
+	@RequestMapping(value ="/", method = RequestMethod.GET)
+	public ModelAndView home(ModelMap model,
+			@ModelAttribute("comentario") Comentario comentario
+			){
 		
 		List<Postagem> postagens = postagemService.findAll();
 		
-		model.addAttribute("Postagens", postagens);
+		model.addAttribute("postagens", postagens);
 		
-		return new ModelAndView("posts", model);
+		return new ModelAndView("post", model);
 	}
 	
 	/**classe para que busca todas as postagens referente a Categoria
@@ -71,17 +72,17 @@ public class HomeController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = "/categoria/{link}", method = RequestMethod.POST)
+	@RequestMapping(value = "/categoria/{link}", method = RequestMethod.GET)
 	public ModelAndView postByCategoria(@PathVariable("link") String permaLink,  ModelMap model){
 		
 		List<Postagem> postagens = postagemService.findByCategoria(permaLink);
 		model.addAttribute("postagens", postagens);
 		
-		return new ModelAndView("posts", model);
+		return new ModelAndView("post", model);
 		
 	}
 	
-	/**Metodo para ir até o link das postagens daquele autor especifico
+	/**Metodo para ir atï¿½ o link das postagens daquele autor especifico
 	 * 
 	 * @param nome
 	 * @param model
@@ -95,7 +96,7 @@ public class HomeController {
 		
 		model.addAttribute("postagens", postagens);
 		
-		return new ModelAndView("posts", model);
+		return new ModelAndView("post", model);
 	}
 	
 	

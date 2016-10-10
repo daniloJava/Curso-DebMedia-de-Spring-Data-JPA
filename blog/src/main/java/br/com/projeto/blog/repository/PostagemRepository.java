@@ -11,7 +11,7 @@ public interface PostagemRepository extends JpaRepository<Postagem, Long>{
 	Postagem findByPermaLink(String link);
 
 	
-	List<Postagem> findByCategoriasPermalink(String permaLink);
+	List<Postagem> findByCategoriasPermaLink(String permaLink);
 
 
 	List<Postagem> findByAutor(String nome);

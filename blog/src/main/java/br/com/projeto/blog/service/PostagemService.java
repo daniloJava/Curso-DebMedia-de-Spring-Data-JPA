@@ -88,7 +88,7 @@ public class PostagemService {
 	 */
 	public List<Postagem> findByCategoria(String permaLink) {
 		
-		return repository.findByCategoriasPermalink(permaLink);
+		return repository.findByCategoriasPermaLink(permaLink);
 	}
 
 

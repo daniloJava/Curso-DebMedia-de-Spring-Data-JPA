@@ -18,22 +18,22 @@
 	<c:import url="menu.jsp" />
 	
 	<fieldset>
-		<c:forEach var="p" items="${postagens }">
+		<c:forEach var="p" items="${postagens}">
 			<div>
 				<!-- Espaço do Titulo -->
-								<div>
+					<div>
 					<h2>
-						<a href="<c:url value = "/${p.permalink}"/>">
-							${postagens.titulo}
+						<a href="<c:url value = "/${p.permaLink}"/>">
+							${p.titulo}
 						</a>
 					</h2>
 					
 					<p> Autor: 
-					<a href="<c:url value="/autor/${postagens.autor.nome }" />"> 
-						${postagens.autor.nome} 
+					<a href="<c:url value="/autor/${p.autor.nome }" />"> 
+						${p.autor.nome} 
 					</a> 
-					
-					|<fmt:parseDate var="date" va{p.dataPostagem}" pattern="yyyy-MM-dd'T'HH:mm:ss.SSSZ" /> 
+					|<fmt:parseDate var="date" 
+						value="${p.dataPostagem}" pattern="yyyy-MM-dd'T'HH:mm:ss" /> 
 						Data: <fmt:formatDate value="${date }" type="both" /> 
 					</p>
 					
@@ -46,7 +46,7 @@
 							end="40">
 							${resumo}
 						</c:forTokens>
-						<a href="<c:url value = "/${p.permalink}"/>">
+						<a href="<c:url value = "/${p.permaLink}"/>">
 							[Leia Mais] </a>
 					</p>
 
@@ -57,7 +57,7 @@
 					<p class="post-categ">
 					<span>Categorias: </span>
 					<c:forEach var="c" items="${p.categorias }">
-						<a href="<c:url value = "/categoria/"${c.descricao} />" title="${c.descricao}">">
+						<a href="<c:url value="/categoria/${c.permaLink}"/>" title="${c.descricao}">
 						| ${c.descricao} </a>
 					</c:forEach>
 					</p>

@@ -1,6 +1,7 @@
 package br.com.projeto.blog.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -30,7 +31,8 @@ public class Usuario extends AbstractPersistable<Long>{
 	
 	private Avatar avatar;
 
-	
+	@OneToMany(mappedBy = "usuario")
+	private List<Comentario> comentarios;
 	
 	
 	@Override
@@ -86,5 +88,15 @@ public class Usuario extends AbstractPersistable<Long>{
 	public void setAvatar(Avatar avatar) {
 		this.avatar = avatar;
 	}
+
+	public List<Comentario> getComentarios() {
+		return comentarios;
+	}
+
+	public void setComentarios(List<Comentario> comentarios) {
+		this.comentarios = comentarios;
+	}
+	
+	
 	
 }
