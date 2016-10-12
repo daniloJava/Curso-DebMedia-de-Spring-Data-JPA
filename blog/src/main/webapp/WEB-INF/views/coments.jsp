@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<div>
+<div id="comentarios">
 	<c:url var="save" value="/comentario/save" />
 	<form:form action="${save }" modelAttribute="comentario" method="POST">
 		<input type="hidden" value="${postagem.permaLink }" name= "permaLink">
