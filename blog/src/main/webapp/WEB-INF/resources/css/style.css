@@ -7,9 +7,26 @@
  
  .comentarios{
  	backgorund: #f1f1f1;
- 	mar 
- 	
+ 	margin-bottom: 10px;
+ 	padding: 10px;
+ 	font-family: monospace;
  }
+ 
+ .comentarios p{
+ 	font-family: cursive;
+ 	font-size: 10pt;
+ 	text-align: justify;
+ }
+
+.comentarios-avatar{
+	float: left;
+	margin: 0 10px 0 0;
+	width: 64px;
+	height: auto;
+	position: relative;
+
+	}
+
  
 .post-autor {
 	border: 2px solid #eee;

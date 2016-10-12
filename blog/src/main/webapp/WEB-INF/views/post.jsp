@@ -35,6 +35,7 @@
 					|<fmt:parseDate var="date" 
 						value="${p.dataPostagem}" pattern="yyyy-MM-dd'T'HH:mm:ss" /> 
 						Data: <fmt:formatDate value="${date }" type="both" /> 
+					|  # ${fn:length(p.comentarios)} Comentario(s)
 					</p>
 					
 				</div>

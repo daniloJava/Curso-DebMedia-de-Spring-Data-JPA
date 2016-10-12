@@ -13,7 +13,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
 @Table(name = "COMENTARIOS")
-public class Comentario extends AbstractPersistable<Long>{
+public class Comentario extends AbstractPersistable<Long> implements Comparable<Comentario>{
 
 	@Column(name = "TEXTO", nullable = false, columnDefinition = "TEXT")
 	private String texto;
@@ -75,6 +75,14 @@ public class Comentario extends AbstractPersistable<Long>{
 	public void setId(Long id) {
 		// TODO Auto-generated method stub
 		super.setId(id);
+	}
+
+
+	/**Metodo de ordenaçao do comentario
+	 * 
+	 */
+	public int compareTo(Comentario comentario) {
+		return this.dataComentario.compareTo(comentario.getDataComentario());
 	}
 	
 	

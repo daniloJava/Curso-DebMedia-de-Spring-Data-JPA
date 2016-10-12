@@ -15,8 +15,8 @@
 	</form:form>
 	<hr>
 	<c:forEach var="c" items="${postagem.comentarios }">
-		<div>
-			<img class="post-avatar" src="<c:url value="/avatar/load/${c.usuario.avatar.id}"/>"/>
+		<div class="comentarios">
+			<img class="comentarios-avatar" src="<c:url value="/avatar/load/${c.usuario.avatar.id}"/>"/>
 			<em>
 				${c.usuario.nome } - 
 				<fmt:parseDate var="date" value="${c.dataComentario}" pattern="yyyy-MM-dd'T'HH:mm:ss" />
