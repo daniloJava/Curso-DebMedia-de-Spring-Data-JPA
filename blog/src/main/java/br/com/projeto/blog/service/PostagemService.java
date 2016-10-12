@@ -156,6 +156,34 @@ public class PostagemService {
 	public List<Postagem> findByAutor(String nome) {
 		return repository.findByAutor(nome);
 	}
+
+
+	/**Metodo para adicionar uma paginaçao atravez da categoria.
+	 * 
+	 * @param page - Numero da pagina
+	 * @param size - quantidade de registros na pagina
+	 * @param permaLink - Link da categoria
+	 * @return
+	 */
+	public Page<Postagem> findByPaginetionByCategoria(int page, int size, String permaLink) {
+		
+		Pageable pageable = new PageRequest(page, size);
+		
+		return repository.findAllByCategoriasPermaLinkOrderByDataPostagemDesc(pageable, permaLink);
+	}
+
+	/**Metodo para cirar uma paginação de Autor atravez do ID
+	 * 
+	 * @param page - numero da pagina 
+	 * @param size - quantidade dos registros por pagina
+	 * @param id - Id do Autor
+	 * @return Pageable - da consulta
+	 */
+	public Page<Postagem> findByPaginetionByAutor(int page, int size, Long id) {
+		Pageable pageable = new PageRequest(page, size);
+		
+		return repository.findAllByAutorIdOrderByDataPostagemDesc(pageable, id);
+	}
 	
 	
 	
