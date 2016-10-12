@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +23,28 @@ public class AutorController {
 	@Autowired
 	private AutorService autorService;
 	
+	/**Metodo para adicionar uma paginação na lista de autores
+	 * 
+	 * @param pagina - recupera a pagina indicada
+	 * @return ModelAndView - com o atributo page mapeado com o registros.
+	 */
+	@RequestMapping(value = "/page/{page}", method = RequestMethod.GET)
+	public ModelAndView pageAutores(@PathVariable("page") Integer pagina){
+		ModelAndView view = new ModelAndView("autor/perfil");
+		
+		Page<Autor> page = autorService.findByPagination(pagina -1, 5);
+		
+		view.addObject("page", page);
+		
+		return view;
+		
+	}
 	
+	/**Metodo para deletar o Autor.
+	 * 
+	 * @param id - recupera paramentro pela url
+	 * @return String - redireciona para a pagina adicionar usuário.
+	 */
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
 	public String delete(@PathVariable("id") Long id) {
 		
@@ -64,8 +86,12 @@ public class AutorController {
 			view.addObject("autores", Arrays.asList(autor));
 			
 		}else{
-			List<Autor> autores = autorService.findAll();
-			view.addObject("autores", autores);
+			
+			Page<Autor> page = autorService.findByPagination(0, 5);
+			view.addObject("page", page);
+//			Anterior:
+//			List<Autor> autores = autorService.findAll();
+//			view.addObject("autores", autores);
 		}
 		
 		return view;

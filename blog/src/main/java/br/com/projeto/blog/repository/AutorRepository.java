@@ -1,5 +1,7 @@
 package br.com.projeto.blog.repository;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -8,6 +10,8 @@ import br.com.projeto.blog.entity.Autor;
 
 public interface AutorRepository extends JpaRepository<Autor, Long>{
 
+	Page<Autor> findAllByOrderByNomeAsc(Pageable pageable);
+	
 	Autor findByNome(String nome);
 	
 	@Modifying
