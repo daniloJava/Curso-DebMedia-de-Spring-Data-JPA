@@ -3,8 +3,8 @@ package br.com.projeto.blog.web.controller;
 import java.util.List;
 import java.util.Optional;
 
-import org.hibernate.sql.Update;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.WebDataBinder;
@@ -34,6 +34,26 @@ public class UsuarioController {
 	
 	@Autowired
 	private AvatarService avatarService;
+	
+	/**Metodo para aplicar a paginação do usuário
+	 * 
+	 * @param pagina - não precisa trabalhar com o ModelAttribute por que não tem um formulário
+	 * 
+	 * @return - a mesma pagina 
+	 */
+	@RequestMapping(value = "/page/{page}", method = RequestMethod.GET)
+	public ModelAndView pageUsuarios(@PathVariable("page") Integer pagina){
+		
+		ModelAndView view = new ModelAndView("usuario/list");
+		//Recupera do Service uma paginação 
+		Page<Usuario> page = usuarioService.findByPagination(pagina -1 , 5);
+		
+		view.addObject("page", page);
+		
+		return view;
+	}
+	
+	
 	
 	/**Metodo para fazer o resete de senha..
 	 * 
@@ -114,9 +134,11 @@ public class UsuarioController {
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public ModelAndView listUsuarios(ModelMap model){
 		
-		List<Usuario> usuarios = usuarioService.findAll();
+		//List<Usuario> usuarios = usuarioService.findAll();
+		//model.addAttribute("usuarios", usuarios);
+		Page<Usuario> page = usuarioService.findByPagination(0 , 5);
 		
-		model.addAttribute("usuarios", usuarios);
+		model.addAttribute("page", page);
 		
 		return new ModelAndView("usuario/list", model); 
 	}

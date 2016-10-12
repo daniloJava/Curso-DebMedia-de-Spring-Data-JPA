@@ -1,5 +1,7 @@
 package br.com.projeto.blog.repository;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -9,6 +11,8 @@ import br.com.projeto.blog.entity.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 
+	Page<Usuario> findAllByOrderByNomeAsc(Pageable pageable);
+	
 	Usuario findByEmail(String email);
 	
 	Usuario findByAvatar(Avatar avatar);
