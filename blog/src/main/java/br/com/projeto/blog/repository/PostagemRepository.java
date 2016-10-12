@@ -2,6 +2,8 @@ package br.com.projeto.blog.repository;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.projeto.blog.entity.Postagem;
@@ -15,5 +17,7 @@ public interface PostagemRepository extends JpaRepository<Postagem, Long>{
 
 
 	List<Postagem> findByAutor(String nome);
+	
+	Page<Postagem> findAllByOrderByDataPostagemDesc(Pageable pageable);
 	
 }

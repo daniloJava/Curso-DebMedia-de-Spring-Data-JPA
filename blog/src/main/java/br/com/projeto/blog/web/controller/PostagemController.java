@@ -3,6 +3,7 @@ package br.com.projeto.blog.web.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.WebDataBinder;
@@ -38,6 +39,22 @@ public class PostagemController {
 	@Autowired	
 	private CategoriaService categoriaService;
 	
+	/**Metodo que recupera a Paginação 
+	 * 
+	 * @param pagina
+	 * @return
+	 */
+	@RequestMapping(value = "/page/{page}", method = RequestMethod.GET)
+	public ModelAndView pagePostagens(@PathVariable("page") Integer pagina){
+		ModelAndView view = new ModelAndView("postagem/list");
+		
+		Page<Postagem> page = postagemService.findByPaginetion(pagina -1, 5);
+		view.addObject("page", page);
+		return view;
+		
+	}
+	
+	
 	/**Metodo para pe update das postagens
 	 * 
 	 * @param id - recupera o ID pela url
@@ -67,7 +84,7 @@ public class PostagemController {
 		return "redirect:/postagem/list";
 	}
 	
-	/**Listando todas as postagens adicionando
+	/**Listando todas as postagens adicionando em uma paginação
 	 * um atributo para identificação 
 	 * 
 	 * @param model
@@ -75,7 +92,12 @@ public class PostagemController {
 	 */
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public ModelAndView listPostagens(ModelMap model){
-		model.addAttribute("postagem", postagemService.findAll());
+		
+		Page<Postagem> page = postagemService.findByPaginetion(0, 5);
+		
+//		Antigo:
+//		model.addAttribute("postagem", postagemService.findAll());
+		model.addAttribute("page", page);
 		
 		return new ModelAndView("postagem/list", model);
 	}
