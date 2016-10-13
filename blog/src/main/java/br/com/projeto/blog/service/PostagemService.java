@@ -184,6 +184,19 @@ public class PostagemService {
 		
 		return repository.findAllByAutorIdOrderByDataPostagemDesc(pageable, id);
 	}
+
+	/**Metodo para retornar uma Page 
+	 * que contenha o texto passado por parametro
+	 * 
+	 * @param page - numero da pagina
+	 * @param size - quantidade maxima de registros
+	 * @param texto - texto a ser procurado
+	 * @return
+	 */
+	public Page<Postagem> findByTexto(int page, int size, String texto) {
+		return repository.findByTextoContainingIgnoreCaseOrderByDataPostagemDesc(
+				texto, new PageRequest(page, size));
+	}
 	
 	
 	

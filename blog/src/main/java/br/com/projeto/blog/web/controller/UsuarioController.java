@@ -35,6 +35,28 @@ public class UsuarioController {
 	@Autowired
 	private AvatarService avatarService;
 	
+	/**Metodo Aplicar uma paginação de usuário com 
+	 * uma ordenação.
+	 * 
+	 * @param pagina - pagina atual
+	 * @param order - tipo de ordenação
+	 * @param field - o campo que será ordenado.
+	 * @return
+	 */
+	@RequestMapping(value = "/sort/{order}/{field}/page/{page}", method = RequestMethod.GET)
+	public ModelAndView pageUsuario(@PathVariable("page") Integer pagina,
+			@PathVariable("order") String order,
+			@PathVariable("field") String field){
+		
+		ModelAndView view = new ModelAndView("usuario/list");
+		Page<Usuario> page = usuarioService.findByPaginationByOrderField(pagina- 1, 5, field, order);
+		view.addObject("page", page);
+		view.addObject("urlPagination", "/usuario/sort/" + order + "/" + field + "/page");
+		
+		return view;
+	}
+	
+	
 	/**Metodo para aplicar a paginação do usuário
 	 * 
 	 * @param pagina - não precisa trabalhar com o ModelAttribute por que não tem um formulário
@@ -49,6 +71,7 @@ public class UsuarioController {
 		Page<Usuario> page = usuarioService.findByPagination(pagina -1 , 5);
 		
 		view.addObject("page", page);
+		view.addObject("urlPagination", "/usuario/page");
 		
 		return view;
 	}
@@ -139,6 +162,7 @@ public class UsuarioController {
 		Page<Usuario> page = usuarioService.findByPagination(0 , 5);
 		
 		model.addAttribute("page", page);
+		model.addAttribute("urlPagination", "/usuario/page");
 		
 		return new ModelAndView("usuario/list", model); 
 	}

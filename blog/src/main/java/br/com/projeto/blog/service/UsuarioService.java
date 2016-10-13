@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.domain.Sort.Order;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -30,6 +33,22 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository repository;
 
+	/**Metodo para dar uma paginação a propriedade de ordenar.
+	 * 
+	 * @param page - o numero da pagina
+	 * @param size - quantidade dos registros por pagina
+	 * @param campo - o campo a ser ordenado
+	 * @param order - como será ordenado
+	 * @return
+	 */
+	public Page<Usuario> findByPaginationByOrderField(int page, int size, String campo, String order){
+		Sort sort = new Sort(new Order(Direction.fromString(order), campo));
+		
+		return repository.findAll(new PageRequest(page, size, sort));
+		
+	}
+	
+	
 	/**Recupera a paginação dos usuários
 	 * 
 	 * @param page - numero de paginas

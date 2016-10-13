@@ -35,7 +35,7 @@ public class AutorController {
 		Page<Autor> page = autorService.findByPagination(pagina -1, 5);
 		
 		view.addObject("page", page);
-		
+		view.addObject("urlPagination", "/autor/page");
 		return view;
 		
 	}
@@ -89,6 +89,7 @@ public class AutorController {
 			
 			Page<Autor> page = autorService.findByPagination(0, 5);
 			view.addObject("page", page);
+			view.addObject("urlPagination", "/autor/page");
 //			Anterior:
 //			List<Autor> autores = autorService.findAll();
 //			view.addObject("autores", autores);

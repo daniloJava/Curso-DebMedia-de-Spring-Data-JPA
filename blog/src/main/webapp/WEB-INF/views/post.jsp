@@ -12,12 +12,20 @@
 
 </head>
 <body>
-	<fieldset class="heder">
+	<fieldset class="header">
 		<h1>Blogo do curso de Spring-Data JPA</h1>
 	</fieldset>
+	
+	
 	<c:import url="menu.jsp" />
 	
 	<fieldset>
+	<div>
+		<form action="<c:url value = "/search"/>" method="get">
+			<input type="search" name="texto" placeholder="Busca por palavra Chave">
+			<input type="submit" value="Localizar">
+		</form>		
+	</div>
 		<c:forEach var="p" items="${page.content}">
 			<div>
 				<!-- Espaço do Titulo -->
@@ -67,21 +75,7 @@
 			</div>
 		
 		</c:forEach>
-		<div align="center">
-		[
-			<c:forEach var="p" begin="1" end="${page.totalPages}">
-				<c:choose>
-					<c:when test="${(p-1) eq page.number }">
-						<label style="font-size: 18pt;">${p }</label>
-					</c:when>
-					<c:otherwise>
-						<a href="<c:url value="${urlPagination }/${p}" />" title="Go To">${p }</a>
-					</c:otherwise>
-				</c:choose>
-			</c:forEach>
-		]
-		
-		</div>
+		<c:import url="paginacao.jsp" />
 		
 	</fieldset>
 

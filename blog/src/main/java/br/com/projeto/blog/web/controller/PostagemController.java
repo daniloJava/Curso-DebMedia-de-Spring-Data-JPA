@@ -49,7 +49,10 @@ public class PostagemController {
 		ModelAndView view = new ModelAndView("postagem/list");
 		
 		Page<Postagem> page = postagemService.findByPaginetion(pagina -1, 5);
+		
 		view.addObject("page", page);
+		view.addObject("urlPagination", "/postagem/page");
+		
 		return view;
 		
 	}
@@ -98,6 +101,7 @@ public class PostagemController {
 //		Antigo:
 //		model.addAttribute("postagem", postagemService.findAll());
 		model.addAttribute("page", page);
+		model.addAttribute("urlPagination", "/postagem/page");
 		
 		return new ModelAndView("postagem/list", model);
 	}

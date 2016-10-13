@@ -41,7 +41,7 @@ public class CategoriaController {
 		//adicionando uma page com 5 linhas de tamano
 		Page<Categoria> page = service.findByPaginetion(pagina - 1, 5);
 		view.addObject("page", page);
-		
+		view.addObject("urlPagination", "/categoria/page");
 		return view;
 	}
 	
@@ -60,7 +60,7 @@ public class CategoriaController {
 		//view.addObject("categorias", service.findAll());
 		view.addObject("page", page);
 		view.setViewName("categoria/cadastro");
-		
+		view.addObject("urlPagination", "/categoria/page");
 		return view;
 		
 	}
@@ -111,7 +111,7 @@ public class CategoriaController {
 		//model.addAttribute("categorias", service.findAll());
 		
 		model.addAttribute("page", page);
-		
+		model.addAttribute("urlPagination", "/categoria/page");
 		
 		return new ModelAndView("categoria/cadastro", model);
 	}

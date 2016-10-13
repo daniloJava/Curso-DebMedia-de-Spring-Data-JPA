@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.projeto.blog.entity.Comentario;
@@ -27,6 +28,43 @@ public class HomeController {
 	@Autowired
 	public  PostagemService postagemService;
 	
+	/**Metodo SObrecarregado para organizar a 
+	 * paginação com a URL correta
+	 * 
+	 * @param texto
+	 * @param pagina
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/search/texto/{texto}/page/{page}", method = RequestMethod.GET)
+	public ModelAndView search(@PathVariable("texto") String texto, 
+							@PathVariable("page") Integer pagina, ModelMap model) {
+
+		Page<Postagem> page = postagemService.findByTexto(pagina -1, 5, texto);
+		model.addAttribute("page", page);
+		model.addAttribute("urlPagination", "/search/texto/"+ texto +"/page");
+
+		return new ModelAndView("post", model);
+
+	}
+
+	/**Metodo para colocar o buscador, do metodo tradicional
+	 * como o fomulário do HTML.
+	 * 
+	 * @param texto
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public ModelAndView search(@RequestParam("texto") String texto, ModelMap model){
+		
+		Page<Postagem> page = postagemService.findByTexto(0, 5, texto);
+		model.addAttribute("page", page);
+		model.addAttribute("urlPagination", "/search/texto/"+ texto +"/page");
+		
+		return new ModelAndView("post", model);
+		
+	}
 	
 	/**Metodo para abrir o unico post
 	 * 

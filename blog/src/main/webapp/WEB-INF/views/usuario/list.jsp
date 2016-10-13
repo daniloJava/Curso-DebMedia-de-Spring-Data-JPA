@@ -17,10 +17,22 @@
 		<table class="table">
 			<tr>
 				<th>Avatar</th>
-				<th>Nome do Usuário</th>
+				<th>
+					<a href="<c:url value="/usuario/sort/asc/nome/page/1"/>">&darr;</a>
+					Nome do Usuário
+					<a href="<c:url value="/usuario/sort/desc/nome/page/1"/>">&uarr;</a>
+				</th>
 				<th>Email</th>
-				<th>Data de Cadasrro</th>
-				<th>Perfil</th>
+				<th>
+					<a href="<c:url value="/usuario/sort/asc/dataCadastro/page/1"/>">&darr;</a>
+					Data de Cadasrro
+					<a href="<c:url value="/usuario/sort/desc/dataCadastro/page/1"/>">&uarr;</a>
+				</th>
+				<th>
+					<a href="<c:url value="/usuario/sort/asc/perfil/page/1"/>">&darr;</a>
+					Perfil
+					<a href="<c:url value="/usuario/sort/desc/perfil/page/1"/>">&uarr;</a>
+				</th>
 				<th>Ação</th>
 			</tr>
 			<c:forEach var="usuario" items="${page.content}" varStatus="i">
@@ -31,7 +43,11 @@
 				</td>
 				<td>${usuario.nome }</td>
 				<td>${usuario.email }</td>
-				<td>${usuario.dataCadastro }</td>
+				<td>
+					<fmt:parseDate var="date" 
+						value="${usuario.dataCadastro }" pattern="yyyy-MM-dd" /> 
+					<fmt:formatDate value="${date }" type="date" /> 				
+				</td>
 				<td>${usuario.perfil}</td>
 				<td>
 					<c:url var="update" value = "/usuario/update/${usuario.id}"></c:url>
@@ -41,26 +57,7 @@
 			</tr>
 			</c:forEach>
 		</table>
-		<div align="center">
-				[
-				<c:forEach var="p" begin="1" end="${page.totalPages }">
-					<c:choose>
-						<c:when test="${p - 1 eq page.number }">
-							<label style="font-size: 18pt;"> ${p} </label>
-						</c:when>
-						<c:otherwise>
-							<label>
-								<a href="<c:url value="/usuario/page/${p }" />" 
-									title="Go to ${p }"> 
-									${p}
-								</a>
-							</label>
-						</c:otherwise>
-					</c:choose>
-									
-				</c:forEach>
-				]				
-			</div>
+		<c:import url="../paginacao.jsp" />
 		
 	</fieldset>
 
