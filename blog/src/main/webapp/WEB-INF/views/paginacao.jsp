@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <div align="center">
-	[
+	
 	<c:forEach var="p" begin="1" end="${page.totalPages }">
 		<c:choose>
 			<c:when test="${p - 1 eq page.number }">
@@ -16,5 +16,5 @@
 		</c:choose>
 
 	</c:forEach>
-	]
+	
 </div>

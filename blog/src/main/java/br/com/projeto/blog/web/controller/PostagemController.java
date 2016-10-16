@@ -44,14 +44,33 @@ public class PostagemController {
 	 * @param pagina
 	 * @return
 	 */
-	@RequestMapping(value = "/page/{page}", method = RequestMethod.GET)
+	
+	@RequestMapping(value = "/ajax/titulo/{titulo}/page/{page}", method = RequestMethod.GET)
+	public ModelAndView searchByAjax(@PathVariable("titulo") String titulo,
+									@PathVariable("page") Integer pagina){
+		ModelAndView view = new ModelAndView("postagem/table-rows");
+		
+		Page<Postagem> page = postagemService.findByTitulo(pagina -1, 5, titulo);
+		view.addObject("page", page);
+		
+		return view;
+	}
+	
+	/**Com Ajax, agora ele recuoera as postagems e aplica no Table-Rows,
+	 * 
+	 * @param pagina
+	 * @return
+	 */
+	@RequestMapping(value = "/ajax/page/{page}", method = RequestMethod.GET)
 	public ModelAndView pagePostagens(@PathVariable("page") Integer pagina){
-		ModelAndView view = new ModelAndView("postagem/list");
+		
+		//Agora com Ajax, ele chama paenas o Include que foi aplicado.
+		ModelAndView view = new ModelAndView("postagem/table-rows");
 		
 		Page<Postagem> page = postagemService.findByPaginetion(pagina -1, 5);
 		
 		view.addObject("page", page);
-		view.addObject("urlPagination", "/postagem/page");
+//		view.addObject("urlPagination", "/postagem/page");
 		
 		return view;
 		
@@ -101,7 +120,7 @@ public class PostagemController {
 //		Antigo:
 //		model.addAttribute("postagem", postagemService.findAll());
 		model.addAttribute("page", page);
-		model.addAttribute("urlPagination", "/postagem/page");
+//		model.addAttribute("urlPagination", "/postagem/page");
 		
 		return new ModelAndView("postagem/list", model);
 	}

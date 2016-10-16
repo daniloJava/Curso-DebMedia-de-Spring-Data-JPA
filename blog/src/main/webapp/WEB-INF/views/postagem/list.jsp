@@ -7,49 +7,24 @@
 <title>Listar os Postagens</title>
 
 <link type="text/css" rel="stylesheet" href="<c:url value= "/css/style.css" />">	
-
+<script type="text/javascript" src="<c:url value="/js/jquery-3.1.1.min.js" />" ></script>
+<script type="text/javascript" src="<c:url value="/js/postagem.js" />" ></script>
 </head>
 
 <body>
 	<c:import url="../menu.jsp" />
 	<fieldset>
 		<legend>Lista de Postagens</legend>
-		<table class="table">
-			<tr>
-				<th>Código</th>
-				<th>Titulo do Post</th>
-				<th>PermaLink</th>
-				<th>Data de Postagem</th>
-				<th>Autor</th>
-				<th>Categorias</th>
-				<th>Ação</th>
-			</tr>
-			<c:forEach var="postagem" items="${page.content}" varStatus="i">
-			<tr bgcolor="${i.count % 2 !=0 ? '#f1f1f1' : 'white'}">
-				
-				<td>${postagem.id }</td>
-				<td>${postagem.titulo }</td>
-				<td>${postagem.permaLink }</td>
-				<td>
-					<fmt:parseDate var = "date" value="${postagem.dataPostagem }" pattern="yyyy-MM-dd'T'HH:mm:ss" />
-					<fmt:formatDate value="${date}" type="both"/>
-				</td>
-				<td>${postagem.autor.nome}</td>
-				<td>
-					<c:forEach var="c" items="${postagem.categorias }" >
-						[${c.descricao}]
-					</c:forEach>
-				</td>
-				<td>
-					<c:url var="update" value = "/postagem/update/${postagem.id }"></c:url>
-					<a href="${update}" title="Editar">&#9445</a>
-					<c:url var="delete" value = "/postagem/delete/${postagem.id }"></c:url>
-					<a href="${delete}" title="Excluir">&#9447</a>
-				</td>
-			</tr>
-			</c:forEach>
+		<div >
+			<input id="search" type="search" placeholder="Busca por titulo" value="" />
+		</div>
+		
+		<table id="tableAjax" class="table">
+			<jsp:include page="table-rows.jsp" />
 		</table>
-		<c:import url="../paginacao.jsp" />
+			
+		<div id="info"></div>
+		
 	</fieldset>
 
 
