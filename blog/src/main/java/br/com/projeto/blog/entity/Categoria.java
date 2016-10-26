@@ -9,12 +9,16 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
 @Table(name = "CATEGORIAS")
 public class Categoria extends AbstractPersistable<Long>{
 	
+	@NotBlank(message = "Este valor não aceita valores em Branco") //não permite enviar vazio ou spaço em Branco.
+	@Length(min = 5, max= 255, message = "este campo aceita entre 5 e 255 caracteres")//Limite de caracteres no campo minimo e maximo.
 	@Column(name = "DESCRICAO",  nullable = false, unique = true, length = 30)
 	private String descricao;
 	

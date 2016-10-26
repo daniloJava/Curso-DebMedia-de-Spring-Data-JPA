@@ -26,6 +26,7 @@
 						<form:label path="descricao">Descrição da Categoria</form:label>
 						<br>
 						<form:input path="descricao" type="text" required="true" size="60" />
+						<form:errors path="descricao" cssClass="error"></form:errors>
 					</div>
 
 					<div>
