@@ -7,6 +7,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -100,11 +102,16 @@ public class AutorController {
 	
 	/**Metodo para Salvar o Autor.
 	 * 
+	 * o BindingResult - é a classe de validação que recebe o erro  
+	 * 
 	 * @param autor
 	 * @return
 	 */
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(@ModelAttribute("autor") Autor autor){
+	public String save(@ModelAttribute("autor") @Validated Autor autor, BindingResult result){
+		
+		if(result.hasErrors())
+			return "autor/cadastro";
 		
 		autorService.save(autor);
 		return "redirect:/autor/perfil/"+ autor.getId();
@@ -118,7 +125,7 @@ public class AutorController {
 	 * @return
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	public ModelAndView addAutor(@ModelAttribute("autor") Autor autor){
+	public ModelAndView addAutor(@ModelAttribute("autor")  Autor autor){
 		return new ModelAndView("autor/cadastro");
 		
 	}

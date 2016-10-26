@@ -21,12 +21,14 @@
 			
 			<div class="campo">
 				<form:label path="nome">Nome do Autor</form:label><br>
-				<form:input path="nome" required="true" title="Inserir Nome" type="text"/>
+				<form:input path="nome" title="Inserir Nome" type="text" />
+				<form:errors path="nome" cssClass="error" />
 			</div><br>
 			
 			<div class="campo">
 				<form:label path="biografia">Biografia</form:label><br>
-				<form:textarea path="biografia" required="true" cols="59" rows="10"/>
+				<form:textarea path="biografia" cols="59" rows="10"/>
+				<form:errors path="biografia" cssClass="error" />
 			</div><br>
 			
 			<div>

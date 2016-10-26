@@ -9,15 +9,27 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
+/**Utilizando os validadores do Hibernate- Validator
+ * 
+ * @author Danilo Silva
+ *
+ */
 @Entity
 @Table(name = "AUTORES")
 public class Autor extends AbstractPersistable<Long>{
 	
+	@NotBlank //não permite enviar vazio ou spaço em Branco.
+	@Length(min = 3, max= 50)//Limite de caracteres no campo minimo e maximo.
 	@Column(nullable = false, unique = true, length = 50)
 	private String nome;
 	
+	
+	@NotBlank(message = "Este valor não aceita valores em Branco") //não permite enviar vazio ou spaço em Branco.
+	@Length(min = 5, max= 255, message = "este campo aceita entre 5 e 255 caracteres")//Limite de caracteres no campo minimo e maximo.
 	@Column(nullable = false, length = 255)
 	private String biografia;
 	
