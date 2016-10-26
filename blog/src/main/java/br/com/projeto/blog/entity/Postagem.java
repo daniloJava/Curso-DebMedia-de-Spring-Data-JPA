@@ -19,6 +19,8 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "POSTAGENS")
 public class Postagem extends AbstractPersistable<Long>{
@@ -33,7 +35,7 @@ public class Postagem extends AbstractPersistable<Long>{
 	@Column(name = "PERMA_LING", nullable = false, unique = true, length = 60)
 	private String permaLink;
 	
-	@DateTimeFormat(iso = ISO.DATE_TIME, pattern ="yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+	@DateTimeFormat(iso = ISO.DATE_TIME, pattern ="yyyy-MM-dd'T'HH:mm:ss")
 	@Column(name = "DATA_POSTAGEM", nullable = false)
 	private LocalDateTime dataPostagem;
 	
@@ -41,6 +43,7 @@ public class Postagem extends AbstractPersistable<Long>{
 	@JoinColumn(name = "AUTOR_ID")// adiciona o atributo que terá na tabela de postagem
 	private Autor autor;
 
+	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 			name= "POSTAGENS_HAS_CATEGORIAS",
@@ -107,7 +110,9 @@ public class Postagem extends AbstractPersistable<Long>{
 	}
 
 	public List<Comentario> getComentarios() {
-		Collections.sort(comentarios);
+		if(comentarios != null)
+			Collections.sort(comentarios);
+		
 		return comentarios;
 	}
 

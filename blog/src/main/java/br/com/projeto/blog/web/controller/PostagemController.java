@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.projeto.blog.entity.Postagem;
@@ -39,12 +40,41 @@ public class PostagemController {
 	@Autowired	
 	private CategoriaService categoriaService;
 	
-	/**Metodo que recupera a Paginação 
+	/**Recupera os dados os dados via JSON e salva os registros
+	 * lembrando que os names do formulário precisa ser exatamente iguais
+	 * pra que a conversão do JSON funcione.
+	 * 
+	 * @ResponseBody - tem como função transformar o Opjeto para um JSON.
+	 * 
+	 * @param postagem
+	 * @return
+	 */
+	@RequestMapping(value = "/ajax/save", method = RequestMethod.POST)
+	public @ResponseBody Postagem saveAjax(Postagem postagem){
+		System.out.println("Adicionando");
+		postagemService.saveOrUpdadte(postagem);
+		System.out.println("Adicionadoo" + postagem.getTexto());
+		
+		return postagem;
+		
+	}
+	
+	/**Abri a pagina que trabalha com ajax
+	 * 
+	 */
+	@RequestMapping(value = "/ajax/add", method = RequestMethod.GET)
+	public ModelAndView cadastroAjax(){
+		ModelAndView view = new ModelAndView("postagem/cadastro-ajax");
+		view.addObject("categorias", categoriaService.findAll());
+		
+		return view;
+	}
+	
+	/**Metodo que recupera a Paginação  por ajax
 	 * 
 	 * @param pagina
 	 * @return
 	 */
-	
 	@RequestMapping(value = "/ajax/titulo/{titulo}/page/{page}", method = RequestMethod.GET)
 	public ModelAndView searchByAjax(@PathVariable("titulo") String titulo,
 									@PathVariable("page") Integer pagina){
@@ -137,7 +167,7 @@ public class PostagemController {
 		return "redirect:/postagem/list";
 	}
 	
-	/**
+	/**Adicionar um nova Categoria
 	 * 
 	 * @param postagem
 	 * @return

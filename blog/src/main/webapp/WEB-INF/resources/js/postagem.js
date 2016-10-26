@@ -6,6 +6,29 @@
  * 
  */
 $(document).ready(function () {
+	$( "#save-ajax" ).submit(function( event ) {
+		  event.preventDefault();	
+		  $.post('/blog/postagem/ajax/save', $(this).serialize() )
+		  	.done(function(postagem){
+		  	$("#info").empty().append(
+		  			"<p> Postagem salva com sucesso</p>" +
+		  			"<p> Abrir Postagem: <a href='/blog/' " + postagem.permaLink + "'>" 
+		  			 + postagem.titulo +"</a> </p>"
+		  		);	
+		  	
+		  		$('#save-ajax').each(function(){
+		  			this.reset();
+		  		});
+		  		
+		  	})
+		  	.fail(function(error){
+		  		$("#info").empty().append("<ṕ>Error Status:" +
+		  				error,status + 
+		  				error.statusText + "</p>")
+		  	});
+		});
+	
+	
 	$(document).on('click', 'button[id*="button_"]', function (a){
 		var pageNumber = $(this).val();
 		tbody(pageNumber);

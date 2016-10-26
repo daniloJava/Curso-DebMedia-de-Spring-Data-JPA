@@ -22,7 +22,7 @@
 	<nav>
 		<a href="<c:url value="/postagem/add"/>"> Add Postagem</a>
 		<a href="<c:url value="/postagem/list"/>"> Lista postagens </a>
-		 
+		<a href="<c:url value="/postagem/ajax/add"/>"> Add Postagem Ajax</a>
 	</nav>
 	<nav>
 		<a href="<c:url value="/categoria/add"/>"> Categorias</a>
