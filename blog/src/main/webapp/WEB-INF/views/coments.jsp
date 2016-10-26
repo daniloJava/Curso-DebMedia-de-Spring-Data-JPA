@@ -6,7 +6,8 @@
 		<input type="hidden" value="${postagem.permaLink }" name= "permaLink">
 		<div>
 			<form:label path="texto">Digitee seu comentario</form:label>
-			<form:textarea path="texto" rows="5" cols="60" required="true"/>
+			<form:textarea path="texto" rows="5" cols="60" > </form:textarea>
+			<form:errors path="texto" cssClass="erros"> </form:errors>
 		</div>
 		<div>
 				<input type="submit" value="Salvar" />

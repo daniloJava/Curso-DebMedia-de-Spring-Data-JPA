@@ -9,12 +9,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
 @Table(name = "COMENTARIOS")
 public class Comentario extends AbstractPersistable<Long> implements Comparable<Comentario>{
 
+	@NotBlank(message = "Este valor não aceita valores em Branco") //não permite enviar vazio ou spaço em Branco.
+	@Length(min = 5, max= 255, message = "Seu comentário tem que ter entre 5 e 255 caracteres")//Limite de caracteres no campo minimo e maximo.
 	@Column(name = "TEXTO", nullable = false, columnDefinition = "TEXT")
 	private String texto;
 	
