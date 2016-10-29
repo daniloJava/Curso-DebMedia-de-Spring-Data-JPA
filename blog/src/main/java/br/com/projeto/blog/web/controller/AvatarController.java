@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +26,13 @@ import br.com.projeto.blog.entity.Avatar;
 import br.com.projeto.blog.entity.Usuario;
 import br.com.projeto.blog.service.AvatarService;
 import br.com.projeto.blog.service.UsuarioService;
+import br.com.projeto.blog.web.validator.AvatarValidator;
 
+/**Controller para o uso do Avatar
+ * 
+ * @author Danilo Silva
+ *
+ */
 @Controller
 @RequestMapping("avatar")
 public class AvatarController {
@@ -35,13 +43,22 @@ public class AvatarController {
 	@Autowired
 	private UsuarioService usuarioService;
 	
+	
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public String update(@ModelAttribute("avatar") Avatar avatar, 
-						@RequestParam("file") MultipartFile file){
+	public String update(@ModelAttribute("avatar") @Validated Avatar avatar,
+						BindingResult result){
+		
+		//Codigo que substitui o InitiBinder, sem precisar mapear nada
+		AvatarValidator validator = new AvatarValidator();
+		validator.validate(avatar, result);
+		
+		if(result.hasErrors())
+			return "avatar/atualizar";
+		
 		//recuperando o id do avatar
 		Long id = avatar.getId();
 		//recupero o avatar pelo arquivo
-		avatar = avatarService.getAvatarByUpload(file);
+		avatar = avatarService.getAvatarByUpload(avatar.getFile());
 		avatar.setId(id);
 		
 		avatarService.saveOrUpdate(avatar);

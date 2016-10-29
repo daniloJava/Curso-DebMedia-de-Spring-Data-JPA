@@ -20,8 +20,9 @@
 			<fieldset class="grupo">
 				<legend>Editar Senha</legend>
 				<div class="campo">
-					<label>Avatar</label>
-					<input type="file" name="file" required="true" />
+					<form:label  path="file">Avatar</form:label>
+					<form:input type="file"  path="file"/>
+					<form:errors path="file" cssClass="error"> </form:errors>
 				</div>
 				<div>
 					<input type="submit" value="Salvar" /> <input type="reset"

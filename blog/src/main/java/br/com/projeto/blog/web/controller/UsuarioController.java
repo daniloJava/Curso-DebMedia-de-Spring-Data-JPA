@@ -83,18 +83,28 @@ public class UsuarioController {
 	 * 
 	 * @param id - se tiver um Id.
 	 * @param user = usuario recuperado da pagina.
-	 * @return
+	 * @return - para a pagina de Peril ou para a pagina de Atualizar pergil
 	 */
 	@RequestMapping(value = {"/update/senha/{id}", "/update/senha"},
 			method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView updateSenha(@PathVariable("id") Optional<Long> id ,
-			@ModelAttribute("usuario") Usuario user){
+								@ModelAttribute("usuario") @Validated Usuario user,
+								BindingResult result){
 		
 		ModelAndView view = new ModelAndView();
 		
 		if(id.isPresent()){
 			user = usuarioService.findById(id.get());
 			view.addObject("usuario", user);
+			view.setViewName("usuario/atualizar");
+			return view;
+		}
+		
+		//validando um campo especifico com o hasFieldErrors
+		if(result.hasFieldErrors("senha")){
+			user = usuarioService.findById(user.getId());
+			view.addObject("nome", user.getNome());
+			view.addObject("email", user.getEmail());
 			view.setViewName("usuario/atualizar");
 			return view;
 		}
@@ -112,22 +122,29 @@ public class UsuarioController {
 	 * é possivel passar mais de uma URL de forma de Array.
 	 * 
 	 * @PathVariable("id") - faz com  que esse metodo sempre tenha um ID na URL
+	 * @Validated para validar o usuario do lado do servidor
 	 * 
+	 * @return = ModelAndView - para pagina de usuario usuario se estiver correto ou a pagina de atualizar 
 	 * 
 	 */
 	@RequestMapping(value = {"/update/{id}", "/update"}, 
 			method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView update(@PathVariable("id") Optional<Long> id, 
-			@ModelAttribute("usuario") Usuario user){
+								@ModelAttribute("usuario") @Validated Usuario user,
+								BindingResult result){
 		ModelAndView view = new ModelAndView();
 		//é um teste para verificar se existe um ID registrado vindo pela URL /update/{id}
 		if(id.isPresent()){
-			usuarioService.findById(id.get());
+			user = usuarioService.findById(id.get());
 			view.addObject("usuario", user);
 			view.setViewName("usuario/atualizar");
 			return view;
 		}
 		
+		if(result.hasErrors()){
+			view.setViewName("usuario/atualizar");
+			return view;
+		}
 		// se vir por /update
 		usuarioService.updateNomeAndEmail(user);
 		
@@ -139,10 +156,11 @@ public class UsuarioController {
 	
 	
 	/**Metodo para registrar qualquer conversçoes no Controller necessarios
+	 * passando parametro, ele intende que somente aquela classe será usada
 	 * 
 	 * @param binder
 	 */
-	@InitBinder
+	@InitBinder("usuario")
 	public void initBinder(WebDataBinder binder){
 		binder.registerCustomEditor(Perfil.class, new PerfilEditorSuporte());
 		binder.setValidator(new UsuarioValidator());

@@ -3,6 +3,7 @@ package br.com.projeto.blog.entity;
 import javax.persistence.*;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name = "AVATARES")
@@ -18,6 +19,8 @@ public class Avatar extends AbstractPersistable<Long>{
 	@Column(nullable = false)
 	private byte[] avatar;
 	
+	@Transient
+	private MultipartFile file;
 	
 
 	@Override
@@ -48,6 +51,14 @@ public class Avatar extends AbstractPersistable<Long>{
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
+	}
+
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 	
 	

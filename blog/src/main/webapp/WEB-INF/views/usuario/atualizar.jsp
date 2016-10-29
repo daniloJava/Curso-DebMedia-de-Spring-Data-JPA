@@ -23,7 +23,8 @@
 				<legend>Editar Senha</legend>
 				<div class="campo">
 					<form:label path="senha">Senha</form:label>
-					<form:password path="senha" required="true" />
+					<form:password path="senha"/>
+					<form:errors path="senha" cssClass="error"> </form:errors>
 				</div>
 				<div>
 					<input type="submit" value="Salvar" /> <input type="reset"
@@ -43,16 +44,17 @@
 
 				<div class="campo">
 					<form:label path="nome">Nome do Usuário</form:label>
-					<br>
-					<form:input path="nome" required="true" title="Inserir Nome"
-						type="text" />
+					<br> 
+					<form:input path="nome" title="Inserir Nome" type="text" value = "${nome}" />
+					<form:errors path="nome" cssClass="error"> </form:errors>
 				</div>
 				<br>
 
 				<div class="campo">
 					<form:label path="email">E-mail</form:label>
 					<br>
-					<form:input path="email" required="true" type="email" />
+					<form:input path="email" type="email" value = "${email}" />
+					<form:errors path="email" cssClass="error"> </form:errors>
 				</div>
 				<br>
 
