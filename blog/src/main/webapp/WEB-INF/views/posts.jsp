@@ -28,7 +28,7 @@
 					Autor: <a href="<c:url value="/autor/${postagem.autor.id }/page/1" />">
 						${postagem.autor.nome} </a> |
 					<fmt:parseDate var="date"
-						value="${p.dataPostagem}" pattern="yyyy-MM-dd'T'HH:mm:ss" />
+						value="${p.dataPostagem}" pattern="yyyy-MM-dd'T'HH:mm" />
 					Data:
 					<fmt:formatDate value="${date }" type="both" />
 				</p>

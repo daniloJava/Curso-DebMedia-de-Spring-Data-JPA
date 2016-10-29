@@ -35,7 +35,7 @@ public class Postagem extends AbstractPersistable<Long>{
 	@Column(name = "PERMA_LING", nullable = false, unique = true, length = 60)
 	private String permaLink;
 	
-	@DateTimeFormat(iso = ISO.DATE_TIME, pattern ="yyyy-MM-dd'T'HH:mm:ss")
+	@DateTimeFormat(iso = ISO.DATE_TIME, pattern ="yyyy-MM-dd'T'HH:mm")
 	@Column(name = "DATA_POSTAGEM", nullable = false)
 	private LocalDateTime dataPostagem;
 	

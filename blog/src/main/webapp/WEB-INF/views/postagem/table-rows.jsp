@@ -20,8 +20,8 @@
 		<td>${postagem.titulo }</td>
 		<td>${postagem.permaLink }</td>
 		<td><fmt:parseDate var="date" value="${postagem.dataPostagem }"
-				pattern="yyyy-MM-dd'T'HH:mm:ss" /> <fmt:formatDate value="${date}"
-				type="both" /></td>
+				pattern="yyyy-MM-dd'T'HH:mm" /> 
+			<fmt:formatDate value="${date}"	type="both" /></td>
 		<td>${postagem.autor.nome}</td>
 		<td><c:forEach var="c" items="${postagem.categorias }">
 						[${c.descricao}]
