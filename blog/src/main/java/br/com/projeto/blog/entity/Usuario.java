@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.*;
 
 import org.springframework.data.jpa.domain.AbstractPersistable;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name = "USUARIOS")
@@ -28,9 +29,14 @@ public class Usuario extends AbstractPersistable<Long>{
 	
 	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	@JoinColumn(name = "AVATAR_ID")
-	
 	private Avatar avatar;
 
+	/**@Transient - significa pra o JPA não criar o Campo
+	 * 
+	 */
+	@Transient
+	private MultipartFile file;
+	
 	@OneToMany(mappedBy = "usuario")
 	private List<Comentario> comentarios;
 	
@@ -95,6 +101,14 @@ public class Usuario extends AbstractPersistable<Long>{
 
 	public void setComentarios(List<Comentario> comentarios) {
 		this.comentarios = comentarios;
+	}
+
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 	
 	

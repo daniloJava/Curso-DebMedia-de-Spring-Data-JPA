@@ -22,22 +22,26 @@
 			
 			<div class="campo">
 				<form:label path="nome">Nome do Usuário</form:label><br>
-				<form:input path="nome" required="true" title="Inserir Nome" type="text"/>
+				<form:input path="nome" title="Inserir Nome" type="text"/>
+				<form:errors path="nome" cssClass="error"> </form:errors>
 			</div><br>
 			
 			<div class="campo">
 				<form:label path="email">E-mail</form:label><br>
-				<form:input path="email" required="true" type="email"/>
+				<form:input path="email" type="email"/>
+				<form:errors path="email" cssClass="error"> </form:errors>
 			</div><br>
 			
 			<div class="campo">
 				<form:label path="senha">Senha</form:label><br>
-				<form:password path="senha" required="true" />
+				<form:password path="senha" />
+				<form:errors path="senha" cssClass="error"> </form:errors>
 			</div><br>
 			
 			<div>
-				<label for="file">Avatar</label><br>
-				<input type="file" name="file" required = "true"/>
+				<form:label path="file">Avatar</form:label><br>
+				<form:input type="file" path="file" />
+				<form:errors path="file" cssClass="error"> </form:errors>
 				
 			</div><br>
 			

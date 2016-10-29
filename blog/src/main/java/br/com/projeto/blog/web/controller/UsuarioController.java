@@ -1,20 +1,19 @@
 package br.com.projeto.blog.web.controller;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.projeto.blog.entity.Avatar;
@@ -23,6 +22,7 @@ import br.com.projeto.blog.entity.Usuario;
 import br.com.projeto.blog.service.AvatarService;
 import br.com.projeto.blog.service.UsuarioService;
 import br.com.projeto.blog.web.editor.PerfilEditorSuporte;
+import br.com.projeto.blog.web.validator.UsuarioValidator;
 
 
 @Controller
@@ -138,13 +138,14 @@ public class UsuarioController {
 	}
 	
 	
-	/**Classe para fazer as converções da opção de Enum
+	/**Metodo para registrar qualquer conversçoes no Controller necessarios
 	 * 
 	 * @param binder
 	 */
 	@InitBinder
 	public void initBinder(WebDataBinder binder){
 		binder.registerCustomEditor(Perfil.class, new PerfilEditorSuporte());
+		binder.setValidator(new UsuarioValidator());
 	}
 	
 	
@@ -189,15 +190,23 @@ public class UsuarioController {
 
 	/**Metodo para salvar o usuário.
 	 * 
-	 * @param user - Usuario do Formulario
 	 * @param file - Recuperando o parametro com @RequestParam, que não faz parte do Objeto usuario.
-	 * @return
+	 * existia o parametro e a anotação acima, porem para validar o formulário do lado do Servidor, 
+	 * por adicionado o atributo a calsse Usuario.
+	 * 
+	 *  
+	 * @param user - Usuario do Formulario
+	 * @return - Redireciona para o perfil do usuário
 	 */
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(@ModelAttribute("usuario") Usuario user, 
-					@RequestParam(value = "file", required = false) MultipartFile file){
+	public String save(@ModelAttribute("usuario") @Validated Usuario user,
+					BindingResult result){
+		//retorna para o cadastro se estiver erro.
+		if(result.hasErrors())
+			return "usuario/cadastro";
 		
-		Avatar avatar = avatarService.getAvatarByUpload(file);
+		
+		Avatar avatar = avatarService.getAvatarByUpload(user.getFile());
 		
 		user.setAvatar(avatar);
 		
