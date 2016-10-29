@@ -1,4 +1,3 @@
-
 /**quando le o documentom e le chama nosso função criada.
  * Exemplificando o metod on, ele recebe a ação, recebe qual a proprierada e 
  * uma função.
@@ -9,17 +8,30 @@ $(document).ready(function () {
 	$( "#save-ajax" ).submit(function( event ) {
 		  event.preventDefault();	
 		  $.post('/blog/postagem/ajax/save', $(this).serialize() )
-		  	.done(function(postagem){
-		  	$("#info").empty().append(
-		  			"<p> Postagem salva com sucesso</p>" +
-		  			"<p> Abrir Postagem: <a href='/blog/' " + postagem.permaLink + "'>" 
-		  			 + postagem.titulo +"</a> </p>"
-		  		);	
-		  	
-		  		$('#save-ajax').each(function(){
-		  			this.reset();
-		  		});
+		  	.done(function(result){
+		  		/**Restando o se o resultado
+		  		 * da classe PostagemAjaxValidator deu Erro ou não
+		  		 */
+		  		if(result.status != 'FAIL'){
 		  		
+				  	$("#info").empty().append(
+				  			"<p> Postagem salva com sucesso</p>" +
+				  			"<p> Abrir Postagem: <a href='/blog/' " + result.postagem.permaLink + "'>" 
+				  			 + result.postagem.titulo +"</a> </p>"
+				  		);	
+				  	
+				  		$('#save-ajax').each(function(){
+				  			this.reset();
+				  		});
+				 $('#titulo-error').empty();
+				 $('#texto-error').empty()
+				  		
+				  		
+		  		}else{
+		  			$('#titulo-error').empty().append(result.tituloError);
+		  			$('#texto-error').empty().append(result.textoError);
+		  			
+		  		}
 		  	})
 		  	.fail(function(error){
 		  		$("#info").empty().append("<ṕ>Error Status:" +

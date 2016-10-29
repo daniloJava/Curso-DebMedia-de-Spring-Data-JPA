@@ -25,12 +25,14 @@
 			<div class="campo">
 				<label for="titulo">Titulo do Post</label>
 				<br>
-				<input name="titulo" type="text" required size="60" />
+				<input name="titulo" type="text" size="60" />
+				<span id="titulo-error" class="error"></span>
 			</div>
 			<div class="campo">
 				<label for="texto">Texto do Post</label>
 				<br>
 					<textarea name="texto" rows="15" cols="80"></textarea>
+					<span id="texto-error" class="error"></span>
 			</div>
 			<div class="campo">
 				<label for="categorias">Selecione a(s) Categorias</label><br>
