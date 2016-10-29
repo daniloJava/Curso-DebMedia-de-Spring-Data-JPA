@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -25,9 +27,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "POSTAGENS")
 public class Postagem extends AbstractPersistable<Long>{
 	
+	@NotBlank
+	@Length(min = 5, max = 60)
 	@Column(name = "TITULO", nullable = false, unique = true, length = 60)
 	private String titulo;
 	
+	@NotBlank
 	//columnDefinition para especificar qual o tamanho LONGTEXT.
 	@Column(name = "TEXTO", nullable = false, columnDefinition = "LONGTEXT")
 	private String texto;

@@ -23,12 +23,13 @@
 			<div class="campo">
 				<form:label path="titulo">Titulo do Post</form:label>
 				<br>
-				<form:input path="titulo" type="text" required="true" size="60" />
+				<form:errors path="titulo" cssClass="error"></form:errors>
 			</div>
 			<div class="campo">
 				<form:label path="texto">Texto do Post</form:label>
 				<br>
 				<form:textarea path="texto" rows="15" cols="80" />
+				<form:errors path="texto" cssClass="error"></form:errors>
 			</div>
 			<div class="campo">
 				<form:label path="categorias">Selecione a(s) Categorias</form:label><br>
