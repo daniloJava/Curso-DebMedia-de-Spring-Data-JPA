@@ -10,6 +10,7 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.DispatcherServlet;
 
 /**Diz para o Spring que todos os recursos que estaria no arquivo
@@ -49,18 +50,22 @@ public class SpringWebXmlConfig implements WebApplicationInitializer{
 
 		//força as requizições para UTF-8
 		FilterRegistration.Dynamic enconding = 
-				servletContext.addFilter("encondingFilter", new CharacterEncodingFilter());
+				servletContext.addFilter("encodingFilter", new CharacterEncodingFilter());
 		enconding.setInitParameter("encoding", "UTF-8");
-		enconding.setInitParameter("forceencoding", "true");
+		enconding.setInitParameter("forceEncoding", "true");
 		enconding.addMappingForUrlPatterns(null, true, "/*");// tudo que estiver dentro do barra como UTF-8
 		
 		//para deixar uma sessão aberta ao abrir a pagina até que o processo de renderização da pagina seja concluida.
-		FilterRegistration.Dynamic inViewSession =
-				servletContext.addFilter("Spring OpenEntityManagerInViewFilter", 
-						new OpenEntityManagerInViewFilter());
+		FilterRegistration.Dynamic inViewSession = servletContext.addFilter("Spring OpenEntityManagerInViewFilter",
+				new OpenEntityManagerInViewFilter());
 		inViewSession.setAsyncSupported(Boolean.TRUE);
-		inViewSession.addMappingForServletNames(null, true, "/*");
+		inViewSession.addMappingForUrlPatterns(null, true, "/*");
 		
+		//trabalhando com Spring Scurity
+		FilterRegistration.Dynamic securityFilter = 
+				servletContext.addFilter("springSecurityFilterChain", new DelegatingFilterProxy());
+		securityFilter.setAsyncSupported(Boolean.TRUE);
+		securityFilter.addMappingForUrlPatterns(null, true, "/*");
 		
 	}
 
