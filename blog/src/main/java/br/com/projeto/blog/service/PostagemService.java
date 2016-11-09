@@ -198,11 +198,32 @@ public class PostagemService {
 				texto, new PageRequest(page, size));
 	}
 
-
+	/**Localiza todos as postagnes pos titulo
+	 * 
+	 * @param page Numero de paginas inicial
+	 * @param size - tamanho de registros por pagina
+	 * @param titulo - titulo a ser procurado
+	 * @return
+	 */
 	public Page<Postagem> findByTitulo(int page, int size, String titulo) {
 		
 		Pageable pageable = new PageRequest(page, size);
 		return repository.findByTituloContainingIgnoreCaseOrderByDataPostagemDesc(pageable, titulo);
+	}
+
+	/**Busca todas as postagens por titulo e por autor
+	 * 
+	 * @param page - pagina inicial
+	 * @param size - tamanho dos registros por pagina
+	 * @param titulo - titulo para ser procurado
+	 * @param id - Id do autor
+	 * @return
+	 */
+	public Page<Postagem> findByTituloAndAutor(int page, int size, String titulo, Long id) {
+
+		Pageable pageable = new PageRequest(page, size);
+		
+		return repository.findALLByAutorIdAndTituloContainingIgnoreCaseOrderByDataPostagemDesc(pageable, id, titulo);
 	}
 	
 	

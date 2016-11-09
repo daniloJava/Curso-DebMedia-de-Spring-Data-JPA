@@ -86,4 +86,13 @@ public class AutorService {
 		// TODO Auto-generated method stub
 		repository.delete(id);
 	}
+
+	/**Metodo para procurar Autor pelo Id do usuario
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public Autor findByUsuario(Long id) {
+		return repository.findByUsuarioId(id);
+	}
 }

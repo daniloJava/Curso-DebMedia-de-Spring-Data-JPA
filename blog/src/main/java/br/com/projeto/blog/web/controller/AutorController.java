@@ -1,11 +1,11 @@
 package br.com.projeto.blog.web.controller;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.projeto.blog.entity.Autor;
+import br.com.projeto.blog.entity.Usuario;
+import br.com.projeto.blog.entity.UsuarioLogado;
 import br.com.projeto.blog.service.AutorService;
+import br.com.projeto.blog.service.UsuarioService;
 
 @Controller
 @RequestMapping("autor")
@@ -24,6 +27,9 @@ public class AutorController {
 	
 	@Autowired
 	private AutorService autorService;
+
+	@Autowired
+	private UsuarioService usuarioService;
 	
 	/**Metodo para adicionar uma paginação na lista de autores
 	 * 
@@ -108,10 +114,16 @@ public class AutorController {
 	 * @return
 	 */
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(@ModelAttribute("autor") @Validated Autor autor, BindingResult result){
+	public String save(@ModelAttribute("autor") @Validated Autor autor, BindingResult result
+					, @AuthenticationPrincipal() UsuarioLogado logado){
 		
 		if(result.hasErrors())
 			return "autor/cadastro";
+		
+		if(logado.getId() != null){
+			Usuario usuario = usuarioService.findById(logado.getId());
+			autor.setUsuario(usuario);
+		}
 		
 		autorService.save(autor);
 		return "redirect:/autor/perfil/"+ autor.getId();
@@ -125,8 +137,18 @@ public class AutorController {
 	 * @return
 	 */
 	@RequestMapping(value = "/add", method = RequestMethod.GET)
-	public ModelAndView addAutor(@ModelAttribute("autor")  Autor autor){
-		return new ModelAndView("autor/cadastro");
+	public ModelAndView addAutor(@ModelAttribute("autor")  Autor autor,
+				@AuthenticationPrincipal() UsuarioLogado logado){
+		
+		autor = autorService.findByUsuario(logado.getId());
+		
+		if(autor == null){
+			return new ModelAndView("autor/cadastro");
+		}
+		
+		
+		return new ModelAndView("redirect:/autor/perfil/"+autor.getId());
+		
 		
 	}
 }

@@ -7,7 +7,12 @@
 $(document).ready(function () {
 	$( "#save-ajax" ).submit(function( event ) {
 		  event.preventDefault();	
-		  $.post('/blog/postagem/ajax/save', $(this).serialize() )
+		  
+		  //para que o Spring security entenda a informação por ajax é precisso colocar  
+		  var token = $("input[name='_csrf']").atrr('value');
+		  
+		  
+		  $.post('/blog/postagem/ajax/save?_csrf='+token, $(this).serialize() )
 		  	.done(function(result){
 		  		/**Restando o se o resultado
 		  		 * da classe PostagemAjaxValidator deu Erro ou não
@@ -70,9 +75,14 @@ $(document).ready(function () {
 });
 
 function search(value){
-	
-	var url = "/blog/postagem/ajax/titulo/" + value + "/page/1";
-	
+	var url 
+	var autorID = $('#table-ajax').attr('title');
+
+	if(autorID > 0 ){
+		url = "/blog/postagem/ajax/autor/" + autorID + "/titulo/" + value + "/page/1";
+	}else{
+		url = "/blog/postagem/ajax/titulo/" + value + "/page/1";
+	}
 	$('#tableAjax').load(url, function(response, status, xhr) {
 		if (status == "error") {
 			var msg = "Sorry but there was an error: ";
@@ -101,14 +111,24 @@ function tbody(page){
 	//recupera o valor que está no campo de busca
 	var titulo = $('#search').val();
 	
-	//valida se tem alguma coisa preenchida,
-	if(titulo.length > 0){
-		//se tiver algo preenchido ele leva pra outra Url, passando o valor do titulo e o numero d apagina
-		url = "/blog/postagem/ajax/titulo/" + titulo + "/page/" + page;
-	}else
-		// se estiver tudo vazio então continua com o fluxo normal.
-		url = "/blog/postagem/ajax/page/" + page;
-
+	//recebe o id do autror, para filtrar as postagens somente do Autor
+	var autorID = $('#table-ajax').attr('title');
+	
+	if(autorID > 0 && titulo.length > 0){
+		url = "/blog/postagem/ajax/autor/" + autorID + "/titulo/" + titulo + "/page/" + page;
+	}
+	
+	else{
+		if(titulo.length > 0){//valida se tem alguma coisa preenchida,
+			//se tiver algo preenchido ele leva pra outra Url, passando o valor do titulo e o numero d apagina
+			url = "/blog/postagem/ajax/titulo/" + titulo + "/page/" + page;
+		} else if(autorID > 0){//valida se é um autor ou não
+			url = "/blog/postagem/ajax/autor/"+ autorID + "/page/" + page;
+		}else{
+			// se estiver tudo vazio então continua com o fluxo normal.
+			url = "/blog/postagem/ajax/page/" + page;
+		}
+	}
 	$("#tableAjax").load(url, function(response, status, xhr) {
 		if (status == "error") {
 			var msg = "Sorry but there was an error: ";

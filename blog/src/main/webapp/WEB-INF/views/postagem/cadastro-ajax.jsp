@@ -19,7 +19,7 @@
 	
 	<c:url var="save" value="/postagem/ajax/save" />
 	<form id="save-ajax">
-
+		<security:csrfInput/>
 		<fieldset>
 			<legend> Cadastro de Postagem</legend>
 			<div class="campo">
