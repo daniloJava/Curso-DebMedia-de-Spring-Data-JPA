@@ -75,7 +75,14 @@ public class UsuarioService {
 	@Transactional(readOnly = false)
 	public void updateNomeAndEmail(Usuario user) {
 		
-		repository.updateNomeAndEmail(user.getNome(), user.getEmail(), user.getId());
+		Usuario usuario = repository.findOne(user.getId());
+		usuario.setNome(user.getNome());
+		usuario.setEmail(user.getEmail());
+		
+		//repository.updateNomeAndEmail(user.getNome(), user.getEmail(), user.getId());
+		
+		repository.save(usuario);
+		
 	}
 	
 	
@@ -154,10 +161,14 @@ public class UsuarioService {
 	public void updateSenha(Usuario user) {
 		//recebe a senha Criptografada
 		String hash = new BCryptPasswordEncoder().encode(user.getSenha());
+		
+		Usuario usuario = repository.findOne(user.getId());
 		//insere no objeto
-		user.setSenha(hash);
+		usuario.setSenha(hash);
 		//somente chama o metodo do UsuarioRepository para tualizar a senha.
-		repository.updateSenha(user.getSenha(), user.getId());
+		//repository.updateSenha(user.getSenha(), user.getId());
+		repository.save(usuario);
+		
 	}
 
 	/**Fazer um update por Usuario

@@ -52,9 +52,17 @@ public class CategoriaService {
 	@Transactional(readOnly = false)
 	public void saveOrUpdate(Categoria categoria){
 		String permalink = MyReplaceString.formatarPermalink(categoria.getDescricao());
-		categoria.setPermaLink(permalink);
-		repository.save(categoria);
 		
+		if(categoria.getId() != null){
+			Categoria cPersistente = repository.findOne(categoria.getId());
+			cPersistente.setPermaLink(permalink);
+			cPersistente.setDescricao(categoria.getDescricao());
+			
+			repository.save(cPersistente);
+		}else{
+			categoria.setPermaLink(permalink);
+			repository.save(categoria);
+		}
 	}
 	
 	/**Metodo que retorna uma paginação do banco de dados

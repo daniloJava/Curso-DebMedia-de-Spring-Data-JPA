@@ -20,7 +20,8 @@ public class LocalDateTimeConverter implements AttributeConverter<LocalDateTime,
 	}
 
 	public LocalDateTime convertToEntityAttribute(Timestamp time) {
-		return time.toLocalDateTime();
+		System.out.println("passou no converter" + time);
+		return time != null ? time.toLocalDateTime() : null;
 	}
 
 }

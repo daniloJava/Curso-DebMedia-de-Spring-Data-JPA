@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name = "USUARIOS")
-public class Usuario extends AbstractPersistable<Long>{
+public class Usuario extends AbstractAuditoria<Long>{
 	@Column(name = "NOME", nullable = false, unique = true)
 	private String nome;
 	
@@ -41,11 +41,6 @@ public class Usuario extends AbstractPersistable<Long>{
 	private List<Comentario> comentarios;
 	
 	
-	@Override
-	public void setId(Long id) {
-		// TODO Auto-generated method stub
-		super.setId(id);
-	}
 
 	public String getNome() {
 		return nome;

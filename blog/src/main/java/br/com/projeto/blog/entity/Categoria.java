@@ -15,7 +15,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Entity
 @Table(name = "CATEGORIAS")
-public class Categoria extends AbstractPersistable<Long>{
+public class Categoria extends AbstractAuditoria<Long>{
 	
 	@NotBlank(message = "Este valor não aceita valores em Branco") //não permite enviar vazio ou spaço em Branco.
 	@Length(min = 5, max= 255, message = "este campo aceita entre 5 e 255 caracteres")//Limite de caracteres no campo minimo e maximo.
@@ -33,10 +33,6 @@ public class Categoria extends AbstractPersistable<Long>{
 	)
 	private List<Postagem> postagem;
 
-	@Override
-	public void setId(Long id) {
-		super.setId(id);
-	}
 
 	public String getDescricao() {
 		return descricao;
