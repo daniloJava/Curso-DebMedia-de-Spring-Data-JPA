@@ -58,7 +58,11 @@
 				</div>
 				
 			</div>
-		<c:import url="coments.jsp"></c:import>
+		<c:if test="${logado == null}">
+			<p><em>Usuários Logados podem comentar nesse Post.</em></p>
+		</c:if>
+		
+			<c:import url="coments.jsp"></c:import>
 	</fieldset>
 
 	

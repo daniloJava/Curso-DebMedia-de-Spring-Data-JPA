@@ -12,7 +12,7 @@
 </head>
 <body>
 	<c:import url="../menu.jsp" />
-	<c:url var="save" value="/usuario/save" />
+	<c:url var="save" value="/usuario/save?${_csrf.parameterName}=${_csrf.token}" />
 	<form:form modelAttribute="usuario" action="${save}" method="POST"
 		enctype="multipart/form-data">
 		
@@ -45,16 +45,6 @@
 				
 			</div><br>
 			
-			<div  class="campo">
-				<form:label path="perfil">Avatar</form:label><br>
-				<form:select path="perfil" required="true">
-				
-					<form:option value="ADIMIN" label="ADIMIN" />
-					<form:option value="AUTOR" label="AUTOR" />
-					<form:option value="LEITOR" label="LEITOR" />
-				
-				</form:select>
-			</div><br>
 			<div>
 				<input type="submit" value="Salvar" />
 				<input type="reset" value ="Limpar" />

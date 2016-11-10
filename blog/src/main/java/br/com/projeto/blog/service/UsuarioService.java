@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.projeto.blog.entity.Avatar;
+import br.com.projeto.blog.entity.Perfil;
 import br.com.projeto.blog.entity.Usuario;
 import br.com.projeto.blog.repository.UsuarioRepository;
 
@@ -99,6 +100,9 @@ public class UsuarioService {
 			user.setDataCadastro(LocalDate.now());
 		
 		String hash = new BCryptPasswordEncoder().encode(user.getSenha());
+		
+		user.setPerfil(Perfil.LEITOR);
+		
 		user.setSenha(hash);
 		
 		repository.save(user);
@@ -154,6 +158,22 @@ public class UsuarioService {
 		user.setSenha(hash);
 		//somente chama o metodo do UsuarioRepository para tualizar a senha.
 		repository.updateSenha(user.getSenha(), user.getId());
+	}
+
+	/**Fazer um update por Usuario
+	 * 
+	 * @param usuario
+	 */
+	@Transactional
+	public void updatePerfil(Usuario usuario) {
+		//procura o usuário pelo id
+		Usuario persistente = repository.findOne(usuario.getId());
+		//seta o perfil atravez do que foi passado
+		persistente.setPerfil(usuario.getPerfil());
+		// salva no banco
+		repository.save(persistente);
+		
+		
 	}
 	
 	

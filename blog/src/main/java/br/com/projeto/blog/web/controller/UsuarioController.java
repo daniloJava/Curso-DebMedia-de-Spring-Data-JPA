@@ -57,6 +57,23 @@ public class UsuarioController {
 	}
 	
 	
+	/**metodo para editar o tipo de perfil 
+	 * apartir do usuário Adimin
+	 * 
+	 * @param usuario - usuario que sera passado para alteração
+	 * @param result - eventuais erros
+	 * @return para a pagina de lista de usuários.
+	 */
+	@RequestMapping(value = "/update/perfil", method = RequestMethod.POST)
+	public String updatePerfil(@ModelAttribute("usuario") @Validated Usuario usuario, 
+								BindingResult result){
+		
+		usuarioService.updatePerfil(usuario);
+		
+		return "redirect:/usuario/list";
+		
+	}
+	
 	/**Metodo para aplicar a paginação do usuário
 	 * 
 	 * @param pagina - não precisa trabalhar com o ModelAttribute por que não tem um formulário
@@ -230,7 +247,7 @@ public class UsuarioController {
 		
 		usuarioService.save(user);
 		//usando o Redirect é somente controler e o metodo dentro do controler
-		return "redirect:/usuario/perfil/" + user.getId();
+		return "redirect:/auth/form";
 		
 	}
 

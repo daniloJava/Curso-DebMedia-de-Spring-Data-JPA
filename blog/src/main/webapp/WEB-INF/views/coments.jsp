@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <div id="comentarios">
+
+	<security:authorize access="hasAnyAuthority('ADIMIN', 'AUTOR', 'LEITOR')">
 	<c:url var="save" value="/comentario/save" />
 	<form:form action="${save }" modelAttribute="comentario" method="POST">
 		<input type="hidden" value="${postagem.permaLink }" name= "permaLink">
@@ -15,6 +17,7 @@
 				<input type="reset" value ="Limpar" />
 			</div>
 	</form:form>
+	</security:authorize>
 	<hr>
 	<c:forEach var="c" items="${postagem.comentarios }">
 		<div class="comentarios">

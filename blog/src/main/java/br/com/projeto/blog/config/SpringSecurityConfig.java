@@ -38,9 +38,17 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 					"/autor/{id}/page/{page}",
 					"/categoria/{link}/page/{page}",
 					"/page/{page}",
-					"/avatar/load/{id}"
+					"/avatar/load/{id}",
+					"/usuario/add",
+					"/usuario/save"
 				) // todas as permições possiveis que são publicas 
 				.permitAll() // liberando para todo mundo as paginas	
+				
+				//nesse caso estou liberando somente para o perfil AUTOR... 
+				// é o mesmo tipo que no codigo html:
+				// <security:authorize access="hasAuthority('AUTOR')">
+				//.antMatchers("/autor/add").hasAnyAuthority("AUTOR")
+				
 			// qualquer Request que estiver autenticado trá acesso o que está acima
 			.anyRequest().authenticated() 
 			

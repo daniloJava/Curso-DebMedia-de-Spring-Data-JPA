@@ -14,7 +14,7 @@
 <body>
 	<c:import url="../menu.jsp" />
 		
-		<c:url var="save" value="/avatar/update" />
+		<c:url var="save" value="/avatar/update?${_csrf.parameterName}=${_csrf.token}" />
 		<form:form modelAttribute="avatar" action="${save}" method="POST" enctype="multipart/form-data">
 			<form:hidden path="id" />
 			<fieldset class="grupo">
