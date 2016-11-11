@@ -165,14 +165,14 @@ Certificado: http://www.devmedia.com.br/cursos/certificado/?id=15380
 </ul>
 
 <ul>
-<b>Projeto Final - Lidando com exceções no Spring MVC</p>
+<b>Projeto Final - Lidando com exceções no Spring MVC</b>
 <li>Exceções a nível de controller
 <li>Exceção a nível Http Status 404
 <li>Exceção a nível Http Status 500
 </ul>
 
 <ul>
-<b>Projeto Final - Segurança com Spring Security</p>
+<b>Projeto Final - Segurança com Spring Security</b>
 <li>Iniciando com Spring Security
 <li>Liberando o acesso total a página Home
 <li>Iniciando com a configuração de login
